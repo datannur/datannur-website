@@ -4,8 +4,8 @@ title: Der quelloffene, leichtgewichtige und souveräne Datenkatalog
 description: datannur scannt Ihre Datenquellen und erzeugt einen strukturierten, interoperablen Katalog – unter Ihrer Kontrolle.
 bg: city
 hero:
-  title: Der quelloffene, leichtgewichtige und souveräne Datenkatalog
-  text: datannur scannt Ihre Datenquellen und erzeugt einen strukturierten<br />und interoperablen Katalog – unter Ihrer Kontrolle.
+  title: Der quelloffene, leichte und souveräne Datenkatalog
+  text: datannur scannt Ihre Datenquellen und erzeugt einen<br />strukturierten, interoperablen Katalog – unter Ihrer Kontrolle.
   image: /images/folder-page-folder-tab.en.jpg
   imageAlt: datannur-Oberfläche – Ordnerseite „Public administration“
   buttons:

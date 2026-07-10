@@ -21,7 +21,7 @@ Zwei Demos sind direkt im Browser zugänglich:
 </div>
 <div>
 
-**Open-Data-Demo:** um den Katalog in einem konkreten Anwendungsfall zu sehen
+**Open-Data-Demo:** um den Katalog im konkreten Einsatz zu sehen
 
 [Open-Data-Demo](https://suisse.datannur.com)
 

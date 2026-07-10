@@ -45,10 +45,10 @@
   --hero-0: rgba(255, 255, 255, 0.55);
   --hero-1: rgba(255, 255, 255, 0.9);
   --city-0: #ffffff;
-  --city-1: rgba(255, 255, 255, 0.88);
-  --city-2: rgba(255, 255, 255, 0.62);
-  --city-3: rgba(255, 255, 255, 0.5);
-  --city-4: rgba(255, 255, 255, 0.64);
+  --city-1: rgba(255, 255, 255, 0.97);
+  --city-2: rgba(255, 255, 255, 0.88);
+  --city-3: rgba(255, 255, 255, 0.7);
+  --city-4: rgba(255, 255, 255, 0.74);
   --container: 1140px;
   --content: 700px;
   --header-height: 75px;
@@ -994,14 +994,20 @@ html:not([data-theme]) .theme-toggle {
     url('/images/black_and_white_image.webp') center bottom / cover no-repeat;
 }
 
-/* l'image file jusqu'en bas de la page : le footer transparent se pose dessus */
+/* l'image file jusqu'en bas de la page : le footer transparent se pose dessus
+   (padding et marge égaux, sinon les pages courtes débordent de la fenêtre) */
 .city-bottom .bg-city {
-  padding-bottom: 150px;
+  padding-bottom: 69px;
+}
+
+/* le fond et le footer espacent déjà la fin de page */
+.bg-city .page-body {
+  padding-bottom: 10px;
 }
 
 .city-bottom .site-footer {
   position: relative;
-  margin-top: -104px;
+  margin-top: -69px;
   background: transparent;
 }
 
@@ -1066,8 +1072,10 @@ html:not([data-theme]) .theme-toggle {
   margin: 0 0 20px;
 }
 
-.partners-note {
-  font-size: 15px;
+.partners p.partners-note {
+  font-size: 18px;
+  max-width: 600px;
+  margin: 80px auto 0;
 }
 
 /* --------------------------------------------------------------------------
@@ -1167,7 +1175,7 @@ html:not([data-theme]) .theme-toggle {
    -------------------------------------------------------------------------- */
 
 .site-footer {
-  padding: 40px 20px;
+  padding: 26px 20px 18px;
   text-align: center;
   font-size: 14px;
   color: var(--muted);
