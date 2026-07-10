@@ -52,8 +52,18 @@ sélecteur EN/FR/DE vers la bonne page traduite.
 - Une image suivie d'une ligne `*en italique*` = légende centrée grise
 - Un lien seul dans son paragraphe = bouton (page démo)
 - `<div class="grid-2">…</div>` = deux colonnes
-- `![alt](/images/x.png "w=310")` = largeur d'affichage fixe en px (diagrammes
-  de la page structure)
+- `![alt](/images/x.png "w=310")` = largeur d'affichage fixe en px
+- `![alt](diagram:nom)` = insère le diagramme `src/diagrams/<lang>/<nom>.html`
+  (SVG repris de l'app datannur — voir ci-dessous)
+
+### Diagrammes de structure
+
+Les diagrammes de la page structure sont le HTML/SVG de l'app elle-même
+(page about de dev.datannur.com), extraits dans `src/diagrams/<lang>/` avec
+leur CSS dans `src/styles/diagrams.css` : nets à toutes les résolutions,
+libellés localisés, couleurs adaptées aux deux thèmes. Si les diagrammes de
+l'app évoluent, ré-extraire les blocs `.simple-diagram-block` et remplacer
+les fichiers correspondants.
 
 ### Images en mode sombre
 

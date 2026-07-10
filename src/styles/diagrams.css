@@ -1,0 +1,147 @@
+/* ==========================================================================
+   Diagrammes de structure — markup et styles repris de l'app datannur
+   (extraits de dev.datannur.com/about, fichiers dans src/diagrams/)
+   ========================================================================== */
+
+.simple-diagram-block {
+  --background-1: #f6f7f8;
+  --color-1: #363636;
+  --color-2: #4a4a4a;
+  --color-3: #12999b;
+}
+
+[data-theme='dark'] .simple-diagram-block {
+  --background-1: #0b0b0b;
+  --color-1: #dbdbdb;
+  --color-2: #b5b5b5;
+  --color-3: #12999b;
+}
+
+.simple-diagram-block {
+  margin: 30px auto;
+}
+
+.simple-diagram-node .icon {
+  display: inline-flex;
+  align-items: center;
+}
+
+.simple-diagram-node .icon svg {
+  width: 1em;
+  height: 1em;
+}
+
+.tab-inner-tab.svelte-16l8tmu .simple-diagram { width: 100%; max-width: 1100px; height: auto; overflow: visible; }
+.tab-inner-tab.svelte-16l8tmu .simple-diagram-compact { width: auto; max-width: min(100%, 520px); }
+.tab-inner-tab.svelte-16l8tmu .simple-diagram-edge { fill: none; stroke: color-mix(in srgb, var(--color-2) 58%, var(--background-1)); stroke-width: 1.25px; opacity: 0.88; }
+.tab-inner-tab.svelte-16l8tmu .simple-diagram-edge-dotted { stroke-dasharray: 6, 6; }
+.tab-inner-tab.svelte-16l8tmu .simple-diagram-label-bg { fill: rgba(0, 0, 0, 0); stroke: rgba(0, 0, 0, 0); stroke-width: 0; opacity: 0; }
+.tab-inner-tab.svelte-16l8tmu .simple-diagram-label-text { fill: var(--color-1); pointer-events: none; font-size: 7px; font-weight: 600; }
+.tab-inner-tab.svelte-16l8tmu .simple-diagram-node { box-sizing: border-box; width: 100%; height: 100%; color: var(--color-1); background: color-mix(in srgb, var(--color-2) 14%, var(--background-1)); border: 1px solid color-mix(in srgb, var(--color-2) 58%, var(--background-1)); border-radius: 20px; justify-content: center; align-items: center; gap: 8px; font-size: 16px; font-weight: 700; transition: 0.3s ease-out; display: flex; }
+.tab-inner-tab.svelte-16l8tmu .simple-diagram-node span { color: inherit; }
+.tab-inner-tab.svelte-16l8tmu .simple-diagram-node .icon { margin-right: 0px; font-size: 15px; }
+.tab-inner-tab.svelte-16l8tmu .simple-diagram-compact .simple-diagram-node { gap: 6px; font-size: 10px; line-height: 1; }
+.tab-inner-tab.svelte-16l8tmu .simple-diagram-compact .simple-diagram-node .icon { font-size: 10px; }
+.tab-inner-tab.svelte-16l8tmu a.internal-link:hover .simple-diagram-node, .tab-inner-tab.svelte-16l8tmu .simple-diagram-node:hover { color: var(--color-1); border-color: color-mix(in srgb, var(--color-2) 78%, var(--background-1)); }
+.tab-inner-tab.svelte-16l8tmu .simple-diagram-node-organization { background: rgba(98, 93, 140, 0.267); border-color: rgb(98, 93, 140); }
+.tab-inner-tab.svelte-16l8tmu .simple-diagram-edge-organization { stroke: rgb(98, 93, 140); }
+.tab-inner-tab.svelte-16l8tmu .simple-diagram-arrow-organization { fill: rgb(98, 93, 140); stroke: rgb(98, 93, 140); }
+.tab-inner-tab.svelte-16l8tmu a.internal-link:hover .simple-diagram-node-organization, .tab-inner-tab.svelte-16l8tmu .simple-diagram-node-organization:hover { color: rgb(98, 93, 140); border-color: rgb(98, 93, 140); }
+.tab-inner-tab.svelte-16l8tmu .simple-diagram-node-folder { background: rgba(182, 139, 76, 0.267); border-color: rgb(182, 139, 76); }
+.tab-inner-tab.svelte-16l8tmu .simple-diagram-edge-folder { stroke: rgb(182, 139, 76); }
+.tab-inner-tab.svelte-16l8tmu .simple-diagram-arrow-folder { fill: rgb(182, 139, 76); stroke: rgb(182, 139, 76); }
+.tab-inner-tab.svelte-16l8tmu a.internal-link:hover .simple-diagram-node-folder, .tab-inner-tab.svelte-16l8tmu .simple-diagram-node-folder:hover { color: rgb(182, 139, 76); border-color: rgb(182, 139, 76); }
+.tab-inner-tab.svelte-16l8tmu .simple-diagram-node-tag { background: rgba(57, 100, 150, 0.267); border-color: rgb(57, 100, 150); }
+.tab-inner-tab.svelte-16l8tmu .simple-diagram-edge-tag { stroke: rgb(57, 100, 150); }
+.tab-inner-tab.svelte-16l8tmu .simple-diagram-arrow-tag { fill: rgb(57, 100, 150); stroke: rgb(57, 100, 150); }
+.tab-inner-tab.svelte-16l8tmu a.internal-link:hover .simple-diagram-node-tag, .tab-inner-tab.svelte-16l8tmu .simple-diagram-node-tag:hover { color: rgb(57, 100, 150); border-color: rgb(57, 100, 150); }
+.tab-inner-tab.svelte-16l8tmu .simple-diagram-node-concept { background: rgba(43, 159, 179, 0.267); border-color: rgb(43, 159, 179); }
+.tab-inner-tab.svelte-16l8tmu .simple-diagram-edge-concept { stroke: rgb(43, 159, 179); }
+.tab-inner-tab.svelte-16l8tmu .simple-diagram-arrow-concept { fill: rgb(43, 159, 179); stroke: rgb(43, 159, 179); }
+.tab-inner-tab.svelte-16l8tmu a.internal-link:hover .simple-diagram-node-concept, .tab-inner-tab.svelte-16l8tmu .simple-diagram-node-concept:hover { color: rgb(43, 159, 179); border-color: rgb(43, 159, 179); }
+.tab-inner-tab.svelte-16l8tmu .simple-diagram-node-dataset { background: rgba(121, 164, 135, 0.267); border-color: rgb(121, 164, 135); }
+.tab-inner-tab.svelte-16l8tmu .simple-diagram-edge-dataset { stroke: rgb(121, 164, 135); }
+.tab-inner-tab.svelte-16l8tmu .simple-diagram-arrow-dataset { fill: rgb(121, 164, 135); stroke: rgb(121, 164, 135); }
+.tab-inner-tab.svelte-16l8tmu a.internal-link:hover .simple-diagram-node-dataset, .tab-inner-tab.svelte-16l8tmu .simple-diagram-node-dataset:hover { color: rgb(121, 164, 135); border-color: rgb(121, 164, 135); }
+.tab-inner-tab.svelte-16l8tmu .simple-diagram-node-variable { background: rgba(178, 111, 82, 0.267); border-color: rgb(178, 111, 82); }
+.tab-inner-tab.svelte-16l8tmu .simple-diagram-edge-variable { stroke: rgb(178, 111, 82); }
+.tab-inner-tab.svelte-16l8tmu .simple-diagram-arrow-variable { fill: rgb(178, 111, 82); stroke: rgb(178, 111, 82); }
+.tab-inner-tab.svelte-16l8tmu a.internal-link:hover .simple-diagram-node-variable, .tab-inner-tab.svelte-16l8tmu .simple-diagram-node-variable:hover { color: rgb(178, 111, 82); border-color: rgb(178, 111, 82); }
+.tab-inner-tab.svelte-16l8tmu .simple-diagram-node-enumeration { background: rgba(170, 78, 99, 0.267); border-color: rgb(170, 78, 99); }
+.tab-inner-tab.svelte-16l8tmu .simple-diagram-edge-enumeration { stroke: rgb(170, 78, 99); }
+.tab-inner-tab.svelte-16l8tmu .simple-diagram-arrow-enumeration { fill: rgb(170, 78, 99); stroke: rgb(170, 78, 99); }
+.tab-inner-tab.svelte-16l8tmu a.internal-link:hover .simple-diagram-node-enumeration, .tab-inner-tab.svelte-16l8tmu .simple-diagram-node-enumeration:hover { color: rgb(170, 78, 99); border-color: rgb(170, 78, 99); }
+.tab-inner-tab.svelte-16l8tmu .simple-diagram-node-value { background: rgba(85, 148, 188, 0.267); border-color: rgb(85, 148, 188); }
+.tab-inner-tab.svelte-16l8tmu a.internal-link:hover .simple-diagram-node-value, .tab-inner-tab.svelte-16l8tmu .simple-diagram-node-value:hover { color: rgb(85, 148, 188); border-color: rgb(85, 148, 188); }
+.tab-inner-tab.svelte-16l8tmu .simple-diagram-node-diagram { background: rgba(159, 182, 88, 0.267); border-color: rgb(159, 182, 88); }
+.tab-inner-tab.svelte-16l8tmu a.internal-link:hover .simple-diagram-node-diagram, .tab-inner-tab.svelte-16l8tmu .simple-diagram-node-diagram:hover { color: rgb(159, 182, 88); border-color: rgb(159, 182, 88); }
+.tab-inner-tab.svelte-16l8tmu .simple-diagram-node-doc { background: rgba(224, 116, 92, 0.267); border-color: rgb(224, 116, 92); }
+.tab-inner-tab.svelte-16l8tmu a.internal-link:hover .simple-diagram-node-doc, .tab-inner-tab.svelte-16l8tmu .simple-diagram-node-doc:hover { color: rgb(224, 116, 92); border-color: rgb(224, 116, 92); }
+.tab-inner-tab.svelte-16l8tmu .simple-diagram-node-frequency { background: rgba(18, 153, 155, 0.267); border-color: rgb(18, 153, 155); }
+.tab-inner-tab.svelte-16l8tmu a.internal-link:hover .simple-diagram-node-frequency, .tab-inner-tab.svelte-16l8tmu .simple-diagram-node-frequency:hover { color: rgb(18, 153, 155); border-color: rgb(18, 153, 155); }
+.tab-inner-tab.svelte-16l8tmu .simple-diagram-node-id-donnees_dataset, .tab-inner-tab.svelte-16l8tmu .simple-diagram-node-id-contexte_dataset { background: color-mix(in srgb, var(--color-2) 14%, var(--background-1)); border-color: color-mix(in srgb, var(--color-2) 58%, var(--background-1)); }
+.tab-inner-tab.svelte-16l8tmu .simple-diagram-node-id-donnees_dataset:hover, .tab-inner-tab.svelte-16l8tmu .simple-diagram-node-id-contexte_dataset:hover { color: var(--color-1); border-color: color-mix(in srgb, var(--color-2) 78%, var(--background-1)); }
+.simple-diagram { width: 100%; max-width: 1100px; height: auto; overflow: visible; }
+.simple-diagram-compact { width: auto; max-width: min(100%, 520px); }
+.simple-diagram-edge { fill: none; stroke: color-mix(in srgb, var(--color-2) 58%, var(--background-1)); stroke-width: 1.25px; opacity: 0.88; }
+.simple-diagram-edge-dotted { stroke-dasharray: 6, 6; }
+.simple-diagram-label-bg { fill: rgba(0, 0, 0, 0); stroke: rgba(0, 0, 0, 0); stroke-width: 0; opacity: 0; }
+.simple-diagram-label-text { fill: var(--color-1); pointer-events: none; font-size: 7px; font-weight: 600; }
+.simple-diagram-node { box-sizing: border-box; width: 100%; height: 100%; color: var(--color-1); background: color-mix(in srgb, var(--color-2) 14%, var(--background-1)); border: 1px solid color-mix(in srgb, var(--color-2) 58%, var(--background-1)); border-radius: 20px; justify-content: center; align-items: center; gap: 8px; font-size: 16px; font-weight: 700; transition: 0.3s ease-out; display: flex; }
+.simple-diagram-node span { color: inherit; }
+.simple-diagram-node .icon { margin-right: 0px; font-size: 15px; }
+.simple-diagram-compact .simple-diagram-node { gap: 6px; font-size: 10px; line-height: 1; }
+.simple-diagram-compact .simple-diagram-node .icon { font-size: 10px; }
+a.internal-link:hover .simple-diagram-node, .simple-diagram-node:hover { color: var(--color-1); border-color: color-mix(in srgb, var(--color-2) 78%, var(--background-1)); }
+.simple-diagram-node-organization { background: rgba(98, 93, 140, 0.267); border-color: rgb(98, 93, 140); }
+.simple-diagram-edge-organization { stroke: rgb(98, 93, 140); }
+.simple-diagram-arrow-organization { fill: rgb(98, 93, 140); stroke: rgb(98, 93, 140); }
+a.internal-link:hover .simple-diagram-node-organization, .simple-diagram-node-organization:hover { color: rgb(98, 93, 140); border-color: rgb(98, 93, 140); }
+.simple-diagram-node-folder { background: rgba(182, 139, 76, 0.267); border-color: rgb(182, 139, 76); }
+.simple-diagram-edge-folder { stroke: rgb(182, 139, 76); }
+.simple-diagram-arrow-folder { fill: rgb(182, 139, 76); stroke: rgb(182, 139, 76); }
+a.internal-link:hover .simple-diagram-node-folder, .simple-diagram-node-folder:hover { color: rgb(182, 139, 76); border-color: rgb(182, 139, 76); }
+.simple-diagram-node-tag { background: rgba(57, 100, 150, 0.267); border-color: rgb(57, 100, 150); }
+.simple-diagram-edge-tag { stroke: rgb(57, 100, 150); }
+.simple-diagram-arrow-tag { fill: rgb(57, 100, 150); stroke: rgb(57, 100, 150); }
+a.internal-link:hover .simple-diagram-node-tag, .simple-diagram-node-tag:hover { color: rgb(57, 100, 150); border-color: rgb(57, 100, 150); }
+.simple-diagram-node-concept { background: rgba(43, 159, 179, 0.267); border-color: rgb(43, 159, 179); }
+.simple-diagram-edge-concept { stroke: rgb(43, 159, 179); }
+.simple-diagram-arrow-concept { fill: rgb(43, 159, 179); stroke: rgb(43, 159, 179); }
+a.internal-link:hover .simple-diagram-node-concept, .simple-diagram-node-concept:hover { color: rgb(43, 159, 179); border-color: rgb(43, 159, 179); }
+.simple-diagram-node-dataset { background: rgba(121, 164, 135, 0.267); border-color: rgb(121, 164, 135); }
+.simple-diagram-edge-dataset { stroke: rgb(121, 164, 135); }
+.simple-diagram-arrow-dataset { fill: rgb(121, 164, 135); stroke: rgb(121, 164, 135); }
+a.internal-link:hover .simple-diagram-node-dataset, .simple-diagram-node-dataset:hover { color: rgb(121, 164, 135); border-color: rgb(121, 164, 135); }
+.simple-diagram-node-variable { background: rgba(178, 111, 82, 0.267); border-color: rgb(178, 111, 82); }
+.simple-diagram-edge-variable { stroke: rgb(178, 111, 82); }
+.simple-diagram-arrow-variable { fill: rgb(178, 111, 82); stroke: rgb(178, 111, 82); }
+a.internal-link:hover .simple-diagram-node-variable, .simple-diagram-node-variable:hover { color: rgb(178, 111, 82); border-color: rgb(178, 111, 82); }
+.simple-diagram-node-enumeration { background: rgba(170, 78, 99, 0.267); border-color: rgb(170, 78, 99); }
+.simple-diagram-edge-enumeration { stroke: rgb(170, 78, 99); }
+.simple-diagram-arrow-enumeration { fill: rgb(170, 78, 99); stroke: rgb(170, 78, 99); }
+a.internal-link:hover .simple-diagram-node-enumeration, .simple-diagram-node-enumeration:hover { color: rgb(170, 78, 99); border-color: rgb(170, 78, 99); }
+.simple-diagram-node-value { background: rgba(85, 148, 188, 0.267); border-color: rgb(85, 148, 188); }
+a.internal-link:hover .simple-diagram-node-value, .simple-diagram-node-value:hover { color: rgb(85, 148, 188); border-color: rgb(85, 148, 188); }
+.simple-diagram-node-diagram { background: rgba(159, 182, 88, 0.267); border-color: rgb(159, 182, 88); }
+a.internal-link:hover .simple-diagram-node-diagram, .simple-diagram-node-diagram:hover { color: rgb(159, 182, 88); border-color: rgb(159, 182, 88); }
+.simple-diagram-node-doc { background: rgba(224, 116, 92, 0.267); border-color: rgb(224, 116, 92); }
+a.internal-link:hover .simple-diagram-node-doc, .simple-diagram-node-doc:hover { color: rgb(224, 116, 92); border-color: rgb(224, 116, 92); }
+.simple-diagram-node-frequency { background: rgba(18, 153, 155, 0.267); border-color: rgb(18, 153, 155); }
+a.internal-link:hover .simple-diagram-node-frequency, .simple-diagram-node-frequency:hover { color: rgb(18, 153, 155); border-color: rgb(18, 153, 155); }
+.simple-diagram-node-id-donnees_dataset, .simple-diagram-node-id-contexte_dataset { background: color-mix(in srgb, var(--color-2) 14%, var(--background-1)); border-color: color-mix(in srgb, var(--color-2) 58%, var(--background-1)); }
+.simple-diagram-node-id-donnees_dataset:hover, .simple-diagram-node-id-contexte_dataset:hover { color: var(--color-1); border-color: color-mix(in srgb, var(--color-2) 78%, var(--background-1)); }
+.simple-diagram-block { text-align: center; margin-bottom: 40px; }
+
+/* icônes colorées selon leur entité (comme dans le reste de l'app) */
+.simple-diagram-node .icon-organization { color: rgb(98, 93, 140); }
+.simple-diagram-node .icon-folder { color: rgb(182, 139, 76); }
+.simple-diagram-node .icon-tag { color: rgb(57, 100, 150); }
+.simple-diagram-node .icon-concept { color: rgb(43, 159, 179); }
+.simple-diagram-node .icon-dataset { color: rgb(121, 164, 135); }
+.simple-diagram-node .icon-variable { color: rgb(178, 111, 82); }
+.simple-diagram-node .icon-enumeration { color: rgb(170, 78, 99); }
+.simple-diagram-node .icon-value { color: rgb(85, 148, 188); }
+.simple-diagram-node .icon-doc { color: rgb(224, 116, 92); }
+.simple-diagram-node .icon-frequency { color: rgb(18, 153, 155); }
+.simple-diagram-node .icon-diagram { color: rgb(159, 182, 88); }

@@ -1,14 +1,23 @@
+import fs from 'node:fs'
 import { defineConfig } from 'astro/config'
 import sitemap from '@astrojs/sitemap'
 import { darkVariant } from './src/lib/dark-image.mjs'
 
-// Trois sucres markdown :
+// Quatre sucres markdown :
 // - un paragraphe composé uniquement d'un lien devient un bouton (.md-btn) ;
 // - une image avec un titre "w=310" reçoit une largeur d'affichage fixe ;
 // - une image ayant une variante sombre sur disque est doublée : la version
-//   affichée dépend du thème (classes theme-light / theme-dark).
+//   affichée dépend du thème (classes theme-light / theme-dark) ;
+// - ![alt](diagram:nom) insère le HTML de src/diagrams/<lang>/<nom>.html
+//   (diagrammes repris de l'app, nets et adaptés au thème).
 function remarkSugar() {
-  function walk(node) {
+  const isDiagram = c =>
+    c.type === 'paragraph' &&
+    c.children.length === 1 &&
+    c.children[0].type === 'image' &&
+    c.children[0].url.startsWith('diagram:')
+
+  function walk(node, lang) {
     if (!node.children) return
     for (const child of node.children) {
       if (
@@ -28,10 +37,15 @@ function remarkSugar() {
         child.data.hProperties.width = child.title.slice(2)
         child.title = null
       }
-      walk(child)
+      walk(child, lang)
     }
-    if (node.children.some(c => c.type === 'image')) {
+    if (node.children.some(c => c.type === 'image' || isDiagram(c))) {
       node.children = node.children.flatMap(child => {
+        if (isDiagram(child)) {
+          const name = child.children[0].url.slice('diagram:'.length)
+          const value = fs.readFileSync(`src/diagrams/${lang}/${name}.html`, 'utf8')
+          return [{ type: 'html', value }]
+        }
         if (child.type !== 'image') return [child]
         const dark = darkVariant(child.url)
         if (!dark) return [child]
@@ -46,7 +60,11 @@ function remarkSugar() {
       })
     }
   }
-  return walk
+  return (tree, file) => {
+    const lang =
+      (String(file.path).match(/[\\/]pages[\\/](\w+)[\\/]/) || [])[1] ?? 'en'
+    walk(tree, lang)
+  }
 }
 
 export default defineConfig({

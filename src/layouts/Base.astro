@@ -4,6 +4,7 @@ import Footer from '../components/Footer.astro'
 import { pageMeta, getAlternates, type PageEntry } from '../lib/pages'
 import { langs, type Lang } from '../i18n/ui'
 import '../styles/global.css'
+import '../styles/diagrams.css'
 
 interface Props {
   lang: Lang
@@ -61,7 +62,7 @@ const isHome = entry?.data.key === 'home'
     <meta
       name="theme-color"
       media="(prefers-color-scheme: dark)"
-      content="#35383a"
+      content="#343434"
     />
     <title>{title}</title>
     <meta name="description" content={description} />

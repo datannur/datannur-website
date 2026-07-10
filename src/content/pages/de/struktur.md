@@ -11,7 +11,7 @@ datannur beruht auf 8 Hauptkonzepten, die sich in zwei Kategorien gliedern:
 - **Datenebene**: für Elemente, die direkt mit den Daten selbst zusammenhängen
 - **Kontextebene**: für Elemente, die Datasets strukturieren, organisieren oder anreichern
 
-![Die zwei Ebenen eines Datasets](/images/dataset_two_parts.en.webp "w=310")
+![Die zwei Ebenen eines Datasets](diagram:dataset-parts)
 
 ## Daten des Datasets
 
@@ -19,13 +19,13 @@ datannur beruht auf 8 Hauptkonzepten, die sich in zwei Kategorien gliedern:
 
 Ein Dataset stellt eine Datentabelle dar — sei es eine Datenbank oder eine Datei (Excel, CSV usw.) — organisiert in Tabellenform. Diese Tabelle besteht aus Zeilen, die Individuen oder Beobachtungen entsprechen, und Spalten, die Variablen oder Attribute sind. Jede Variable enthält eine Liste von Werten, die sich von einem Individuum zum anderen unterscheiden.
 
-![Diagramm Dataset und Variablen](/images/dataset_variable.png "w=143")
+![Diagramm Dataset und Variablen](diagram:dataset-variable)
 
 ### Variable
 
 Manche Variablen sind kategorial, mit möglichen Werten, die durch eine Enumeration definiert sind. Eine Variable kann mit mehreren Enumerationen verknüpft sein und umgekehrt. Sie kann auch einem Konzept des Fachglossars zugeordnet werden, um die genaue Bedeutung des gemessenen Begriffs zu präzisieren. Jede Variable kann zudem zugehörige Häufigkeitsdaten haben.
 
-![Diagramm der Beziehungen einer Variable](/images/structure_variable2.en.webp "w=358")
+![Diagramm der Beziehungen einer Variable](diagram:variable)
 
 ### Häufigkeit
 
@@ -35,7 +35,7 @@ Häufigkeiten erlauben es, die Anzahl der Vorkommen jedes einzelnen Wertes inner
 
 Eine Enumeration fasst eine Menge möglicher Werte für eine oder mehrere kategoriale Variablen zusammen. Jeder Wert kann mit einer Beschreibung versehen sein, die seine Bedeutung präzisiert.
 
-![Diagramm Enumeration und Werte](/images/modality_value2.en.png "w=160")
+![Diagramm Enumeration und Werte](diagram:enumeration-value)
 
 ## Kontext des Datasets
 
@@ -43,7 +43,7 @@ Eine Enumeration fasst eine Menge möglicher Werte für eine oder mehrere katego
 
 Datasets und Enumerationen können in Ordnern organisiert werden. Ordner können ineinander verschachtelt sein und bilden so eine hierarchische Baumstruktur, um Ihre Daten zu organisieren.
 
-![Diagramm der Ordnerhierarchie](/images/folder3.en.png "w=309")
+![Diagramm der Ordnerhierarchie](diagram:folder)
 
 ### Organisation
 
@@ -54,28 +54,28 @@ Ein Ordner oder ein Dataset kann mit zwei Arten von Rollen verknüpft sein, die 
 
 Organisationen können ebenfalls hierarchisch organisiert sein, indem sie ineinander enthalten sind.
 
-![Diagramm der Rollen einer Organisation](/images/organisation2.en.png "w=337")
+![Diagramm der Rollen einer Organisation](diagram:organization)
 
 ### Schlagwort
 
 Schlagwörter dienen dazu, Organisationen, Ordner, Datasets, Variablen oder Konzepte mit übergreifenden Themen oder Kategorien anzureichern. Ein Schlagwort kann mit einer Vielzahl von Elementen verknüpft sein und ebenfalls hierarchisch organisiert werden.
 
-![Diagramm der Beziehungen eines Schlagworts](/images/structure_tag2.en.png)
+![Diagramm der Beziehungen eines Schlagworts](diagram:tag)
 
 ### Konzept
 
 Die Konzepte des Fachglossars dienen dazu, bestimmte in den Daten verwendete Begriffe präzise zu definieren. Anders als Schlagwörter klassifizieren sie nicht nach Themen: Sie beschreiben eine explizite fachliche Bedeutung. Ein Konzept kann hierarchisch organisiert, mit mehreren Variablen verknüpft und durch Schlagwörter oder Dokumente angereichert werden.
 
-![Diagramm der Beziehungen eines Konzepts](/images/structure_concept.en.png "w=435")
+![Diagramm der Beziehungen eines Konzepts](diagram:concept)
 
 ### Doc
 
 Dokumentationen (Docs) im Markdown- oder PDF-Format können Organisationen, Ordnern, Schlagwörtern, Konzepten oder Datasets zugeordnet werden. Sie ermöglichen es, diese Elemente ausführlich zu beschreiben oder zu erklären.
 
-![Diagramm der Beziehungen eines Docs](/images/structure_doc2.en.png)
+![Diagramm der Beziehungen eines Docs](diagram:doc)
 
 ## Gesamtübersicht
 
 Die Konzepte von datannur sind miteinander verbunden und bieten grosse Flexibilität, um Ihre Daten zu organisieren, anzureichern und zu dokumentieren. So hängen sie zusammen:
 
-![Gesamtübersicht der datannur-Konzepte und ihrer Beziehungen](/images/structure_all2.en.png)
+![Gesamtübersicht der datannur-Konzepte und ihrer Beziehungen](diagram:all)
