@@ -1,0 +1,60 @@
+---
+import Icon from './Icon.astro'
+import { darkVariant } from '../lib/dark-image.mjs'
+
+interface Props {
+  hero: {
+    title: string
+    text: string
+    image: string
+    imageAlt: string
+    buttons: {
+      label: string
+      href: string
+      icon?: string
+      style: 'solid' | 'outline'
+    }[]
+  }
+}
+const { hero } = Astro.props
+const heroDark = darkVariant(hero.image)
+---
+
+<section class="hero">
+  <div class="hero-inner">
+    <h1 set:html={hero.title} />
+    <p class="hero-text" set:html={hero.text} />
+    <div class="hero-buttons">
+      {
+        hero.buttons.map(btn => (
+          <a class={`btn btn-${btn.style}`} href={btn.href}>
+            {btn.icon && <Icon name={btn.icon} />}
+            {btn.label}
+          </a>
+        ))
+      }
+    </div>
+    <div class="hero-image">
+      <img
+        class:list={{ 'theme-light': heroDark }}
+        src={hero.image}
+        alt={hero.imageAlt}
+        width="1200"
+        height="628"
+        fetchpriority="high"
+      />
+      {
+        heroDark && (
+          <img
+            class="theme-dark"
+            src={heroDark}
+            alt={hero.imageAlt}
+            width="1200"
+            height="628"
+            loading="lazy"
+          />
+        )
+      }
+    </div>
+  </div>
+</section>

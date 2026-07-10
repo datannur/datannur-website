@@ -1,0 +1,20 @@
+---
+import Icon from './Icon.astro'
+
+interface Props {
+  pillars: { icon: string; title: string; text: string }[]
+}
+const { pillars } = Astro.props
+---
+
+<section class="pillars">
+  {
+    pillars.map(p => (
+      <div class="pillar">
+        <Icon name={p.icon} class="pillar-icon" />
+        <h2>{p.title}</h2>
+        <p>{p.text}</p>
+      </div>
+    ))
+  }
+</section>

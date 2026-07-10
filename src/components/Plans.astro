@@ -1,0 +1,41 @@
+---
+import Icon from './Icon.astro'
+
+interface Props {
+  plans: {
+    name: string
+    price: string
+    period: string
+    text: string
+    features: string[]
+    cta: { label: string; href: string }
+  }[]
+}
+const { plans } = Astro.props
+---
+
+<div class="plans">
+  {
+    plans.map(plan => (
+      <div class="plan">
+        <h3>{plan.name}</h3>
+        <p class="plan-price">
+          <span>{plan.price}</span>
+          <small>{plan.period}</small>
+        </p>
+        <p class="plan-text">{plan.text}</p>
+        <ul>
+          {plan.features.map(f => (
+            <li>
+              <Icon name="check" />
+              {f}
+            </li>
+          ))}
+        </ul>
+        <a class="btn btn-outline btn-small" href={plan.cta.href}>
+          {plan.cta.label}
+        </a>
+      </div>
+    ))
+  }
+</div>

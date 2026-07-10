@@ -1,0 +1,69 @@
+---
+// Visualiseur d'écrans 100 % CSS : chaque vignette contient sa radio
+// (aucun défilement au clic), la diapo affichée est pilotée via :has().
+// Les captures ayant une variante sombre sont doublées (voir dark-image.mjs).
+import { darkVariant } from '../lib/dark-image.mjs'
+
+interface Props {
+  gallery: {
+    title: string
+    images: { image: string; alt: string; label: string }[]
+  }
+}
+const { gallery } = Astro.props
+const images = gallery.images.map(img => ({
+  ...img,
+  dark: darkVariant(img.image),
+}))
+---
+
+<section class="gallery">
+  <h2>{gallery.title}</h2>
+  <div class="showcase">
+    <div class="stage">
+      {
+        images.map(img => (
+          <figure class="slide">
+            <img
+              class:list={{ 'theme-light': img.dark }}
+              src={img.image}
+              alt={img.alt}
+              loading="lazy"
+              width="1600"
+              height="900"
+            />
+            {img.dark && (
+              <img
+                class="theme-dark"
+                src={img.dark}
+                alt={img.alt}
+                loading="lazy"
+                width="1600"
+                height="900"
+              />
+            )}
+            <figcaption>{img.label}</figcaption>
+          </figure>
+        ))
+      }
+    </div>
+    <div class="thumbs">
+      {
+        images.map((img, i) => (
+          <label title={img.label}>
+            <input type="radio" name="gallery-slide" checked={i === 0} />
+            <img
+              class:list={{ 'theme-light': img.dark }}
+              src={img.image}
+              alt=""
+              loading="lazy"
+            />
+            {img.dark && (
+              <img class="theme-dark" src={img.dark} alt="" loading="lazy" />
+            )}
+          </label>
+        ))
+      }
+    </div>
+  </div>
+</section>

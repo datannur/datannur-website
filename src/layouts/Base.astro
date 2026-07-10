@@ -1,0 +1,115 @@
+---
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import { pageMeta, getAlternates, type PageEntry } from '../lib/pages'
+import { langs, type Lang } from '../i18n/ui'
+import '../styles/global.css'
+
+interface Props {
+  lang: Lang
+  title: string
+  description: string
+  entry?: PageEntry // absent pour les pages hors collection (404)
+  ogImage?: string
+}
+const { lang, title, description, entry, ogImage } = Astro.props
+
+const siteUrl = Astro.site!.href.replace(/\/$/, '')
+const path = entry ? pageMeta(entry).path : Astro.url.pathname
+const canonical = `${siteUrl}${path}`
+
+// URL par langue de la page courante (hreflang) ; x-default = anglais
+const alternates = entry ? await getAlternates(entry) : []
+const langUrls = entry
+  ? langs.flatMap(l => {
+      if (l === lang) return [{ lang: l, url: canonical }]
+      const alt = alternates.find(e => pageMeta(e).lang === l)
+      return alt ? [{ lang: l, url: `${siteUrl}${pageMeta(alt).path}` }] : []
+    })
+  : []
+const xDefault = langUrls.find(u => u.lang === 'en')?.url
+
+const ogLocales: Record<Lang, string> = {
+  en: 'en_US',
+  fr: 'fr_CH',
+  de: 'de_CH',
+}
+const ogImageUrl = `${siteUrl}${ogImage ?? '/images/logo.png'}`
+const isHome = entry?.data.key === 'home'
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script is:inline>
+      // thème posé avant le premier rendu pour éviter tout flash
+      let storedTheme = null
+      try {
+        storedTheme = localStorage.getItem('theme')
+      } catch {}
+      document.documentElement.dataset.theme =
+        storedTheme ||
+        (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+    </script>
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: light)"
+      content="#e7e8e6"
+    />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="#35383a"
+    />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {langUrls.map(u => <link rel="alternate" hreflang={u.lang} href={u.url} />)}
+    {xDefault && <link rel="alternate" hreflang="x-default" href={xDefault} />}
+    <link
+      rel="preload"
+      href="/fonts/manrope-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="icon" href="/images/icon-192.png" sizes="32x32" />
+    <link rel="icon" href="/images/icon-192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="/images/icon-192.png" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="datannur" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:locale" content={ogLocales[lang]} />
+    <meta name="twitter:card" content="summary_large_image" />
+    {
+      isHome && (
+        <script
+          type="application/ld+json"
+          set:html={JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Organization',
+            name: 'datannur',
+            url: siteUrl,
+            logo: `${siteUrl}/images/logo.png`,
+            email: 'contact@datannur.com',
+            telephone: '+41 21 510 21 21',
+            sameAs: ['https://github.com/datannur/datannur'],
+          })}
+        />
+      )
+    }
+  </head>
+  <body class:list={{ 'city-bottom': entry?.data.bg === 'city' }}>
+    <Header lang={lang} entry={entry} />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

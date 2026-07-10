@@ -1,0 +1,239 @@
+---
+import Icon from './Icon.astro'
+import { nav, navLabels, langs, type Lang } from '../i18n/ui'
+import {
+  pathByKey,
+  pageMeta,
+  getAlternates,
+  type PageEntry,
+} from '../lib/pages'
+
+interface Props {
+  lang: Lang
+  entry?: PageEntry
+}
+const { lang, entry } = Astro.props
+
+const homePath = await pathByKey('home', lang)
+const currentPath = entry ? pageMeta(entry).path : undefined
+
+// le sélecteur de langue pointe vers la page traduite, pas vers l'accueil
+const alternates = entry ? await getAlternates(entry) : []
+const langPath = (l: Lang) => {
+  if (l === lang) return currentPath ?? homePath
+  const alt = alternates.find(e => pageMeta(e).lang === l)
+  return alt ? pageMeta(alt).path : l === 'en' ? '/' : `/${l}/`
+}
+
+type ResolvedItem = { label: string; href: string; icon: string; external: boolean }
+const groups: { label: string; icon: string; items: ResolvedItem[] }[] = []
+for (const group of nav) {
+  const items: ResolvedItem[] = []
+  for (const item of group.items) {
+    if ('key' in item) {
+      items.push({
+        label: navLabels[item.key][lang],
+        href: await pathByKey(item.key, lang),
+        icon: item.icon,
+        external: false,
+      })
+    } else {
+      items.push({
+        label: item.label[lang],
+        href: item.href,
+        icon: item.icon,
+        external: true,
+      })
+    }
+  }
+  groups.push({ label: group.label[lang], icon: group.icon, items })
+}
+
+const isActive = (href: string) => currentPath === href
+const groupActive = (g: { items: ResolvedItem[] }) =>
+  g.items.some(i => isActive(i.href))
+
+const themeLabel: Record<Lang, string> = {
+  en: 'Toggle dark mode',
+  fr: 'Basculer le mode sombre',
+  de: 'Dunkelmodus umschalten',
+}
+---
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="logo" href={homePath} aria-label="datannur">
+      <img
+        class="theme-light"
+        src="/images/logo.png"
+        alt="datannur"
+        width="110"
+        height="26"
+      />
+      <img
+        class="theme-dark"
+        src="/images/logo.dark.png"
+        alt="datannur"
+        width="110"
+        height="26"
+        loading="lazy"
+      />
+    </a>
+
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+    <label for="nav-toggle" class="nav-burger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </label>
+
+    <nav class="main-nav" aria-label="Main">
+      <ul class="nav-list">
+        <li>
+          <a href={homePath} class:list={{ active: isActive(homePath) }}>
+            <Icon name="house" />
+            {navLabels.home[lang]}
+          </a>
+        </li>
+        {
+          groups.map(group => (
+            <li class="has-children">
+              <button
+                type="button"
+                class:list={{ active: groupActive(group) }}
+                aria-haspopup="true"
+              >
+                <Icon name={group.icon} />
+                {group.label}
+                <span class="caret" aria-hidden="true" />
+              </button>
+              <ul class="sub-menu">
+                {group.items.map(item => (
+                  <li>
+                    <a
+                      href={item.href}
+                      class:list={{ active: isActive(item.href) }}
+                      target={item.external ? '_blank' : undefined}
+                      rel={item.external ? 'noopener' : undefined}
+                    >
+                      <Icon name={item.icon} />
+                      {item.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+
+    <div class="header-tools">
+      <div class="lang-switch">
+        {
+          langs.map(l => (
+            <a href={langPath(l)} class:list={{ active: l === lang }} lang={l}>
+              {l.toUpperCase()}
+            </a>
+          ))
+        }
+      </div>
+      <button type="button" class="theme-toggle" aria-label={themeLabel[lang]}>
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <mask id="moon-mask">
+            <rect x="0" y="0" width="24" height="24" fill="#fff"></rect>
+            <circle class="mask-dot" cx="28" cy="0" r="8" fill="#000"></circle>
+          </mask>
+          <circle class="sun" cx="12" cy="12" r="5" mask="url(#moon-mask)"
+          ></circle>
+          <g class="rays" aria-hidden="true">
+            <line x1="12" y1="1.5" x2="12" y2="3.5"></line>
+            <line x1="12" y1="20.5" x2="12" y2="22.5"></line>
+            <line x1="1.5" y1="12" x2="3.5" y2="12"></line>
+            <line x1="20.5" y1="12" x2="22.5" y2="12"></line>
+            <line x1="4.6" y1="4.6" x2="6" y2="6"></line>
+            <line x1="18" y1="18" x2="19.4" y2="19.4"></line>
+            <line x1="4.6" y1="19.4" x2="6" y2="18"></line>
+            <line x1="18" y1="6" x2="19.4" y2="4.6"></line>
+          </g>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<script is:inline>
+  document.querySelector('.theme-toggle').addEventListener('click', () => {
+    const html = document.documentElement
+    const next = html.dataset.theme === 'dark' ? 'light' : 'dark'
+    html.dataset.theme = next
+    const system = matchMedia('(prefers-color-scheme: dark)').matches
+      ? 'dark'
+      : 'light'
+    try {
+      // choix identique au système : on l'oublie pour continuer à le suivre
+      if (next === system) localStorage.removeItem('theme')
+      else localStorage.setItem('theme', next)
+    } catch {}
+  })
+
+  // changement de langue : on retrouve le même endroit dans la page traduite.
+  // Les pages traduites ont la même structure : on repère le premier élément
+  // visible sous le header (index + position dans le viewport) et on cale la
+  // page d'arrivée sur son homologue. Ratio global en secours.
+  const anchorEls = () =>
+    document.querySelectorAll(
+      'main h1, main h2, main h3, main h4, main p, main img, main li, main figure'
+    )
+
+  document.querySelectorAll('.lang-switch a').forEach(a =>
+    a.addEventListener('click', () => {
+      if (!scrollY) return
+      const els = anchorEls()
+      const saved = {
+        i: -1,
+        top: 0,
+        ratio: scrollY / (document.documentElement.scrollHeight - innerHeight),
+      }
+      for (let i = 0; i < els.length; i++) {
+        const r = els[i].getBoundingClientRect()
+        if (r.height && r.bottom > 80) {
+          saved.i = i
+          saved.top = r.top
+          break
+        }
+      }
+      try {
+        sessionStorage.setItem('lang-scroll', JSON.stringify(saved))
+      } catch {}
+    })
+  )
+
+  let langScroll = null
+  try {
+    langScroll = JSON.parse(sessionStorage.getItem('lang-scroll'))
+    sessionStorage.removeItem('lang-scroll')
+  } catch {}
+  if (langScroll) {
+    const apply = () => {
+      const el = anchorEls()[langScroll.i]
+      const top = el
+        ? scrollY + el.getBoundingClientRect().top - langScroll.top
+        : langScroll.ratio *
+          (document.documentElement.scrollHeight - innerHeight)
+      scrollTo({ top, behavior: 'instant' })
+    }
+    let userScrolled = false
+    const mark = () => (userScrolled = true)
+    for (const evt of ['wheel', 'touchstart', 'keydown'])
+      addEventListener(evt, mark, { once: true, passive: true })
+    addEventListener('DOMContentLoaded', apply)
+    // les images lazy qui se chargent décalent la page : on suit sa hauteur
+    // un court instant, tant que l'utilisateur n'a pas repris la main
+    addEventListener('load', () => {
+      if (userScrolled) return
+      apply()
+      const observer = new ResizeObserver(() => userScrolled || apply())
+      observer.observe(document.body)
+      setTimeout(() => observer.disconnect(), 2500)
+    })
+  }
+</script>

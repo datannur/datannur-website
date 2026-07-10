@@ -1,0 +1,20 @@
+---
+import Icon from './Icon.astro'
+
+interface Props {
+  partners: {
+    icon: string
+    title: string
+    paragraphs: string[]
+    note?: string
+  }
+}
+const { partners } = Astro.props
+---
+
+<section class="partners">
+  <Icon name={partners.icon} class="partners-icon" />
+  <h2>{partners.title}</h2>
+  {partners.paragraphs.map(p => <p set:html={p} />)}
+  {partners.note && <p class="partners-note" set:html={partners.note} />}
+</section>

@@ -1,0 +1,19 @@
+---
+import Icon from './Icon.astro'
+import { site } from '../i18n/ui'
+---
+
+<div class="contact-block">
+  <p>
+    <Icon name="envelope" />
+    <a href={`mailto:${site.email}`}>{site.email}</a>
+  </p>
+  <p>
+    <Icon name="phone" />
+    <a href={`tel:${site.phone.replace(/ /g, '')}`}>{site.phone}</a>
+  </p>
+  <p>
+    <Icon name="github" />
+    <a href={site.github} target="_blank" rel="noopener">GitHub</a>
+  </p>
+</div>

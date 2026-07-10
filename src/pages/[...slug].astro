@@ -1,0 +1,22 @@
+---
+import PageView from '../components/PageView.astro'
+import { getPages, pageMeta, type PageEntry } from '../lib/pages'
+
+export async function getStaticPaths() {
+  const pages = await getPages('en')
+  return pages.map(entry => {
+    const { slug } = pageMeta(entry)
+    return {
+      params: { slug: slug === 'home' ? undefined : slug },
+      props: { entry },
+    }
+  })
+}
+
+interface Props {
+  entry: PageEntry
+}
+const { entry } = Astro.props
+---
+
+<PageView entry={entry} />

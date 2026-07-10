@@ -1,0 +1,64 @@
+---
+import { render } from 'astro:content'
+import Base from '../layouts/Base.astro'
+import Icon from './Icon.astro'
+import Hero from './Hero.astro'
+import Pillars from './Pillars.astro'
+import Gallery from './Gallery.astro'
+import Partners from './Partners.astro'
+import Plans from './Plans.astro'
+import ContactBlock from './ContactBlock.astro'
+import { pageMeta, type PageEntry } from '../lib/pages'
+
+interface Props {
+  entry: PageEntry
+}
+const { entry } = Astro.props
+const { lang } = pageMeta(entry)
+const { data } = entry
+const { Content } = await render(entry)
+const isHome = data.key === 'home'
+---
+
+<Base
+  lang={lang}
+  title={data.title}
+  description={data.description}
+  entry={entry}
+>
+  {
+    isHome ? (
+      <>
+        {data.hero && <Hero hero={data.hero} />}
+        {data.pillars && <Pillars pillars={data.pillars} />}
+        <div class="page-body home-body">
+          <Content />
+        </div>
+        {data.gallery && <Gallery gallery={data.gallery} />}
+        <div class:list={['home-bottom', { 'bg-city': data.bg === 'city' }]}>
+          {data.partners && <Partners partners={data.partners} />}
+          {data.contactBlock && <ContactBlock />}
+        </div>
+      </>
+    ) : (
+      <article
+        class:list={[
+          'page',
+          { 'bg-city': data.bg === 'city', 'plain-images': data.plainImages },
+        ]}
+      >
+        <header class="page-header">
+          <h1>
+            {data.icon && <Icon name={data.icon} class="title-icon" />}
+            <span>{data.title}</span>
+          </h1>
+        </header>
+        <div class="page-body">
+          <Content />
+          {data.contactBlock && <ContactBlock />}
+        </div>
+        {data.plans && <Plans plans={data.plans} />}
+      </article>
+    )
+  }
+</Base>

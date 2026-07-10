@@ -1,0 +1,22 @@
+{
+  "name": "datannur-website",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Site vitrine datannur.com — statique, markdown, FR/EN",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.4.1",
+    "astro": "^5.12.0"
+  },
+  "prettier": {
+    "semi": false,
+    "arrowParens": "avoid",
+    "singleQuote": true
+  }
+}
