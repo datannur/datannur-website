@@ -1,105 +1,148 @@
 # datannur-website
 
-Site vitrine [datannur.com](https://datannur.com) — statique (Astro), contenu en
-markdown, trilingue EN/FR/DE. Remplace le WordPress historique en conservant les
-mêmes URLs. Voir [ARCHITECTURE.md](ARCHITECTURE.md) pour les choix d'architecture.
+Marketing site for [datannur.com](https://datannur.com), the open-source,
+lightweight and sovereign data catalog. Static site built with
+[Astro](https://astro.build), all content in markdown, trilingual (EN/FR/DE):
+English at the root, translated slugs under `/fr/` and `/de/`.
 
-Mode sombre : bascule dans le header, préférence système par défaut, choix
-mémorisé dans `localStorage`. Les couleurs sont des variables CSS définies dans
-`src/styles/global.css` (`:root` pour le clair, `[data-theme='dark']` pour le
-sombre) — toute nouvelle couleur doit passer par ces variables.
+## Architecture in short
 
-## Commandes
+- **Static output, zero client-side framework.** The build produces plain
+  HTML/CSS. The only JavaScript shipped is ~30 inline lines for the theme
+  toggle and scroll preservation across language switches. Dropdown menus,
+  the mobile burger, the screenshot viewer and the header scroll transition
+  are pure CSS.
+- **Why Astro:** markdown content collections, built-in i18n with translated
+  slugs, sitemap generation, and no hydration by default — plain HTML from
+  markdown, with shared layout and components at build time only.
+- **Hosting:** any static file server. Production runs on Infomaniak shared
+  hosting (Apache) — `public/.htaccess` handles https redirects, caching and
+  the 404 page. No PHP, no Node at runtime.
+- **Dark mode:** header toggle, system preference by default, choice persisted
+  in `localStorage`, no flash on load. Every color is a CSS variable defined
+  in `src/styles/global.css` (`:root` for light, `[data-theme='dark']` for
+  dark) — any new color must go through these variables.
+
+## Commands
 
 ```sh
-npm install       # une seule fois
-npm run dev       # serveur de dev sur http://localhost:4321
-npm run build     # génère le site statique dans dist/
-npm run preview   # sert dist/ en local
+npm install       # once
+npm run dev       # dev server at http://localhost:4321
+npm run build     # generates the static site in dist/
+npm run preview   # serves dist/ locally
 ```
 
-## Éditer le contenu
+## Editing content
 
-Tout le contenu vit dans `src/content/pages/<langue>/<slug>.md` — un fichier
-par page et par langue. **Le nom du fichier est le slug de l'URL**
-(`fonctionnalites.md` → `/fr/fonctionnalites/`, `home.md` → racine).
+All content lives in `src/content/pages/<lang>/<slug>.md` — one file per page
+per language. **The file name is the URL slug** (`fonctionnalites.md` →
+`/fr/fonctionnalites/`, `home.md` → the language root).
 
-Le frontmatter de chaque page :
+Each page's frontmatter:
 
 ```yaml
 ---
-key: features        # clé commune aux deux langues (lie les traductions)
-title: Fonctionnalités — Explorer et exploiter le catalogue   # <title> + H1
+key: features        # shared key linking translations across languages
+title: Features — Explore and use the catalog   # <title> + H1
 description: ...     # meta description (SEO)
-icon: screwdriver-wrench   # icône du titre (nom de fichier dans src/icons/)
+icon: screwdriver-wrench   # title icon (file name in src/icons/)
 ---
-Corps de la page en markdown…
+Page body in markdown…
 ```
 
-La clé `key` génère automatiquement les `hreflang` et fait pointer le
-sélecteur EN/FR/DE vers la bonne page traduite.
+The `key` field drives everything multilingual: it generates the crossed
+`hreflang` tags and makes the EN/FR/DE switcher point to the translated page
+(`/features/` → `/fr/fonctionnalites/`, not `/fr/`). Inner-page titles follow
+the `Section — Subtitle` pattern: the part before the em dash is rendered as
+a small teal kicker line, the rest as the main heading — inside a single
+`<h1>` whose text content stays complete for SEO.
 
-### Blocs optionnels du frontmatter
+### Optional frontmatter blocks
 
-- `bg: city` — fond photo ville (contact, bas de la homepage)
-- `contactBlock: true` — bloc email / téléphone / GitHub après le contenu
-- `plainImages: true` — images du corps sans ombre ni arrondi (diagrammes)
-- `plans:` — cartes d'offres de support (page support)
-- `hero:`, `pillars:`, `gallery:`, `partners:` — sections riches de la homepage
+- `bg: city` — city photo background (contact page, homepage bottom)
+- `contactBlock: true` — email / phone / GitHub block after the content
+- `plainImages: true` — body images without shadow or border radius
+- `plans:` — support plan cards (support page)
+- `hero:`, `pillars:`, `gallery:`, `partners:` — rich homepage sections
 
-### Conventions markdown
+### Markdown conventions
 
-- Une image suivie d'une ligne `*en italique*` = légende centrée grise
-- Un lien seul dans son paragraphe = bouton (page démo)
-- `<div class="grid-2">…</div>` = deux colonnes
-- `![alt](/images/x.png "w=310")` = largeur d'affichage fixe en px
-- `![alt](diagram:nom)` = insère le diagramme `src/diagrams/<lang>/<nom>.html`
-  (SVG repris de l'app datannur — voir ci-dessous)
+- An image followed by an `*italic*` line = centered gray caption
+- A link alone in its paragraph = button (demo page)
+- `<div class="grid-2">…</div>` = two columns
+- `![alt](/images/x.png "w=310")` = fixed display width in px
+- `![alt](diagram:name)` = embeds the diagram
+  `src/diagrams/<lang>/<name>.html` (see below)
 
-### Diagrammes de structure
+### Structure diagrams
 
-Les diagrammes de la page structure sont le HTML/SVG de l'app elle-même
-(page about de dev.datannur.com), extraits dans `src/diagrams/<lang>/` avec
-leur CSS dans `src/styles/diagrams.css` : nets à toutes les résolutions,
-libellés localisés, couleurs adaptées aux deux thèmes. Si les diagrammes de
-l'app évoluent, ré-extraire les blocs `.simple-diagram-block` et remplacer
-les fichiers correspondants.
+The diagrams on the structure page are the app's own HTML/SVG (extracted from
+the about page of dev.datannur.com) stored in `src/diagrams/<lang>/`, with
+their styles in `src/styles/diagrams.css`: crisp at any resolution, localized
+labels, colors that adapt to both themes, entity-colored icons. If the app's
+diagrams evolve, re-extract the `.simple-diagram-block` elements and replace
+the corresponding files.
 
-### Images en mode sombre
+### Dark mode images
 
-Déposer une variante sombre dans `public/images/` et elle est utilisée
-automatiquement (hero, galerie, corps markdown — détection au build) :
+Drop a dark variant in `public/images/` and it is picked up automatically at
+build time (hero, gallery, markdown body):
 
-- `x.dark.jpg` = variante commune à toutes les langues (pour `x.en.jpg`,
-  `x.fr.jpg`…) ; l'extension peut différer de la claire
-- `x.fr.dark.jpg` = variante propre à une langue, prioritaire sur la commune
-- Sans variante : les captures restent claires ; les diagrammes `plainImages`
-  sont inversés par filtre CSS
+- `x.dark.jpg` = variant shared by all languages (for `x.en.jpg`,
+  `x.fr.jpg`…); the extension may differ from the light one
+- `x.fr.dark.jpg` = language-specific variant, takes precedence
+- Without a variant, screenshots stay light in dark mode; `plainImages`
+  diagrams are inverted via a CSS filter
 
-### Ajouter une page
+The hidden variant is `loading="lazy"`, so only the active theme's images are
+downloaded.
 
-1. Créer `src/content/pages/en/<slug-en>.md` et `src/content/pages/fr/<slug-fr>.md`
-   avec la même `key`
-2. L'ajouter au menu dans [src/i18n/ui.ts](src/i18n/ui.ts) (`nav` + `navLabels`)
+### Adding a page
 
-## Structure
+1. Create `src/content/pages/<lang>/<slug>.md` for every language with the
+   same `key`
+2. Add it to the menu in [src/i18n/ui.ts](src/i18n/ui.ts) (`nav` + `navLabels`)
 
-- `src/content/pages/` — contenu markdown (la seule chose à éditer au quotidien)
-- `src/i18n/ui.ts` — libellés du menu/footer + coordonnées de contact
-- `src/layouts/Base.astro` — `<head>` SEO (canonical, hreflang, OG, JSON-LD)
-- `src/components/` — header, footer, hero, galerie, plans…
-- `src/icons/` — icônes Font Awesome 6 en SVG, inlinées au build
-- `src/styles/global.css` — toute la charte graphique
-- `public/images/` — logo, captures d'écran (suffixe `.en`/`.fr` si localisées)
-- `public/.htaccess` — https, cache, 404 (hébergement mutualisé Apache)
+### Adding a language
 
-## Déploiement
+Add the locale to `langs` in [src/i18n/ui.ts](src/i18n/ui.ts) and to
+`astro.config.mjs`, create `src/pages/<lang>/[...slug].astro` (copy of the
+`fr` one), then add the content folder. Everything else (hreflang, switcher,
+sitemap) follows automatically.
 
-Automatique : chaque push sur `main` builde et synchronise `dist/` vers
-l'hébergement Infomaniak par rsync/SSH
-([.github/workflows/deploy.yml](.github/workflows/deploy.yml) — secrets
-`SSH_HOST`, `SSH_USER`, `SSH_PRIVATE_KEY`, `DEPLOY_PATH` à définir dans GitHub).
-Déclenchement manuel possible depuis l'onglet Actions (workflow_dispatch).
+## SEO
 
-Manuel : `npm run build` puis déposer le contenu de `dist/` à la racine web
-(SFTP/rsync). Aucun PHP ni Node requis côté serveur.
+Handled by the base layout on every page: unique title and meta description,
+absolute canonical, `hreflang` for en/fr/de + `x-default` (EN), Open Graph and
+Twitter card, `og:locale` per language, JSON-LD Organization on the home
+pages, sitemap with i18n alternates, `robots.txt`, custom 404. Single `<h1>`
+per page, `alt` on all meaningful images, `width`/`height` attributes and lazy
+loading to avoid CLS. No browser-language redirect — bad for crawlers; the
+visitor chooses via the switcher.
+
+## Project layout
+
+- `src/content/pages/` — markdown content (the only thing to edit day to day)
+- `src/i18n/ui.ts` — nav/footer labels + contact details
+- `src/layouts/Base.astro` — SEO `<head>` (canonical, hreflang, OG, JSON-LD)
+- `src/components/` — header, footer, hero, gallery, plans…
+- `src/diagrams/<lang>/` — structure diagrams extracted from the app
+- `src/icons/` — Font Awesome 6 SVG icons, inlined at build time
+- `src/lib/dark-image.mjs` — build-time dark image variant resolution
+- `src/styles/global.css` — the whole design system (colors as variables)
+- `src/styles/diagrams.css` — diagram styles ported from the app
+- `public/images/` — logo, screenshots (`.en`/`.fr` suffix when localized,
+  `.dark` for dark variants)
+- `public/.htaccess` — https, cache, 404 (Apache shared hosting)
+- `astro.config.mjs` — i18n, sitemap, markdown sugar (buttons, image widths,
+  dark variants, `diagram:` embeds)
+
+## Deployment
+
+Automatic: every push to `main` builds and syncs `dist/` to Infomaniak over
+rsync/SSH ([.github/workflows/deploy.yml](.github/workflows/deploy.yml) —
+`SSH_HOST`, `SSH_USER`, `SSH_PRIVATE_KEY` and `DEPLOY_PATH` secrets must be
+set on the repository). Manual runs are available from the Actions tab.
+
+Manual fallback: `npm run build`, then upload the contents of `dist/` to the
+web root (SFTP/rsync). No PHP or Node required server-side.
