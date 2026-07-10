@@ -1,6 +1,6 @@
 ---
 key: support
-title: Support — Kontinuität, Zuverlässigkeit und Weiterentwicklung des Produkts
+title: Support — Kontinuität und Weiterentwicklung des Produkts
 description: Der Herstellersupport von datannur garantiert Kontinuität, Zuverlässigkeit und Weiterentwicklung des Produkts für Partner und nutzende Organisationen.
 icon: life-ring
 plans:

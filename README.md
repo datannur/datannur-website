@@ -85,5 +85,11 @@ automatiquement (hero, galerie, corps markdown — détection au build) :
 
 ## Déploiement
 
-`npm run build` puis déposer le contenu de `dist/` à la racine web de
-l'hébergement mutualisé (SFTP/rsync). Aucun PHP ni Node requis côté serveur.
+Automatique : chaque push sur `main` builde et synchronise `dist/` vers
+l'hébergement Infomaniak par rsync/SSH
+([.github/workflows/deploy.yml](.github/workflows/deploy.yml) — secrets
+`SSH_HOST`, `SSH_USER`, `SSH_PRIVATE_KEY`, `DEPLOY_PATH` à définir dans GitHub).
+Déclenchement manuel possible depuis l'onglet Actions (workflow_dispatch).
+
+Manuel : `npm run build` puis déposer le contenu de `dist/` à la racine web
+(SFTP/rsync). Aucun PHP ni Node requis côté serveur.

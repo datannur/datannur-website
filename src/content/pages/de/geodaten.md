@@ -1,7 +1,7 @@
 ---
 key: geodata
 title: Geodaten — Inventarisieren Sie Ihre geografischen Daten
-description: "Inventarisieren Sie Ihre geografischen Daten, Vektor und Raster, in einem leichtgewichtigen, souveränen Datenkatalog: CRS, Ausdehnung, Auflösung, erntbar für INSPIRE/GeoCAT."
+description: "Inventarisieren Sie Ihre Geodaten, Vektor und Raster, in einem leichten, souveränen Katalog: CRS, Ausdehnung, Auflösung, erntbar für INSPIRE/GeoCAT."
 icon: earth-europe
 ---
 

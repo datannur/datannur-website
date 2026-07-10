@@ -43,7 +43,7 @@
   --stage-a: #f4f7f7;
   --stage-b: #eef1f2;
   --hero-0: rgba(255, 255, 255, 0.55);
-  --hero-1: rgba(255, 255, 255, 0.9);
+  --hero-1: #ffffff;
   --city-0: #ffffff;
   --city-1: rgba(255, 255, 255, 0.97);
   --city-2: rgba(255, 255, 255, 0.88);
@@ -64,8 +64,8 @@
   --accent-hover: #3fc3c5;
   --accent-soft: rgba(38, 190, 192, 0.12);
   --heading: #e8ebec;
-  --text: #a3adb2;
-  --muted: #78838a;
+  --text: #bcc4c9;
+  --muted: #8b959c;
   --bg: #15191c;
   --bg-elev: #20262b;
   --bg-soft: #1d2327;
@@ -78,11 +78,11 @@
   --stage-a: #1b2125;
   --stage-b: #171c1f;
   --hero-0: rgba(21, 25, 28, 0.82);
-  --hero-1: rgba(21, 25, 28, 0.96);
+  --hero-1: #15191c;
   --city-0: #15191c;
-  --city-1: rgba(21, 25, 28, 0.9);
-  --city-2: rgba(21, 25, 28, 0.72);
-  --city-3: rgba(21, 25, 28, 0.6);
+  --city-1: rgba(21, 25, 28, 0.96);
+  --city-2: rgba(21, 25, 28, 0.87);
+  --city-3: rgba(21, 25, 28, 0.72);
   --city-4: rgba(14, 17, 20, 0.75);
 }
 
@@ -95,6 +95,11 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: calc(var(--header-height) + 20px);
+  background-color: var(--bg);
+}
+
+/* seules les pages à fond ville se terminent sur ce gris */
+html:has(.city-bottom) {
   background-color: var(--page-edge);
 }
 
@@ -884,19 +889,44 @@ html:not([data-theme]) .theme-toggle {
 
 .page-header h1 {
   display: flex;
-  gap: 20px;
-  align-items: baseline;
-  font-size: 40px;
-  color: var(--accent);
+  gap: 18px;
+  align-items: flex-start;
+  font-size: 38px;
+  letter-spacing: -0.5px;
+  color: var(--heading);
   margin: 0 0 30px;
 }
 
+/* surtitre : la partie avant le « — » du titre, sur sa propre ligne */
+.title-kicker {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+
+/* présent pour les moteurs et lecteurs d'écran, invisible à l'écran */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* icône du titre dans une pastille teal douce */
 .title-icon {
-  width: 40px;
-  height: 40px;
+  width: 54px;
+  height: 54px;
+  padding: 14px;
   flex-shrink: 0;
-  align-self: flex-start;
-  margin-top: 6px;
+  border-radius: 16px;
+  background: var(--accent-soft);
+  color: var(--accent);
 }
 
 .page-body {
@@ -1191,7 +1221,15 @@ html:not([data-theme]) .theme-toggle {
   }
 
   .page-header h1 {
-    font-size: 28px;
+    font-size: 27px;
+    gap: 14px;
+  }
+
+  .title-icon {
+    width: 44px;
+    height: 44px;
+    padding: 11px;
+    border-radius: 13px;
   }
 }
 

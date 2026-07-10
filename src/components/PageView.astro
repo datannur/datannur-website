@@ -18,6 +18,10 @@ const { lang } = pageMeta(entry)
 const { data } = entry
 const { Content } = await render(entry)
 const isHome = data.key === 'home'
+
+// « Section — Sous-titre » : rendu en deux lignes dans un seul h1 (SEO intact)
+const [kicker, ...restTitle] = data.title.split(' — ')
+const titleMain = restTitle.join(' — ')
 ---
 
 <Base
@@ -50,7 +54,19 @@ const isHome = data.key === 'home'
         <header class="page-header">
           <h1>
             {data.icon && <Icon name={data.icon} class="title-icon" />}
-            <span>{data.title}</span>
+            {
+              titleMain ? (
+                <span>
+                  <span class="title-kicker">
+                    {kicker}
+                    <span class="sr-only"> — </span>
+                  </span>
+                  {titleMain}
+                </span>
+              ) : (
+                <span>{data.title}</span>
+              )
+            }
           </h1>
         </header>
         <div class="page-body">
