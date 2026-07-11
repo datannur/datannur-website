@@ -6,7 +6,7 @@ bg: city
 hero:
   title: Der quelloffene, leichte und souveräne Datenkatalog
   text: datannur scannt Ihre Datenquellen und erzeugt einen<br />strukturierten, interoperablen Katalog – unter Ihrer Kontrolle.
-  image: /images/folder-page-folder-tab.en.jpg
+  image: /images/folder-page-folder-tab.en.webp
   imageAlt: datannur-Oberfläche – Ordnerseite «Public administration»
   buttons:
     - { label: Demo, href: /de/demo/, icon: desktop }
@@ -27,14 +27,14 @@ pillars:
 gallery:
   title: Einblick in die Oberfläche
   images:
-    - { image: /images/side-bar-ai-open.en.png, alt: Dataset-Seite mit geöffnetem KI-Assistenten, label: KI-Assistent }
-    - { image: /images/search-bar-open.en.jpg, alt: Organisationsseite mit aktiver Suchleiste, label: Suche }
-    - { image: /images/folder-about-tab.en.jpg, alt: Ordnerseite – Info-Tab, label: Ordner-Detail }
-    - { image: /images/favorite-page.en.jpg, alt: Favoritenseite, label: Favoriten }
-    - { image: /images/about-page-diagramm.en.jpg, alt: Info-Seite mit Konzeptdiagramm, label: Gesamtübersicht }
-    - { image: /images/stat-tab.en.jpg, alt: Statistik-Tab, label: Statistiken }
-    - { image: /images/dataset-mobile.en.jpg, alt: Dataset-Seite auf dem Smartphone, label: Mobil – Dataset }
-    - { image: /images/organization-page-folder-tab-mobile.en.jpg, alt: Organisationsseite auf dem Smartphone – Ordner-Tab, label: Mobil – Organisation }
+    - { image: /images/side-bar-ai-open.en.webp, alt: Dataset-Seite mit geöffnetem KI-Assistenten, label: KI-Assistent }
+    - { image: /images/search-bar-open.en.webp, alt: Organisationsseite mit aktiver Suchleiste, label: Suche }
+    - { image: /images/folder-about-tab.en.webp, alt: Ordnerseite – Info-Tab, label: Ordner-Detail }
+    - { image: /images/favorite-page.en.webp, alt: Favoritenseite, label: Favoriten }
+    - { image: /images/about-page-diagramm.en.webp, alt: Info-Seite mit Konzeptdiagramm, label: Gesamtübersicht }
+    - { image: /images/stat-tab.en.webp, alt: Statistik-Tab, label: Statistiken }
+    - { image: /images/dataset-mobile.en.webp, alt: Dataset-Seite auf dem Smartphone, label: Mobil – Dataset }
+    - { image: /images/organization-page-folder-tab-mobile.en.webp, alt: Organisationsseite auf dem Smartphone – Ordner-Tab, label: Mobil – Organisation }
 partners:
   icon: handshake-simple
   title: Partner für eine erfolgreiche Einführung

@@ -40,17 +40,17 @@ datannur erlaubt es, den Katalog auf mehrere sich ergänzende Arten zu durchsuch
 
 Diese vielfältige Navigation macht den Katalog sowohl für eine breite Erkundung als auch für gezielte Bedürfnisse nutzbar: einen Datensatz finden, eine Variable identifizieren, einen Verantwortlichen ausfindig machen oder einen zusammenhängenden Dokumentenbestand durchsuchen.
 
-![Ordner «Public Admin» – Ordner-Tab](/images/folder-page-folder-tab.en.jpg)
+![Ordner «Public Admin» – Ordner-Tab](/images/folder-page-folder-tab.en.webp)
 *Ordner «Public Admin» – Ordner-Tab*
 
 ### Suche
 
 Die Suchleiste ermöglicht es, anhand der eingegebenen Begriffe schnell die relevantesten Elemente zu finden. Eine eigene Seite zeigt die Ergebnisse übersichtlich an, mit direktem Zugriff auf die letzten Suchanfragen.
 
-![Organisationsseite – aktive Suchleiste](/images/search-bar-open.en.jpg)
+![Organisationsseite – aktive Suchleiste](/images/search-bar-open.en.webp)
 *Organisationsseite – aktive Suchleiste*
 
-![Suchseite](/images/search-page.en.jpg)
+![Suchseite](/images/search-page.en.webp)
 *Suchseite*
 
 ### Filter
@@ -72,7 +72,7 @@ datannur stützt sich auf eine Baumstruktur, um Organisationen, Ordner und Schla
 
 Jeder Knoten der Baumstruktur verfügt über eine eigene Seite und verhält sich wie eine Teilmenge des Katalogs. So lassen sich sowohl sein Inhalt und sein Kontext als auch die ihm zugeordneten Datasets erkunden. In Kombination mit Sortierung und Filtern bietet diese Struktur eine ebenso einfache wie leistungsfähige Navigation.
 
-![Info-Seite – Organisation: Gesamtübersicht](/images/about-page-diagramm.en.jpg)
+![Info-Seite – Organisation: Gesamtübersicht](/images/about-page-diagramm.en.webp)
 *Info-Seite – Organisation: Gesamtübersicht*
 
 ### KI-Assistent
@@ -81,7 +81,7 @@ Eine Chat-Seitenleiste ermöglicht es, den Katalog in natürlicher Sprache zu er
 
 In die Oberfläche integriert, ergänzt er die klassischen Such-, Filter- und Erkundungsfunktionen durch einen direkteren und flexibleren Zugriff auf den Inhalt des Katalogs.
 
-![Dataset-Seite mit geöffnetem KI-Assistenten](/images/side-bar-ai-open.en.png)
+![Dataset-Seite mit geöffnetem KI-Assistenten](/images/side-bar-ai-open.en.webp)
 
 ## Information
 
@@ -89,14 +89,14 @@ Jede einem Katalogelement gewidmete Seite enthält einen Info-Tab, der seine wic
 
 Die anderen Tabs geben Zugriff auf die Elemente, die es enthält oder mit denen es verbunden ist, wie Datasets, Variablen, Aufzählungen oder Dokumente.
 
-![Ordner – Info-Tab](/images/folder-about-tab.en.jpg)
+![Ordner – Info-Tab](/images/folder-about-tab.en.webp)
 *Ordner – Info-Tab*
 
 ### Doc
 
 Der Katalog kann seine wichtigsten Elemente mit einer oder mehreren bestehenden Dokumentationen im Markdown- oder PDF-Format verknüpfen. Das kann zum Beispiel ein README, eine Anleitung, ein Bericht oder eine bereits in der Organisation vorhandene Fachdokumentation sein. Direkt von der Seite des betreffenden Elements aus zugänglich, liefern diese Dokumente Kontext, Erklärungen und ergänzende Informationen.
 
-![Im Katalog geöffnetes PDF-Dokument](/images/doc-pdf.en.jpg)
+![Im Katalog geöffnetes PDF-Dokument](/images/doc-pdf.en.webp)
 
 ### Fachglossar
 

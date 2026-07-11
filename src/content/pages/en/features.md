@@ -40,17 +40,17 @@ datannur lets you browse the catalog in several complementary ways. The tree vie
 
 This multi-faceted navigation makes the catalog usable both for broad exploration and for targeted needs: finding a dataset, identifying a variable, locating an owner, or browsing a related set of documents.
 
-![Public Admin folder – folder tab](/images/folder-page-folder-tab.en.jpg)
+![Public Admin folder – folder tab](/images/folder-page-folder-tab.en.webp)
 *Public Admin folder – folder tab*
 
 ### Search
 
 The search bar lets you quickly find the most relevant items based on the terms entered. A dedicated page displays results clearly, with direct access to recent searches.
 
-![Organization page – active search bar](/images/search-bar-open.en.jpg)
+![Organization page – active search bar](/images/search-bar-open.en.webp)
 *Organization page – active search bar*
 
-![Search page](/images/search-page.en.jpg)
+![Search page](/images/search-page.en.webp)
 *Search page*
 
 ### Filter
@@ -72,7 +72,7 @@ datannur relies on a tree structure to organize organizations, folders, and keyw
 
 Each node in the tree has its own page and acts as a subset of the catalog. You can therefore explore its content, its context, and the datasets attached to it. Combined with sorting and filters, this structure provides navigation that is both simple and powerful.
 
-![About page – Organization: overview](/images/about-page-diagramm.en.jpg)
+![About page – Organization: overview](/images/about-page-diagramm.en.webp)
 *About page – Organization: overview*
 
 ### AI assistant
@@ -81,7 +81,7 @@ A chat sidebar allows you to explore the catalog in natural language. The assist
 
 Integrated into the interface, it complements traditional search, filtering, and exploration features by providing more direct and flexible access to the catalog's content.
 
-![Dataset page with AI assistant sidebar open](/images/side-bar-ai-open.en.png)
+![Dataset page with AI assistant sidebar open](/images/side-bar-ai-open.en.webp)
 
 ## Information
 
@@ -89,14 +89,14 @@ Each page dedicated to a catalog item includes an "About" tab that brings togeth
 
 The other tabs provide access to the items it contains or is associated with, such as datasets, variables, enumerations, or documents.
 
-![Folder – About tab](/images/folder-about-tab.en.jpg)
+![Folder – About tab](/images/folder-about-tab.en.webp)
 *Folder – About tab*
 
 ### Doc
 
 The catalog can link one or more existing documents to its main items, in Markdown or PDF format. This may include, for example, a README, a notice, a report, or business documentation already present within the organization. Accessible directly from the relevant item's page, these documents provide context, explanations, and additional information.
 
-![PDF document opened in the catalog](/images/doc-pdf.en.jpg)
+![PDF document opened in the catalog](/images/doc-pdf.en.webp)
 
 ### Business glossary
 

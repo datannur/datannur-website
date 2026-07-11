@@ -6,7 +6,7 @@ bg: city
 hero:
   title: The open-source, lightweight, and sovereign data catalog
   text: datannur scans your data sources and generates a catalog<br />structured and interoperable, under your control.
-  image: /images/folder-page-folder-tab.en.jpg
+  image: /images/folder-page-folder-tab.en.webp
   imageAlt: datannur interface – Public administration folder page
   buttons:
     - { label: Demo, href: /demo/, icon: desktop }
@@ -27,14 +27,14 @@ pillars:
 gallery:
   title: Interface overview
   images:
-    - { image: /images/side-bar-ai-open.en.png, alt: Dataset page with AI assistant sidebar open, label: AI assistant }
-    - { image: /images/search-bar-open.en.jpg, alt: Organization page with active search bar, label: Search }
-    - { image: /images/folder-about-tab.en.jpg, alt: Folder page – About tab, label: Folder details }
-    - { image: /images/favorite-page.en.jpg, alt: Favorites page, label: Favorites }
-    - { image: /images/about-page-diagramm.en.jpg, alt: About page with concepts diagram, label: Overview diagram }
-    - { image: /images/stat-tab.en.jpg, alt: Statistics tab, label: Statistics }
-    - { image: /images/dataset-mobile.en.jpg, alt: Dataset page on mobile, label: Mobile – dataset }
-    - { image: /images/organization-page-folder-tab-mobile.en.jpg, alt: Organization page on mobile – folder tab, label: Mobile – organization }
+    - { image: /images/side-bar-ai-open.en.webp, alt: Dataset page with AI assistant sidebar open, label: AI assistant }
+    - { image: /images/search-bar-open.en.webp, alt: Organization page with active search bar, label: Search }
+    - { image: /images/folder-about-tab.en.webp, alt: Folder page – About tab, label: Folder details }
+    - { image: /images/favorite-page.en.webp, alt: Favorites page, label: Favorites }
+    - { image: /images/about-page-diagramm.en.webp, alt: About page with concepts diagram, label: Overview diagram }
+    - { image: /images/stat-tab.en.webp, alt: Statistics tab, label: Statistics }
+    - { image: /images/dataset-mobile.en.webp, alt: Dataset page on mobile, label: Mobile – dataset }
+    - { image: /images/organization-page-folder-tab-mobile.en.webp, alt: Organization page on mobile – folder tab, label: Mobile – organization }
 partners:
   icon: handshake-simple
   title: Partners to Support Adoption

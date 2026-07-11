@@ -6,7 +6,7 @@ bg: city
 hero:
   title: Le catalogue de données open source, léger et souverain
   text: datannur scanne vos sources de données et génère un catalogue<br />structuré et interopérable, sous votre contrôle.
-  image: /images/folder-page-folder-tab.fr.jpg
+  image: /images/folder-page-folder-tab.fr.webp
   imageAlt: interface datannur – page du dossier Administration publique
   buttons:
     - { label: Démo, href: /fr/demo/, icon: desktop }
@@ -28,13 +28,13 @@ gallery:
   title: Aperçu de l’interface
   images:
     - { image: /images/side-bar-ai-open.fr.webp, alt: Page dataset avec l’assistant IA ouvert, label: Assistant IA }
-    - { image: /images/search-bar-open.fr.jpg, alt: Page organisation avec barre de recherche active, label: Recherche }
-    - { image: /images/folder-about-tab.fr.jpg, alt: Page dossier – onglet à propos, label: Détail d’un dossier }
-    - { image: /images/favorite-page.fr.jpg, alt: Page des favoris, label: Favoris }
-    - { image: /images/about-page-diagramm.fr.jpg, alt: Page à propos avec diagramme des concepts, label: Vue d’ensemble }
-    - { image: /images/stat-tab.fr.jpg, alt: Onglet statistiques, label: Statistiques }
-    - { image: /images/dataset-mobile.fr.jpg, alt: Page dataset sur mobile, label: Mobile – dataset }
-    - { image: /images/organization-page-folder-tab-mobile.fr.jpg, alt: Page organisation sur mobile – onglet dossier, label: Mobile – organisation }
+    - { image: /images/search-bar-open.fr.webp, alt: Page organisation avec barre de recherche active, label: Recherche }
+    - { image: /images/folder-about-tab.fr.webp, alt: Page dossier – onglet à propos, label: Détail d’un dossier }
+    - { image: /images/favorite-page.fr.webp, alt: Page des favoris, label: Favoris }
+    - { image: /images/about-page-diagramm.fr.webp, alt: Page à propos avec diagramme des concepts, label: Vue d’ensemble }
+    - { image: /images/stat-tab.fr.webp, alt: Onglet statistiques, label: Statistiques }
+    - { image: /images/dataset-mobile.fr.webp, alt: Page dataset sur mobile, label: Mobile – dataset }
+    - { image: /images/organization-page-folder-tab-mobile.fr.webp, alt: Page organisation sur mobile – onglet dossier, label: Mobile – organisation }
 partners:
   icon: handshake-simple
   title: Des partenaires pour accompagner l’adoption

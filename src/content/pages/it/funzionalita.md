@@ -40,17 +40,17 @@ datannur permette di percorrere il catalogo in più modi complementari. La strut
 
 Questa navigazione multipla rende il catalogo utilizzabile tanto per un'esplorazione d'insieme quanto per esigenze mirate: ritrovare un dataset, identificare una variabile, individuare un responsabile o navigare in un insieme di documenti collegati.
 
-![Cartella «Public Admin» – scheda cartella](/images/folder-page-folder-tab.en.jpg)
+![Cartella «Public Admin» – scheda cartella](/images/folder-page-folder-tab.en.webp)
 *Cartella «Public Admin» – scheda cartella*
 
 ### Ricerca
 
 La barra di ricerca permette di ritrovare rapidamente gli elementi più pertinenti a partire dai termini inseriti. Una pagina dedicata presenta i risultati in modo chiaro, con accesso diretto alle ricerche recenti.
 
-![Pagina organizzazione – barra di ricerca attiva](/images/search-bar-open.en.jpg)
+![Pagina organizzazione – barra di ricerca attiva](/images/search-bar-open.en.webp)
 *Pagina organizzazione – barra di ricerca attiva*
 
-![Pagina di ricerca](/images/search-page.en.jpg)
+![Pagina di ricerca](/images/search-page.en.webp)
 *Pagina di ricerca*
 
 ### Filtro
@@ -72,7 +72,7 @@ datannur si basa su una struttura ad albero per organizzare le organizzazioni, l
 
 Ogni nodo della struttura ad albero dispone di una propria pagina e agisce come un sottoinsieme del catalogo. È così possibile esplorarne al tempo stesso il contenuto, il contesto e i dataset che vi sono collegati. Combinata con l'ordinamento e i filtri, questa struttura offre una navigazione tanto semplice quanto potente.
 
-![Pagina informazioni – Organizzazione: visione d'insieme](/images/about-page-diagramm.en.jpg)
+![Pagina informazioni – Organizzazione: visione d'insieme](/images/about-page-diagramm.en.webp)
 *Pagina informazioni – Organizzazione: visione d'insieme*
 
 ### Assistente IA
@@ -81,7 +81,7 @@ Una barra laterale di chat permette di esplorare il catalogo in linguaggio natur
 
 Integrato nell'interfaccia, completa le funzioni classiche di ricerca, filtro ed esplorazione offrendo un accesso più diretto e più flessibile al contenuto del catalogo.
 
-![Pagina dataset con l'assistente IA aperto](/images/side-bar-ai-open.en.png)
+![Pagina dataset con l'assistente IA aperto](/images/side-bar-ai-open.en.webp)
 
 ## Informazione
 
@@ -89,14 +89,14 @@ Ogni pagina dedicata a un elemento del catalogo comprende una scheda «Informazi
 
 Le altre schede danno accesso agli elementi che contiene o a cui è associato, come dataset, variabili, enumerazioni o documenti.
 
-![Cartella – scheda informazioni](/images/folder-about-tab.en.jpg)
+![Cartella – scheda informazioni](/images/folder-about-tab.en.webp)
 *Cartella – scheda informazioni*
 
 ### Doc
 
 Il catalogo può collegare ai suoi elementi principali una o più documentazioni esistenti, in formato Markdown o PDF. Può trattarsi, ad esempio, di un README, di una guida, di un rapporto o di una documentazione di business già presente nell'organizzazione. Accessibili direttamente dalla pagina dell'elemento interessato, questi documenti apportano contesto, spiegazioni e informazioni complementari.
 
-![Documento PDF aperto nel catalogo](/images/doc-pdf.en.jpg)
+![Documento PDF aperto nel catalogo](/images/doc-pdf.en.webp)
 
 ### Glossario di business
 

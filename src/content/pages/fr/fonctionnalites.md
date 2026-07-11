@@ -40,17 +40,17 @@ datannur permet de parcourir le catalogue de plusieurs façons complémentaires.
 
 Cette navigation multiple rend le catalogue utilisable aussi bien pour une exploration globale que pour des besoins ciblés : retrouver un jeu de données, identifier une variable, repérer un responsable ou naviguer dans un ensemble documentaire lié.
 
-![Dossier Admin. publique – onglet dossier](/images/folder-page-folder-tab.fr.jpg)
+![Dossier Admin. publique – onglet dossier](/images/folder-page-folder-tab.fr.webp)
 *Dossier Admin. publique – onglet dossier*
 
 ### Recherche
 
 La barre de recherche permet de retrouver rapidement les éléments les plus pertinents à partir des termes saisis. Une page dédiée affiche les résultats de manière claire, avec un accès direct aux recherches récentes.
 
-![Page organisation – Bar de recherche active](/images/search-bar-open.fr.jpg)
+![Page organisation – Bar de recherche active](/images/search-bar-open.fr.webp)
 *Page organisation – Bar de recherche active*
 
-![Page de recherche](/images/search-page.fr.jpg)
+![Page de recherche](/images/search-page.fr.webp)
 *Page de recherche*
 
 ### Filtre
@@ -72,7 +72,7 @@ datannur s’appuie sur une structure arborescente pour organiser les organisati
 
 Chaque nœud de l’arborescence dispose de sa propre page et agit comme un sous-ensemble du catalogue. Il est ainsi possible d’explorer à la fois son contenu, son contexte, et les datasets qui lui sont rattachés. Combinée au tri et aux filtres, cette structure offre une navigation à la fois simple et puissante.
 
-![Page à propos – Organisation : vision d’ensemble](/images/about-page-diagramm.fr.jpg)
+![Page à propos – Organisation : vision d’ensemble](/images/about-page-diagramm.fr.webp)
 *Page à propos – Organisation : vision d’ensemble*
 
 ### Assistant IA
@@ -89,14 +89,14 @@ Chaque page dédiée à un élément du catalogue comporte un onglet « À propo
 
 Les autres onglets donnent accès aux éléments qu’il contient ou auxquels il est associé, comme les datasets, variables, énumérations ou documents.
 
-![Dossier – Onglet à propos](/images/folder-about-tab.fr.jpg)
+![Dossier – Onglet à propos](/images/folder-about-tab.fr.webp)
 *Dossier – Onglet à propos*
 
 ### Doc
 
 Le catalogue peut relier à ses principaux éléments une ou plusieurs documentations existantes, au format Markdown ou PDF. Il peut s’agir, par exemple, d’un README, d’une notice, d’un rapport ou d’une documentation métier déjà présente dans l’organisation. Accessibles directement depuis la page de l’élément concerné, ces documents apportent du contexte, des explications et des informations complémentaires.
 
-![Document PDF ouvert dans le catalogue](/images/doc-pdf.fr.jpg)
+![Document PDF ouvert dans le catalogue](/images/doc-pdf.fr.webp)
 
 ### Glossaire métier
 
