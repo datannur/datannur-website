@@ -59,6 +59,17 @@ const pages = defineCollection({
         note: z.string().optional(),
       })
       .optional(),
+    // linked cards with icon (documentation page)
+    cards: z
+      .array(
+        z.object({
+          icon: z.string(),
+          title: z.string(),
+          text: z.string(),
+          cta: z.object({ label: z.string(), href: z.string() }),
+        })
+      )
+      .optional(),
     // support plans (support page)
     plans: z
       .array(

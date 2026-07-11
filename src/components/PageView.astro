@@ -6,6 +6,7 @@ import Hero from './Hero.astro'
 import Pillars from './Pillars.astro'
 import Gallery from './Gallery.astro'
 import Partners from './Partners.astro'
+import Cards from './Cards.astro'
 import Plans from './Plans.astro'
 import ContactBlock from './ContactBlock.astro'
 import { pageMeta, type PageEntry } from '../lib/pages'
@@ -73,6 +74,7 @@ const titleMain = restTitle.join(' — ')
           <Content />
           {data.contactBlock && <ContactBlock />}
         </div>
+        {data.cards && <Cards cards={data.cards} />}
         {data.plans && <Plans plans={data.plans} />}
       </article>
     )

@@ -28,7 +28,7 @@ plans:
 
 datannur est un logiciel libre, utilisable sans licence payante. Le support éditeur n’est donc pas une condition d’accès au produit, mais un cadre de continuité, de fiabilité et d’évolution pour les partenaires et les organisations qui souhaitent s’appuyer sur datannur dans la durée. Il garantit un point d’appui clair sur le produit, sans se substituer à l’accompagnement métier.
 
-Pour installer, configurer et utiliser datannur en autonomie, consultez la [documentation](https://docs.datannur.com/).
+Pour installer, configurer et utiliser datannur en autonomie, consultez la [documentation](/fr/documentation/).
 
 ## Pourquoi un support éditeur
 

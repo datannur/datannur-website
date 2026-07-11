@@ -28,7 +28,7 @@ plans:
 
 datannur ist freie Software und ohne kostenpflichtige Lizenz nutzbar. Der Herstellersupport ist daher keine Zugangsvoraussetzung für das Produkt, sondern ein Rahmen für Kontinuität, Zuverlässigkeit und Weiterentwicklung für Partner und Organisationen, die sich langfristig auf datannur stützen möchten. Er garantiert einen klaren Ansprechpunkt für das Produkt, ohne die fachliche Begleitung zu ersetzen.
 
-Um datannur eigenständig zu installieren, zu konfigurieren und zu nutzen, konsultieren Sie die [Dokumentation](https://docs.datannur.com/).
+Um datannur eigenständig zu installieren, zu konfigurieren und zu nutzen, konsultieren Sie die [Dokumentation](/de/dokumentation/).
 
 ## Warum ein Herstellersupport
 

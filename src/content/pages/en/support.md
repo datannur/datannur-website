@@ -28,7 +28,7 @@ plans:
 
 datannur is open-source software, usable without a paid license. Publisher support is therefore not a condition for accessing the product, but rather a framework for continuity, reliability, and evolution for partners and organizations wishing to rely on datannur over the long term. It ensures a clear point of support for the product without replacing professional guidance.
 
-To install, configure, and use datannur independently, please consult the [documentation](https://docs.datannur.com/).
+To install, configure, and use datannur independently, please consult the [documentation](/documentation/).
 
 ## Why choose publisher support
 

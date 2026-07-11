@@ -1,0 +1,26 @@
+---
+import Icon from './Icon.astro'
+
+interface Props {
+  cards: {
+    icon: string
+    title: string
+    text: string
+    cta: { label: string; href: string }
+  }[]
+}
+const { cards } = Astro.props
+---
+
+<div class="cards">
+  {
+    cards.map(card => (
+      <a class="card" href={card.cta.href}>
+        <Icon name={card.icon} class="card-icon" />
+        <h2>{card.title}</h2>
+        <p>{card.text}</p>
+        <span class="card-cta">{card.cta.label}</span>
+      </a>
+    ))
+  }
+</div>

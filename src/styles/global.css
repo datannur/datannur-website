@@ -1196,6 +1196,89 @@ html:not([data-theme]) .theme-toggle {
 }
 
 /* --------------------------------------------------------------------------
+   Linked cards with icon (documentation page)
+   -------------------------------------------------------------------------- */
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: stretch;
+  max-width: 990px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px 20px 90px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-soft);
+  border-radius: var(--radius);
+  box-shadow: 0 3px 18px rgba(0, 0, 0, 0.07);
+  padding: 42px 46px 46px;
+  color: inherit;
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  color: inherit;
+  transform: translateY(-3px);
+  box-shadow: 0 3px 18px rgba(0, 0, 0, 0.07),
+    0 12px 30px rgba(18, 153, 155, 0.16);
+}
+
+/* card icon in a soft badge, per-icon color like page titles */
+.card .card-icon {
+  width: 54px;
+  height: 54px;
+  padding: 14px;
+  border-radius: var(--radius);
+  color: var(--icon-c, var(--accent));
+  background: color-mix(in srgb, var(--icon-c, var(--accent)) 13%, transparent);
+}
+
+.card h2 {
+  font-size: 22px;
+  margin: 20px 0 10px;
+}
+
+.card p {
+  margin: 0 0 26px;
+  flex: 1;
+}
+
+.card-cta {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.card:hover .card-cta {
+  color: var(--accent-hover);
+}
+
+.card-cta::after {
+  content: ' →';
+  display: inline-block;
+  transition: transform 0.15s ease;
+}
+
+.card:hover .card-cta::after {
+  transform: translateX(3px);
+}
+
+@media (max-width: 767px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 32px 30px 36px;
+  }
+}
+
+/* --------------------------------------------------------------------------
    Support plans (support page)
    -------------------------------------------------------------------------- */
 
