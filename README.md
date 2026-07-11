@@ -17,7 +17,10 @@ English at the root, translated slugs under `/fr/` and `/de/`.
   markdown, with shared layout and components at build time only.
 - **Hosting:** any static file server. Production runs on Infomaniak shared
   hosting (Apache) — `public/.htaccess` handles https redirects, caching and
-  the 404 page. No PHP, no Node at runtime.
+  the 404 page. No PHP, no Node at runtime. Note: the root of
+  docs.datannur.com carries a manually uploaded `.htaccess` (not in any
+  deployed repo) that 301-redirects only `/` to `/documentation/` on this
+  site; `/app/` and `/builder/` stay served by VitePress.
 - **Dark mode:** header toggle, system preference by default, choice persisted
   in `localStorage`, no flash on load. Every color is a CSS variable defined
   in `src/styles/global.css` (`:root` for light, `[data-theme='dark']` for
