@@ -601,6 +601,13 @@ html:not([data-theme]) .theme-toggle {
     border-radius: var(--radius-s);
   }
 
+  /* accordion titles: the highlight belongs to the child item — a colored
+     title background would blend into the unfolded submenu below it */
+  .nav-list > li > button.active,
+  .has-children:has(.sub-menu a:hover) > button {
+    background: none;
+  }
+
   .caret {
     margin-left: auto;
   }
