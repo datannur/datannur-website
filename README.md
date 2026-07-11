@@ -1,6 +1,6 @@
 # datannur-website
 
-Marketing site for [datannur.com](https://datannur.com), the open-source,
+Official website of [datannur](https://datannur.com), the open-source,
 lightweight and sovereign data catalog. Static site built with
 [Astro](https://astro.build), all content in markdown, trilingual (EN/FR/DE):
 English at the root, translated slugs under `/fr/` and `/de/`.
