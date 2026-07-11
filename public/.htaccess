@@ -42,6 +42,9 @@ AddType image/avif .avif
   Header set X-Content-Type-Options "nosniff"
   Header set X-Frame-Options "SAMEORIGIN"
   Header set Referrer-Policy "strict-origin-when-cross-origin"
-  # HSTS preload (hstspreload.org): all subdomains are committed to https
-  Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+  # HSTS preload (hstspreload.org): all subdomains are committed to https.
+  # "always" overrides the hosting-level header (same table); the plain
+  # unset clears any copy from the standard table to avoid duplicates.
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+  Header unset Strict-Transport-Security
 </IfModule>
