@@ -220,6 +220,10 @@ const langMenuLabel: Record<Lang, string> = {
 
   document.querySelectorAll('.lang-switch a').forEach(a =>
     a.addEventListener('click', () => {
+      // remember the explicit choice: the root redirect obeys it from now on
+      try {
+        localStorage.setItem('lang', a.getAttribute('lang'))
+      } catch {}
       if (!scrollY) return
       const els = anchorEls()
       const saved = {

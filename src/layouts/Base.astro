@@ -38,6 +38,20 @@ const ogLocales: Record<Lang, string> = {
 }
 const ogImageUrl = `${siteUrl}${ogImage ?? '/images/logo.png'}`
 const isHome = entry?.data.key === 'home'
+
+// Direct visits to the root: forward the visitor to their language (once,
+// before render). An explicit switcher choice (stored) always wins; Googlebot
+// browses in en-US so it never gets redirected — the EN root stays stable.
+const langRedirect = `try {
+  const offered = ['de', 'fr', 'it']
+  const pref = localStorage.getItem('lang')
+  const target = pref
+    ? offered.includes(pref) && pref
+    : (navigator.languages || [navigator.language])
+        .map(l => (l || '').slice(0, 2).toLowerCase())
+        .find(l => offered.includes(l))
+  if (target) location.replace('/' + target + '/')
+} catch {}`
 ---
 
 <!doctype html>
@@ -55,6 +69,7 @@ const isHome = entry?.data.key === 'home'
         storedTheme ||
         (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
     </script>
+    {isHome && lang === 'en' && <script is:inline set:html={langRedirect} />}
     <meta
       name="theme-color"
       media="(prefers-color-scheme: light)"
