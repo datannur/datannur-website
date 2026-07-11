@@ -47,11 +47,16 @@ const images = gallery.images.map(img => ({
         ))
       }
     </div>
-    <div class="thumbs">
+    <div class="thumbs" role="radiogroup" aria-label={gallery.title}>
       {
         images.map((img, i) => (
           <label title={img.label}>
-            <input type="radio" name="gallery-slide" checked={i === 0} />
+            <input
+              type="radio"
+              name="gallery-slide"
+              checked={i === 0}
+              aria-label={img.label}
+            />
             <img
               class:list={{ 'theme-light': img.dark }}
               src={img.image}
