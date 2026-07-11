@@ -9,9 +9,30 @@ datannur brings together, in a single interface, the essential functions of a da
 
 The goal is not only to store information, but to make data easier to read, more usable, and simpler to govern on a day-to-day basis.
 
-- **[Browsing](#browsing)**: [search](#search), [filtering](#filter), [sorting](#sort), [tree view](#tree-view), [AI assistant](#ai-assistant)
-- **[Information](#information)**: [documentation](#doc), [business glossary](#business-glossary), [dependencies](#dependencies-lineage), [statistical summary](#statistical-summary), [data preview](#data-preview), [similar enumerations](#similar-enumerations), [change history](#change-history)
-- **[Usage](#usage)**: [favorites](#favorites), [customization](#customization), [download](#download), [interoperability](#interoperability), [internal view](#internal-view)
+<div class="toc">
+
+- **[Browsing](#browsing)**
+  - [Search](#search)
+  - [Filtering](#filter)
+  - [Sorting](#sort)
+  - [Tree view](#tree-view)
+  - [AI assistant](#ai-assistant)
+- **[Information](#information)**
+  - [Documentation](#doc)
+  - [Business glossary](#business-glossary)
+  - [Dependencies](#dependencies-lineage)
+  - [Statistical summary](#statistical-summary)
+  - [Data preview](#data-preview)
+  - [Similar enumerations](#similar-enumerations)
+  - [Change history](#change-history)
+- **[Usage](#usage)**
+  - [Favorites](#favorites)
+  - [Customization](#customization)
+  - [Download](#download)
+  - [Interoperability](#interoperability)
+  - [Internal view](#internal-view)
+
+</div>
 
 ## Browsing
 

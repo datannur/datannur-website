@@ -9,9 +9,30 @@ datannur réunit dans une même interface les fonctions essentielles d’un cata
 
 L’objectif n’est pas seulement de stocker de l’information, mais de rendre les données plus lisibles, plus exploitables et plus simples à gouverner au quotidien.
 
-- **[Navigation](#navigation)** : [recherche](#recherche), [filtre](#filtre), [tri](#tri), [arborescence](#arborescence), [assistant IA](#assistant-ia)
-- **[Information](#information)** : [documentation](#doc), [glossaire métier](#glossaire-métier), [dépendances](#dépendances-lineage), [résumé statistique](#résumé-statistique), [aperçu des données](#aperçu-des-données), [énumérations similaires](#enumérations-similaires), [évolution](#evolution)
-- **[Utilisation](#utilisation)** : [mise en favoris](#mise-en-favoris), [personnalisation](#personnalisation), [téléchargement](#téléchargement), [interopérabilité](#interopérabilité), [vue interne](#vue-interne)
+<div class="toc">
+
+- **[Navigation](#navigation)**
+  - [Recherche](#recherche)
+  - [Filtre](#filtre)
+  - [Tri](#tri)
+  - [Arborescence](#arborescence)
+  - [Assistant IA](#assistant-ia)
+- **[Information](#information)**
+  - [Documentation](#doc)
+  - [Glossaire métier](#glossaire-métier)
+  - [Dépendances](#dépendances-lineage)
+  - [Résumé statistique](#résumé-statistique)
+  - [Aperçu des données](#aperçu-des-données)
+  - [Énumérations similaires](#enumérations-similaires)
+  - [Évolution](#evolution)
+- **[Utilisation](#utilisation)**
+  - [Mise en favoris](#mise-en-favoris)
+  - [Personnalisation](#personnalisation)
+  - [Téléchargement](#téléchargement)
+  - [Interopérabilité](#interopérabilité)
+  - [Vue interne](#vue-interne)
+
+</div>
 
 ## Navigation
 

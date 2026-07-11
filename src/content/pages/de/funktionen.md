@@ -9,9 +9,30 @@ datannur vereint in einer einzigen Oberfläche die wesentlichen Funktionen eines
 
 Das Ziel ist nicht nur, Informationen zu speichern, sondern Daten lesbarer, nutzbarer und im Alltag einfacher steuerbar zu machen.
 
-- **[Navigation](#navigation)**: [Suche](#suche), [Filter](#filter), [Sortierung](#sortierung), [Baumstruktur](#baumstruktur), [KI-Assistent](#ki-assistent)
-- **[Information](#information)**: [Dokumentation](#doc), [Fachglossar](#fachglossar), [Abhängigkeiten](#abhängigkeiten-lineage), [statistische Zusammenfassung](#statistische-zusammenfassung), [Datenvorschau](#datenvorschau), [ähnliche Aufzählungen](#ähnliche-aufzählungen), [Änderungshistorie](#änderungshistorie)
-- **[Nutzung](#nutzung)**: [Favoriten](#favoriten), [Personalisierung](#personalisierung), [Download](#download), [Interoperabilität](#interoperabilität), [interne Sicht](#interne-sicht)
+<div class="toc">
+
+- **[Navigation](#navigation)**
+  - [Suche](#suche)
+  - [Filter](#filter)
+  - [Sortierung](#sortierung)
+  - [Baumstruktur](#baumstruktur)
+  - [KI-Assistent](#ki-assistent)
+- **[Information](#information)**
+  - [Dokumentation](#doc)
+  - [Fachglossar](#fachglossar)
+  - [Abhängigkeiten](#abhängigkeiten-lineage)
+  - [Statistische Zusammenfassung](#statistische-zusammenfassung)
+  - [Datenvorschau](#datenvorschau)
+  - [Ähnliche Aufzählungen](#ähnliche-aufzählungen)
+  - [Änderungshistorie](#änderungshistorie)
+- **[Nutzung](#nutzung)**
+  - [Favoriten](#favoriten)
+  - [Personalisierung](#personalisierung)
+  - [Download](#download)
+  - [Interoperabilität](#interoperabilität)
+  - [Interne Sicht](#interne-sicht)
+
+</div>
 
 ## Navigation
 

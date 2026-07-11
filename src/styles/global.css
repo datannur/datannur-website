@@ -49,6 +49,8 @@
   --city-2: rgba(255, 255, 255, 0.88);
   --city-3: rgba(255, 255, 255, 0.7);
   --city-4: rgba(255, 255, 255, 0.74);
+  --radius: 20px; /* surfaces: cards, submenus, gallery stage */
+  --radius-s: 10px; /* nested elements: images, thumbnails, submenu links */
   --container: 1140px;
   --content: 700px;
   --header-height: 75px;
@@ -272,11 +274,22 @@ h4 {
 }
 
 .nav-list > li > a:hover,
-.nav-list > li > button:hover,
 .nav-list > li > a.active,
 .nav-list > li > button.active {
-  color: var(--accent);
-  background: var(--accent-soft);
+  color: var(--icon-c, var(--accent));
+  background: color-mix(in srgb, var(--icon-c, var(--accent)) 9%, transparent);
+}
+
+/* dropdown titles have no color of their own: neutral hover, and while a
+   child is hovered the title previews that child's color (rules below) */
+.nav-list > li > button:not(.active):hover {
+  color: var(--heading);
+  background: color-mix(in srgb, var(--heading) 7%, transparent);
+}
+
+.has-children:has(.sub-menu a:hover) > button {
+  color: var(--icon-c, var(--heading));
+  background: color-mix(in srgb, var(--icon-c, var(--heading)) 9%, transparent);
 }
 
 /* dropdown menu arrow, rotates when opening */
@@ -308,7 +321,7 @@ h4 {
   background: var(--bg-elev);
   border: 1px solid var(--border-soft);
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.05);
-  border-radius: 14px;
+  border-radius: var(--radius);
   opacity: 0;
   visibility: hidden;
   transform: translateY(10px) scale(0.98);
@@ -335,7 +348,7 @@ h4 {
 
 .sub-menu a {
   padding: 9px 14px;
-  border-radius: 9px;
+  border-radius: var(--radius-s);
   font-weight: 450;
 }
 
@@ -346,8 +359,8 @@ h4 {
 
 .sub-menu a:hover,
 .sub-menu a.active {
-  color: var(--accent);
-  background: var(--accent-soft);
+  color: var(--icon-c, var(--accent));
+  background: color-mix(in srgb, var(--icon-c, var(--accent)) 9%, transparent);
 }
 
 /* right zone: languages + theme */
@@ -572,7 +585,7 @@ html:not([data-theme]) .theme-toggle {
   .nav-list button {
     padding: 12px 14px;
     width: 100%;
-    border-radius: 10px;
+    border-radius: var(--radius-s);
   }
 
   .caret {
@@ -683,7 +696,7 @@ html:not([data-theme]) .theme-toggle {
 
 .hero-image img {
   display: block;
-  border-radius: 10px 10px 0 0;
+  border-radius: var(--radius-s) var(--radius-s) 0 0;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.18);
 }
 
@@ -765,7 +778,7 @@ html:not([data-theme]) .theme-toggle {
   position: relative;
   aspect-ratio: 16 / 9;
   background: linear-gradient(160deg, var(--stage-a), var(--stage-b));
-  border-radius: 16px;
+  border-radius: var(--radius);
   box-shadow: inset 0 0 0 1px var(--border-soft);
   overflow: hidden;
 }
@@ -790,7 +803,7 @@ html:not([data-theme]) .theme-toggle {
   width: auto;
   height: auto;
   object-fit: contain;
-  border-radius: 8px;
+  border-radius: var(--radius-s);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.14);
 }
 
@@ -842,7 +855,7 @@ html:not([data-theme]) .theme-toggle {
   flex: 0 0 auto;
   width: 92px;
   height: 58px;
-  border-radius: 9px;
+  border-radius: var(--radius-s);
   overflow: hidden;
   cursor: pointer;
   opacity: 0.45;
@@ -877,7 +890,7 @@ html:not([data-theme]) .theme-toggle {
 @media (max-width: 767px) {
   .stage {
     aspect-ratio: 4 / 3;
-    border-radius: 12px;
+    border-radius: var(--radius);
   }
 
   .slide {
@@ -921,7 +934,8 @@ html:not([data-theme]) .theme-toggle {
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--accent);
+  /* takes the page icon color when the h1 carries one (see :has rules) */
+  color: var(--icon-c, var(--accent));
   margin-bottom: 4px;
 }
 
@@ -941,7 +955,7 @@ html:not([data-theme]) .theme-toggle {
   height: 54px;
   padding: 14px;
   flex-shrink: 0;
-  border-radius: 16px;
+  border-radius: var(--radius);
   background: var(--accent-soft);
   color: var(--accent);
 }
@@ -965,7 +979,7 @@ html:not([data-theme]) .theme-toggle {
 .page-body img {
   display: block;
   margin: 30px auto;
-  border-radius: 8px;
+  border-radius: var(--radius-s);
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
 }
 
@@ -1015,6 +1029,55 @@ html:not([data-theme]) .theme-toggle {
   color: #fff;
   transform: translateY(-2px);
   box-shadow: 0 8px 22px rgba(18, 153, 155, 0.38);
+}
+
+/* table of contents (features page): three quiet columns */
+.toc {
+  margin: 40px 0 10px;
+}
+
+.toc ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.toc > ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.toc > ul > li > strong a {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.toc > ul > li > strong a:hover {
+  color: var(--accent);
+}
+
+.toc > ul > li > ul a {
+  display: inline-block;
+  padding: 2px 0;
+  font-size: 15px;
+  color: var(--text);
+}
+
+.toc > ul > li > ul a:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 640px) {
+  .toc > ul {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
 }
 
 /* two columns in the markdown content */
@@ -1146,7 +1209,7 @@ html:not([data-theme]) .theme-toggle {
 
 .plan {
   background: var(--bg-soft);
-  border-radius: 12px;
+  border-radius: var(--radius);
   box-shadow: 0 3px 18px rgba(0, 0, 0, 0.07);
   padding: 42px 46px 46px;
 }
@@ -1251,7 +1314,7 @@ html:not([data-theme]) .theme-toggle {
     width: 44px;
     height: 44px;
     padding: 11px;
-    border-radius: 13px;
+    border-radius: 16px;
   }
 }
 
@@ -1279,23 +1342,132 @@ img.theme-dark {
    and page titles — elsewhere icons follow the text color.
    -------------------------------------------------------------------------- */
 
-.icon-c-house { --icon-c: rgb(47, 125, 104); } /* dashboard */
-.icon-c-lightbulb { --icon-c: rgb(43, 159, 179); } /* concept */
-.icon-c-circle-nodes { --icon-c: rgb(57, 100, 150); } /* tag */
-.icon-c-circle-info { --icon-c: rgb(111, 131, 194); } /* protection */
-.icon-c-book-open { --icon-c: rgb(87, 159, 189); } /* understanding */
-.icon-c-diagram-project { --icon-c: rgb(159, 182, 88); } /* diagram */
-.icon-c-screwdriver-wrench { --icon-c: rgb(224, 116, 92); } /* features */
-.icon-c-plug-circle-check { --icon-c: rgb(22, 122, 69); } /* integrity */
-.icon-c-earth-europe { --icon-c: rgb(94, 147, 129); } /* coverage */
-.icon-c-desktop { --icon-c: rgb(198, 105, 94); } /* preview */
-.icon-c-handshake-simple { --icon-c: rgb(98, 93, 140); } /* organization */
-.icon-c-life-ring { --icon-c: rgb(18, 153, 155); } /* frequency */
-.icon-c-book { --icon-c: rgb(224, 116, 92); } /* doc */
-.icon-c-compass { --icon-c: rgb(170, 78, 99); } /* enumeration */
-.icon-c-comments { --icon-c: rgb(85, 148, 188); } /* value */
+:root {
+  --c-house: var(--accent); /* primary */
+  --c-lightbulb: rgb(43, 159, 179); /* concept */
+  --c-circle-nodes: rgb(57, 100, 150); /* tag */
+  --c-circle-info: rgb(111, 131, 194); /* protection */
+  --c-book-open: rgb(87, 159, 189); /* understanding */
+  --c-diagram-project: rgb(159, 182, 88); /* diagram */
+  --c-screwdriver-wrench: rgb(224, 116, 92); /* features */
+  --c-plug-circle-check: rgb(22, 122, 69); /* integrity */
+  --c-earth-europe: rgb(94, 147, 129); /* coverage */
+  --c-desktop: rgb(198, 105, 94); /* preview */
+  --c-handshake-simple: rgb(98, 93, 140); /* organization */
+  --c-life-ring: rgb(212, 169, 48); /* publication */
+  --c-book: rgb(224, 116, 92); /* doc */
+  --c-compass: rgb(170, 78, 99); /* enumeration */
+  --c-comments: rgb(85, 148, 188); /* value */
+}
 
-.main-nav .icon {
+.icon-c-house,
+:has(> .icon-c-house) {
+  --icon-c: var(--c-house);
+}
+.icon-c-lightbulb,
+:has(> .icon-c-lightbulb) {
+  --icon-c: var(--c-lightbulb);
+}
+.icon-c-circle-nodes,
+:has(> .icon-c-circle-nodes) {
+  --icon-c: var(--c-circle-nodes);
+}
+.icon-c-circle-info,
+:has(> .icon-c-circle-info) {
+  --icon-c: var(--c-circle-info);
+}
+.icon-c-book-open,
+:has(> .icon-c-book-open) {
+  --icon-c: var(--c-book-open);
+}
+.icon-c-diagram-project,
+:has(> .icon-c-diagram-project) {
+  --icon-c: var(--c-diagram-project);
+}
+.icon-c-screwdriver-wrench,
+:has(> .icon-c-screwdriver-wrench) {
+  --icon-c: var(--c-screwdriver-wrench);
+}
+.icon-c-plug-circle-check,
+:has(> .icon-c-plug-circle-check) {
+  --icon-c: var(--c-plug-circle-check);
+}
+.icon-c-earth-europe,
+:has(> .icon-c-earth-europe) {
+  --icon-c: var(--c-earth-europe);
+}
+.icon-c-desktop,
+:has(> .icon-c-desktop) {
+  --icon-c: var(--c-desktop);
+}
+.icon-c-handshake-simple,
+:has(> .icon-c-handshake-simple) {
+  --icon-c: var(--c-handshake-simple);
+}
+.icon-c-life-ring,
+:has(> .icon-c-life-ring) {
+  --icon-c: var(--c-life-ring);
+}
+.icon-c-book,
+:has(> .icon-c-book) {
+  --icon-c: var(--c-book);
+}
+.icon-c-compass,
+:has(> .icon-c-compass) {
+  --icon-c: var(--c-compass);
+}
+.icon-c-comments,
+:has(> .icon-c-comments) {
+  --icon-c: var(--c-comments);
+}
+
+.has-children:has(.sub-menu a:hover > .icon-c-house) > button {
+  --icon-c: var(--c-house);
+}
+.has-children:has(.sub-menu a:hover > .icon-c-lightbulb) > button {
+  --icon-c: var(--c-lightbulb);
+}
+.has-children:has(.sub-menu a:hover > .icon-c-circle-nodes) > button {
+  --icon-c: var(--c-circle-nodes);
+}
+.has-children:has(.sub-menu a:hover > .icon-c-circle-info) > button {
+  --icon-c: var(--c-circle-info);
+}
+.has-children:has(.sub-menu a:hover > .icon-c-book-open) > button {
+  --icon-c: var(--c-book-open);
+}
+.has-children:has(.sub-menu a:hover > .icon-c-diagram-project) > button {
+  --icon-c: var(--c-diagram-project);
+}
+.has-children:has(.sub-menu a:hover > .icon-c-screwdriver-wrench) > button {
+  --icon-c: var(--c-screwdriver-wrench);
+}
+.has-children:has(.sub-menu a:hover > .icon-c-plug-circle-check) > button {
+  --icon-c: var(--c-plug-circle-check);
+}
+.has-children:has(.sub-menu a:hover > .icon-c-earth-europe) > button {
+  --icon-c: var(--c-earth-europe);
+}
+.has-children:has(.sub-menu a:hover > .icon-c-desktop) > button {
+  --icon-c: var(--c-desktop);
+}
+.has-children:has(.sub-menu a:hover > .icon-c-handshake-simple) > button {
+  --icon-c: var(--c-handshake-simple);
+}
+.has-children:has(.sub-menu a:hover > .icon-c-life-ring) > button {
+  --icon-c: var(--c-life-ring);
+}
+.has-children:has(.sub-menu a:hover > .icon-c-book) > button {
+  --icon-c: var(--c-book);
+}
+.has-children:has(.sub-menu a:hover > .icon-c-compass) > button {
+  --icon-c: var(--c-compass);
+}
+.has-children:has(.sub-menu a:hover > .icon-c-comments) > button {
+  --icon-c: var(--c-comments);
+}
+
+.sub-menu .icon {
   color: var(--icon-c, currentColor);
 }
 

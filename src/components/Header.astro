@@ -50,8 +50,9 @@ for (const group of nav) {
 }
 
 const isActive = (href: string) => currentPath === href
-const groupActive = (g: { items: ResolvedItem[] }) =>
-  g.items.some(i => isActive(i.href))
+// a dropdown takes the color of its selected item (neutral otherwise)
+const groupActiveItem = (g: { items: ResolvedItem[] }) =>
+  g.items.find(i => isActive(i.href))
 
 const themeLabel: Record<Lang, string> = {
   en: 'Toggle dark mode',
@@ -98,7 +99,11 @@ const themeLabel: Record<Lang, string> = {
             <li class="has-children">
               <button
                 type="button"
-                class:list={{ active: groupActive(group) }}
+                class:list={{ active: groupActiveItem(group) }}
+                style={
+                  groupActiveItem(group) &&
+                  `--icon-c: var(--c-${groupActiveItem(group)!.icon})`
+                }
                 aria-haspopup="true"
               >
                 <Icon name={group.icon} />
