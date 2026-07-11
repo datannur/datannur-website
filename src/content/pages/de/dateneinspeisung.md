@@ -5,9 +5,9 @@ description: datannurpy scannt Dateien und Datenbanken, um den Katalog mit einem
 icon: plug-circle-check
 ---
 
-Der datannur-Katalog beruht auf strukturierten Metadaten, die die Datensätze, ihre Variablen, ihre Enumerationen, ihre Organisation und ihre Dokumentation beschreiben. Diese Metadaten können auf verschiedene Weise erstellt werden: durch einen automatisierten Scan, manuell gepflegte Dateien oder bereits in der Organisation vorhandene Drittwerkzeuge.
+Der datannur-Katalog beruht auf strukturierten Metadaten, die die Datensätze, ihre Variablen, ihre Aufzählungen, ihre Organisation und ihre Dokumentation beschreiben. Diese Metadaten können auf verschiedene Weise erstellt werden: durch einen automatisierten Scan, manuell gepflegte Dateien oder bereits in der Organisation vorhandene Werkzeuge von Drittanbietern.
 
-Die Herausforderung besteht nicht nur darin, einen Katalog anzuzeigen, sondern ihn im Zeitverlauf zuverlässig zu befüllen, zu aktualisieren und anzureichern. datannur verfolgt dafür einen modularen Ansatz: auf der einen Seite die Katalogoberfläche, auf der anderen ein Scan- und Einspeisungsmodul. Ein Python-Paket und eine Konfigurationsdatei genügen, um den Katalog zu befüllen — ohne Server und ohne dedizierte Infrastruktur.
+Die Herausforderung besteht nicht nur darin, einen Katalog anzuzeigen, sondern ihn im Zeitverlauf zuverlässig zu befüllen, zu aktualisieren und anzureichern. datannur verfolgt dafür einen modularen Ansatz: auf der einen Seite die Katalogoberfläche, auf der anderen ein Scan- und Einspeisungsmodul. Ein Python-Paket und eine Konfigurationsdatei genügen, um den Katalog zu befüllen – ohne Server und ohne dedizierte Infrastruktur.
 
 ## Eine modulare Architektur
 
@@ -17,13 +17,13 @@ Diese Trennung ermöglicht grosse Flexibilität in der Nutzung: Jedes Modul kann
 
 ## Die Rolle von datannurpy
 
-datannurpy ist das Python-Paket, das das Scannen und die Einspeisung des Katalogs erleichtert. Es ermöglicht, Dateien, Datenbanken oder bestehende Ordnerstrukturen zu erkunden, daraus Schemata und nützliche Metadaten zu extrahieren und dann eine Metadatenbasis zu erzeugen, die von der datannur-Oberfläche oder anderen Werkzeugen genutzt werden kann.
+datannurpy ist das Python-Paket, das das Scannen und die Einspeisung des Katalogs erleichtert. Es ermöglicht, Dateien, Datenbanken oder bestehende Ordnerstrukturen zu erkunden, daraus Schemata und nützliche Metadaten zu extrahieren und dann eine Metadatenbank zu erzeugen, die von der datannur-Oberfläche oder anderen Werkzeugen genutzt werden kann.
 
-Seine Rolle besteht nicht nur darin, Quellen zu lesen, sondern auch die Informationen zu strukturieren: Erkennung von Datasets, Variablen und Enumerationen, Berechnung deskriptiver Statistiken und Häufigkeiten, Verfolgung der Entwicklung zwischen den Scans, Zusammenführung mit manuell gepflegten Metadaten, dann Export in eine Metadatenbank oder eine vollständige, einsatzbereite Anwendung.
+Seine Rolle besteht nicht nur darin, Quellen zu lesen, sondern auch die Informationen zu strukturieren: Erkennung von Datasets, Variablen und Aufzählungen, Berechnung deskriptiver Statistiken und Häufigkeiten, Verfolgung der Entwicklung zwischen den Scans, Zusammenführung mit manuell gepflegten Metadaten, dann Export in eine Metadatenbank oder eine vollständige, einsatzbereite Anwendung.
 
 ## Unterstützte Quellen
 
-datannurpy ist mit der grossen Mehrheit der tabellarischen Datenquellen und relationalen Datenbanken kompatibel. Es kann sowohl tabellarische Dateien wie CSV oder Excel scannen als auch spaltenorientierte Formate wie Parquet, Delta Lake, Apache Iceberg oder partitionierte Verzeichnisse. Es unterstützt zudem mehrere Statistikformate wie SAS, SPSS oder Stata.
+datannurpy ist mit den allermeisten tabellarischen Datenquellen und relationalen Datenbanken kompatibel. Es kann sowohl tabellarische Dateien wie CSV oder Excel scannen als auch spaltenorientierte Formate wie Parquet, Delta Lake, Apache Iceberg oder partitionierte Verzeichnisse. Es unterstützt zudem mehrere Statistikformate wie SAS, SPSS oder Stata.
 
 Bei den Datenbanken kann es sich mit gängigen relationalen Systemen wie PostgreSQL, MySQL, Oracle, SQL Server, SQLite oder DuckDB verbinden. Es kann auch mit entfernten oder Cloud-Speichern arbeiten sowie mit manuell gepflegten Metadaten, um Automatisierung und fachliche Anreicherung zu kombinieren.
 
@@ -35,6 +35,6 @@ Es kann ausserdem Dateien, die zu derselben Zeitreihe gehören, automatisch grup
 
 datannurpy kann je nach Kontext auf verschiedene Weise genutzt werden. Es lässt sich in ein Python-Skript integrieren, über eine YAML-Konfigurationsdatei steuern oder in eine grössere, bereits in der Organisation bestehende Pipeline einfügen. Diese Flexibilität erlaubt sowohl einen schnellen ersten Scan als auch die regelmässige Aktualisierung eines bestehenden Katalogs.
 
-Das Paket bleibt bewusst leichtgewichtig: kein Server zu betreiben, keine dedizierte Infrastruktur, keine vorgegebene Architektur. Es unterstützt in der Praxis nützliche Mechanismen wie inkrementelles Scannen, die Verfolgung von Änderungen zwischen zwei Exporten oder den direkten Export in eine Metadatenbank oder eine vollständige datannur-Anwendung. So erleichtert es die Aktualisierung des Katalogs im Zeitverlauf, in einem portablen, leichten und wiederverwendbaren Format.
+Das Paket bleibt bewusst leichtgewichtig: kein Serverbetrieb, keine dedizierte Infrastruktur, keine vorgegebene Architektur. Es unterstützt in der Praxis nützliche Mechanismen wie inkrementelles Scannen, die Verfolgung von Änderungen zwischen zwei Exporten oder den direkten Export in eine Metadatenbank oder eine vollständige datannur-Anwendung. So erleichtert es die Aktualisierung des Katalogs im Zeitverlauf, in einem portablen, leichten und wiederverwendbaren Format.
 
 datannurpy ist auf [PyPI](https://pypi.org/project/datannurpy/) und [GitHub](https://github.com/datannur/datannurpy) verfügbar.

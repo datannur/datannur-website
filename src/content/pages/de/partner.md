@@ -1,11 +1,11 @@
 ---
 key: partners
 title: Partner — Die Einführung von datannur begleiten
-description: Begleiten Sie Ihre Kunden bei Inventar, Dokumentation, Qualität und Governance ihrer Daten mit datannur, einem leichtgewichtigen, souveränen Open-Source-Katalog
+description: Begleiten Sie Ihre Kunden bei Inventarisierung, Dokumentation, Qualität und Governance ihrer Daten mit datannur, dem leichten, souveränen Open-Source-Katalog
 icon: handshake-simple
 ---
 
-datannur richtet sich zunächst an Organisationen, die Datensätze erstellen, publizieren oder pflegen. Sie können es direkt nutzen, um ihre Quellen zu inventarisieren, ihre Variablen zu dokumentieren, die Qualität zu prüfen und die Publikation, BI oder KI vorzubereiten.
+datannur richtet sich in erster Linie an Organisationen, die Datensätze erstellen, publizieren oder pflegen. Sie können es direkt nutzen, um ihre Quellen zu inventarisieren, ihre Variablen zu dokumentieren, die Qualität zu prüfen und die Publikation, BI oder KI vorzubereiten.
 
 Partner spielen eine ergänzende Rolle, wenn der Kunde bei der Einführung, der Schulung oder der Strukturierung seiner Praktiken unterstützt werden möchte. Sie können datannur auch in ihren eigenen Audit-, Qualitätsdiagnose-, Open-Data-Vorbereitungs- oder Governance-Mandaten einsetzen, wenn das Werkzeug die Arbeit vor Ort konkret unterstützt.
 
@@ -19,7 +19,7 @@ datannur unterstützt diese Vorhaben mit einem quelloffenen, leichtgewichtigen u
 
 Die Anwendungsfälle liegen vor allem auf Kundenseite, können aber von einem Partner angestossen oder erleichtert werden:
 
-- Inventar und Kartierung der Datenquellen
+- Inventarisierung und Kartierung der Datenquellen
 - Dokumentation der Variablen und Metadaten
 - Qualitätsdiagnose der Datensätze
 - Vorbereitung der Open-Data-Publikation
@@ -39,4 +39,4 @@ In diesem Sinne arbeitet datannur insbesondere mit [idon](https://www.idon.ch/) 
 
 ## Partner werden
 
-Begleiten Sie Organisationen bei ihren Daten, ihrer Governance, ihrer Compliance oder ihren Open-Data-, BI- oder KI-Projekten? [Kontaktieren Sie uns](/de/kontakt/), um über Anwendungsfälle, Unterstützungsbedarf und mögliche erste Kooperationen zu sprechen.
+Begleiten Sie Organisationen beim Umgang mit ihren Daten, bei Governance und Compliance oder bei Open-Data-, BI- oder KI-Projekten? [Kontaktieren Sie uns](/de/kontakt/), um über Anwendungsfälle, Unterstützungsbedarf und mögliche erste Kooperationen zu sprechen.

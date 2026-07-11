@@ -1,6 +1,6 @@
 ---
 key: support
-title: Support — Kontinuität und Weiterentwicklung des Produkts
+title: Support — Kontinuität, Zuverlässigkeit und Weiterentwicklung
 description: Der Herstellersupport von datannur garantiert Kontinuität, Zuverlässigkeit und Weiterentwicklung des Produkts für Partner und nutzende Organisationen.
 icon: life-ring
 plans:
@@ -16,12 +16,12 @@ plans:
   - name: Erweitert
     price: CHF 10'000
     period: / Jahr
-    text: Für eine strukturierende Nutzung mit engerer Begleitung.
+    text: Für eine zentrale Nutzung mit engerer Begleitung.
     features:
       - Korrekturen und Updates
       - Technische Unterstützung der Stufe 2
       - Prioritäts-Support
-      - Regelmässige Verfolgung der Produktbedürfnisse
+      - Regelmässiger Austausch zu den Produktbedürfnissen
       - Priorisierung der Bedürfnisse in der Roadmap
     cta: { label: Kontaktieren Sie uns, href: /de/kontakt/ }
 ---

@@ -30,7 +30,7 @@ Zwei Demos sind direkt im Browser zugänglich:
 
 ### Lokal
 
-datannur kann auch lokal oder auf einem Netzlaufwerk laufen. Die fiktive Demo kann als eigenständiger Ordner heruntergeladen und dann direkt im Browser über die Datei index.html geöffnet werden — ohne Installation und ohne Internetverbindung.
+datannur kann auch lokal oder auf einem Netzlaufwerk laufen. Die fiktive Demo kann als eigenständiger Ordner heruntergeladen und dann direkt im Browser über die Datei index.html geöffnet werden – ohne Installation und ohne Internetverbindung.
 
 [Demo herunterladen](https://github.com/datannur/datannur/releases/latest/download/datannur-app-latest.zip)
 

@@ -1,6 +1,6 @@
 ---
 key: project
-title: Projekt — Eine konkrete Antwort auf einen realen Bedarf
+title: Projekt — Eine konkrete Antwort auf einen Bedarf aus der Praxis
 description: Entdecken Sie die Ursprünge von datannur, seine Verankerung in der Praxis, seinen Open-Source-Ansatz und sein Herstellermodell mit einem Partner-Ökosystem.
 icon: compass
 ---
@@ -11,7 +11,7 @@ datannur ist ein in der Schweiz entwickeltes Open-Source-Projekt, das die Dateng
 
 datannur wird von seinem Gründer, Bassim Matar, entwickelt und gepflegt. Das Projekt entstand aus der direkten Erfahrung mit den Herausforderungen der Verwaltung, Strukturierung und Dokumentation von Daten im öffentlichen Sektor, an der Schnittstelle von Softwareentwicklung und Fachbedürfnissen.
 
-Sein Ausgangspunkt ist einfach: In Umgebungen mit realen Bedürfnissen machen die üblichen Bedingungen für die Einführung von IT-Lösungen diese Art von Werkzeug oft schwer umsetzbar. Lange Zyklen, technische Komplexität, hohe Kosten und starke Abhängigkeit von grossen IT-Vorhaben bremsen das Entstehen von Lösungen, die für das Fachgeschäft dennoch nützlich wären. datannur wurde konzipiert, um schneller voranzukommen — mit einem leichten, portablen Werkzeug, das ohne vorherige dedizierte Infrastruktur nutzbar ist.
+Sein Ausgangspunkt ist einfach: In Umgebungen mit realen Bedürfnissen erschweren die üblichen Bedingungen für die Einführung von IT-Lösungen den Einsatz dieser Art von Werkzeug erheblich. Lange Zyklen, technische Komplexität, hohe Kosten und starke Abhängigkeit von grossen IT-Vorhaben bremsen das Entstehen von Lösungen, die für die Fachbereiche dennoch nützlich wären. datannur wurde konzipiert, um schneller voranzukommen – mit einem leichten, portablen Werkzeug, das ohne vorherige dedizierte Infrastruktur nutzbar ist.
 
 Heute ist es seit über zwei Jahren in einem kantonalen statistischen Amt produktiv im Einsatz.
 
@@ -23,6 +23,6 @@ Dieser Ansatz ermöglicht es Organisationen, die Kontrolle über ihre Metadaten,
 
 ## Ein Herstellermodell mit Partnern
 
-datannur folgt einem Herstellermodell, das sich auf ein Netzwerk von Partnern stützt. Die Partner — Berater, DSGVO-Experten, Integratoren, IT-Dienstleister — nutzen das Werkzeug in ihren Mandaten und können es anschliessend als Governance-Grundlage an ihre Kunden weitergeben.
+datannur folgt einem Herstellermodell, das sich auf ein Netzwerk von Partnern stützt. Die Partner – Berater, DSGVO-Experten, Integratoren, IT-Dienstleister – nutzen das Werkzeug in ihren Mandaten und können es anschliessend als Governance-Grundlage an ihre Kunden weitergeben.
 
-In diesem Modell sind die Rollen komplementär: Die Partner übernehmen die fachliche Begleitung, während der Hersteller die Kontinuität, Zuverlässigkeit und Weiterentwicklung des Produkts garantiert. Der Anspruch von datannur ist es, die Datengovernance für heute noch schlecht ausgerüstete Organisationen zugänglicher zu machen — Verwaltungen, KMU, NGOs, Universitäten, Labore — eingebettet in ein nachhaltiges Partner-Ökosystem, zuerst in der Schweiz und dann darüber hinaus.
+In diesem Modell sind die Rollen komplementär: Die Partner übernehmen die fachliche Begleitung, während der Hersteller die Kontinuität, Zuverlässigkeit und Weiterentwicklung des Produkts garantiert. Der Anspruch von datannur ist es, die Datengovernance für heute noch schlecht ausgerüstete Organisationen zugänglicher zu machen – Verwaltungen, KMU, NGOs, Universitäten, Labore – eingebettet in ein nachhaltiges Partner-Ökosystem, zuerst in der Schweiz und dann darüber hinaus.

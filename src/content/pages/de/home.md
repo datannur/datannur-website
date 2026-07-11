@@ -7,20 +7,20 @@ hero:
   title: Der quelloffene, leichte und souveräne Datenkatalog
   text: datannur scannt Ihre Datenquellen und erzeugt einen<br />strukturierten, interoperablen Katalog – unter Ihrer Kontrolle.
   image: /images/folder-page-folder-tab.en.jpg
-  imageAlt: datannur-Oberfläche – Ordnerseite „Public administration“
+  imageAlt: datannur-Oberfläche – Ordnerseite «Public administration»
   buttons:
     - { label: Demo, href: /de/demo/, icon: desktop }
     - { label: Kontakt, href: /de/kontakt/, icon: comments, style: outline }
 pillars:
   - icon: feather-pointed
     title: Leichtgewichtig
-    text: Ohne schwere Infrastruktur und komplexe Konfiguration ist datannur leicht zu nutzen und zu warten.
+    text: Ohne schwere Infrastruktur und komplexe Konfiguration ist datannur leicht zu nutzen und zu warten
   - icon: globe
     title: Universell
     text: "Lokal, auf einem Server, in der Cloud oder auf einem Netzlaufwerk: ein einfacher Ordner, der im Browser geöffnet wird"
   - icon: arrows-up-down-left-right
     title: Offen
-    text: Open Source und kompatibel mit vielfältigen Quellen – datannur ist wiederverwendbar und leicht zu integrieren.
+    text: Open Source und kompatibel mit vielfältigen Quellen – datannur ist wiederverwendbar und leicht zu integrieren
   - icon: crown
     title: Souverän
     text: Konzipiert, um Ihre Autonomie, Ihre Kontrolle und Ihre Vertraulichkeitsanforderungen zu stärken
@@ -39,7 +39,7 @@ partners:
   icon: handshake-simple
   title: Partner für eine erfolgreiche Einführung
   paragraphs:
-    - datannur richtet sich zunächst an Organisationen, die Datensätze erstellen, publizieren oder pflegen. Sie können es direkt nutzen, um ihre Quellen zu inventarisieren, Variablen zu dokumentieren, die Qualität zu prüfen und Daten für Publikation, BI oder KI vorzubereiten.
+    - datannur richtet sich in erster Linie an Organisationen, die Datensätze erstellen, publizieren oder pflegen. Sie können es direkt nutzen, um ihre Quellen zu inventarisieren, Variablen zu dokumentieren, die Qualität zu prüfen und Daten für Publikation, BI oder KI vorzubereiten.
     - Geht der Bedarf über die eigenständige Nutzung hinaus, können Beratungsunternehmen, Integratoren, Open-Data-, DSGVO- oder Datenmanagement-Fachleute die Einführung, die Schulung und die Strukturierung der Praktiken begleiten.
     - Der Kunde behält die Kontrolle über seine Daten. Der Partner bringt sein Fachwissen ein. datannur liefert das leichtgewichtige, souveräne Open-Source-Werkzeug – mit Herstellersupport, sobald die Nutzung regelmässig wird.
   note: <em>In der Schweiz entwickelt, ist datannur seit über zwei Jahren in einem kantonalen statistischen Amt produktiv im Einsatz.</em>

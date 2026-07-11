@@ -7,10 +7,10 @@ icon: screwdriver-wrench
 
 datannur vereint in einer einzigen Oberfläche die wesentlichen Funktionen eines Datenkatalogs: Navigation, Dokumentation, Erkundung und Nutzung der Metadaten. Das Werkzeug ermöglicht es, Datensätze wiederzufinden, ihre Struktur zu verstehen, ihre Abhängigkeiten zu erkunden und ihre Entwicklung im Zeitverlauf zu verfolgen.
 
-Das Ziel ist nicht nur, Informationen zu speichern, sondern Daten lesbarer, nutzbarer und im Alltag einfacher zu steuern zu machen.
+Das Ziel ist nicht nur, Informationen zu speichern, sondern Daten lesbarer, nutzbarer und im Alltag einfacher steuerbar zu machen.
 
 - **[Navigation](#navigation)**: [Suche](#suche), [Filter](#filter), [Sortierung](#sortierung), [Baumstruktur](#baumstruktur), [KI-Assistent](#ki-assistent)
-- **[Information](#information)**: [Dokumentation](#doc), [Fachglossar](#fachglossar), [Abhängigkeiten](#abhängigkeiten-lineage), [statistische Zusammenfassung](#statistische-zusammenfassung), [Datenvorschau](#datenvorschau), [ähnliche Enumerationen](#ähnliche-enumerationen), [Änderungshistorie](#änderungshistorie)
+- **[Information](#information)**: [Dokumentation](#doc), [Fachglossar](#fachglossar), [Abhängigkeiten](#abhängigkeiten-lineage), [statistische Zusammenfassung](#statistische-zusammenfassung), [Datenvorschau](#datenvorschau), [ähnliche Aufzählungen](#ähnliche-aufzählungen), [Änderungshistorie](#änderungshistorie)
 - **[Nutzung](#nutzung)**: [Favoriten](#favoriten), [Personalisierung](#personalisierung), [Download](#download), [Interoperabilität](#interoperabilität), [interne Sicht](#interne-sicht)
 
 ## Navigation
@@ -19,8 +19,8 @@ datannur erlaubt es, den Katalog auf mehrere sich ergänzende Arten zu durchsuch
 
 Diese vielfältige Navigation macht den Katalog sowohl für eine breite Erkundung als auch für gezielte Bedürfnisse nutzbar: einen Datensatz finden, eine Variable identifizieren, einen Verantwortlichen ausfindig machen oder einen zusammenhängenden Dokumentenbestand durchsuchen.
 
-![Ordner „Public Admin“ – Ordner-Tab](/images/folder-page-folder-tab.en.jpg)
-*Ordner „Public Admin“ – Ordner-Tab*
+![Ordner «Public Admin» – Ordner-Tab](/images/folder-page-folder-tab.en.jpg)
+*Ordner «Public Admin» – Ordner-Tab*
 
 ### Suche
 
@@ -39,17 +39,17 @@ Jede Tabelle bietet Filter pro Spalte, um die Ergebnisse präziser einzugrenzen 
 ![Datasets-Tab mit zwei aktiven Filtern](/images/datasets-tab-filter.webp)
 *Datasets-Tab mit zwei aktiven Filtern*
 
-Ein globaler Filter erlaubt es zudem, bestimmte Kategorien von Datasets katalogweit ein- oder auszuschliessen, zum Beispiel nach ihrem Öffnungsstatus oder ihrem Verarbeitungsgrad.
+Ein globaler Filter erlaubt es zudem, bestimmte Kategorien von Datasets katalogweit ein- oder auszuschliessen, zum Beispiel nach ihrem Offenheitsgrad oder ihrem Verarbeitungsgrad.
 
 ### Sortierung
 
-Tabellen können von jeder Spalte aus auf- oder absteigend sortiert werden. Diese Sortierung kombiniert sich natürlich mit den Filtern, um die Erkundung und Analyse der Daten zu erleichtern.
+Tabellen können von jeder Spalte aus auf- oder absteigend sortiert werden. Diese Sortierung lässt sich nahtlos mit den Filtern kombinieren, um die Erkundung und Analyse der Daten zu erleichtern.
 
 ### Baumstruktur
 
 datannur stützt sich auf eine Baumstruktur, um Organisationen, Ordner und Schlagwörter zu organisieren. Jedes Element kann Unterelemente über mehrere Ebenen enthalten, was es ermöglicht, komplexe Organisationen originalgetreu abzubilden.
 
-Jeder Knoten der Baumstruktur verfügt über eine eigene Seite und wirkt wie eine Teilmenge des Katalogs. So lassen sich sowohl sein Inhalt und sein Kontext als auch die ihm zugeordneten Datasets erkunden. In Kombination mit Sortierung und Filtern bietet diese Struktur eine ebenso einfache wie leistungsfähige Navigation.
+Jeder Knoten der Baumstruktur verfügt über eine eigene Seite und verhält sich wie eine Teilmenge des Katalogs. So lassen sich sowohl sein Inhalt und sein Kontext als auch die ihm zugeordneten Datasets erkunden. In Kombination mit Sortierung und Filtern bietet diese Struktur eine ebenso einfache wie leistungsfähige Navigation.
 
 ![Info-Seite – Organisation: Gesamtübersicht](/images/about-page-diagramm.en.jpg)
 *Info-Seite – Organisation: Gesamtübersicht*
@@ -64,9 +64,9 @@ In die Oberfläche integriert, ergänzt er die klassischen Such-, Filter- und Er
 
 ## Information
 
-Jede einem Katalogelement gewidmete Seite enthält einen Info-Tab, der seine wichtigsten Metadaten zusammenfasst. Dort finden sich seine spezifischen Attribute — etwa eine Beschreibung, ein Aktualisierungsdatum oder ein Kontakt — sowie die Elemente, mit denen es verknüpft ist, wie seine Schlagwörter, sein Ordner oder verbundene Organisationen.
+Jede einem Katalogelement gewidmete Seite enthält einen Info-Tab, der seine wichtigsten Metadaten zusammenfasst. Dort finden sich seine spezifischen Attribute – etwa eine Beschreibung, ein Aktualisierungsdatum oder ein Kontakt – sowie die Elemente, mit denen es verknüpft ist, wie seine Schlagwörter, sein Ordner oder verbundene Organisationen.
 
-Die anderen Tabs geben Zugriff auf die Elemente, die es enthält oder mit denen es verbunden ist, wie Datasets, Variablen, Enumerationen oder Dokumente.
+Die anderen Tabs geben Zugriff auf die Elemente, die es enthält oder mit denen es verbunden ist, wie Datasets, Variablen, Aufzählungen oder Dokumente.
 
 ![Ordner – Info-Tab](/images/folder-about-tab.en.jpg)
 *Ordner – Info-Tab*
@@ -79,9 +79,9 @@ Der Katalog kann seine wichtigsten Elemente mit einer oder mehreren bestehenden 
 
 ### Fachglossar
 
-datannur kann auch ein Fachglossar in Form von Konzepten enthalten. Diese Konzepte dienen dazu, bestimmte in den Daten verwendete Begriffe präzise zu definieren und Mehrdeutigkeiten über die genaue Bedeutung einer Variable auszuräumen.
+datannur kann auch ein Fachglossar in Form von Konzepten enthalten. Diese Konzepte dienen dazu, bestimmte in den Daten verwendete Begriffe präzise zu definieren und Mehrdeutigkeiten hinsichtlich der genauen Bedeutung einer Variable auszuräumen.
 
-Jedes Konzept verfügt über eine eigene Seite, kann hierarchisch organisiert, durch Schlagwörter oder Dokumente angereichert und mit den betreffenden Variablen verknüpft werden. Diese semantische Ebene ergänzt die klassischen Metadaten um eine fachlichere Erklärungsebene.
+Jedes Konzept verfügt über eine eigene Seite, kann hierarchisch organisiert, durch Schlagwörter oder Docs angereichert und mit den betreffenden Variablen verknüpft werden. Diese semantische Ebene ergänzt die klassischen Metadaten um eine fachlichere Erklärungsebene.
 
 ### Abhängigkeiten (Lineage)
 
@@ -91,7 +91,7 @@ Diese Beziehungen machen die Transformationsketten innerhalb des Katalogs sichtb
 
 ### Statistische Zusammenfassung
 
-Der Statistik-Tab bietet eine visuelle Zusammenfassung der im Katalog verfügbaren Informationen. Je nach Elementtyp kann er sowohl aggregierte Übersichten anzeigen — etwa die Anzahl der Variablen pro Dataset oder die mit einem Ordner verknüpften Schlagwörter — als auch feinere deskriptive Statistiken auf Variablenebene.
+Der Statistik-Tab bietet eine visuelle Zusammenfassung der im Katalog verfügbaren Informationen. Je nach Elementtyp kann er sowohl aggregierte Übersichten anzeigen – etwa die Anzahl der Variablen pro Dataset oder die mit einem Ordner verknüpften Schlagwörter – als auch feinere deskriptive Statistiken auf Variablenebene.
 
 Für Variablen kann datannur insbesondere die Häufigkeit der Werte sowie statistische Kennzahlen wie Minimum, Maximum, Mittelwert oder Standardabweichung darstellen. Diese Informationen unterstützen die Erkundung, die Konsistenzprüfung und das schnelle Verständnis des Dateninhalts.
 
@@ -99,9 +99,9 @@ Für Variablen kann datannur insbesondere die Häufigkeit der Werte sowie statis
 
 Für kompatible Datensätze zeigt ein eigener Tab eine tabellarische Vorschau des Inhalts an. Diese Vorschau bietet einen ersten Einblick in die Daten und stützt sich auf die integrierten Sortier- und Filterfunktionen, um die Einträge effizienter zu durchsuchen.
 
-### Ähnliche Enumerationen
+### Ähnliche Aufzählungen
 
-Die Harmonisierung von Enumerationen über mehrere Datensätze hinweg kann schnell mühsam werden. Um diese Arbeit zu vereinfachen, bietet datannur einen Tab, der Enumerationen nach ihrer Ähnlichkeit einander gegenüberstellt und hilft, Dubletten, nahe Varianten oder teilweise Überschneidungen zu erkennen.
+Die Harmonisierung von Aufzählungen über mehrere Datensätze hinweg kann schnell mühsam werden. Um diese Arbeit zu vereinfachen, bietet datannur einen Tab, der Aufzählungen nach ihrer Ähnlichkeit einander gegenüberstellt und hilft, Dubletten, nahe Varianten oder teilweise Überschneidungen zu erkennen.
 
 Diese Ansicht hilft, Abweichungen in den Bezeichnungen zu erkennen, Werte zu vereinheitlichen und die Gesamtkonsistenz des Katalogs zu verbessern.
 
@@ -125,7 +125,7 @@ Alle Katalogelemente können mit einem Klick zu den Favoriten hinzugefügt werde
 
 Eine Einstellungsseite erlaubt es, mehrere Aspekte der Oberfläche anzupassen, etwa den Dunkelmodus, die angezeigte Tiefe der Baumstruktur oder andere visuelle Einstellungen. Sie ermöglicht es auch, die lokal gespeicherten Nutzungsdaten zurückzusetzen, wie Favoriten, Suchanfragen, Einstellungen oder Protokolle.
 
-Ein eigener Tab fasst zudem die Nutzungsprotokolle zusammen — besuchte Seiten, Suchanfragen, Favoriten — sowie eine statistische Übersicht, um die wichtigsten Nutzungsmuster zu visualisieren.
+Ein eigener Tab vereint zudem die Nutzungsprotokolle – besuchte Seiten, Suchanfragen, Favoriten – sowie eine statistische Übersicht, um die wichtigsten Nutzungsmuster zu visualisieren.
 
 ### Download
 
@@ -137,7 +137,7 @@ Die Tabellen des Katalogs lassen sich ebenfalls einfach exportieren, entweder du
 
 datannur kann die Metadaten des Katalogs über eine REST-API bereitstellen und einen DCAT-Export erzeugen. Diese Mechanismen ermöglichen es, den Katalog in andere Werkzeuge zu integrieren, Open-Data-Portale zu speisen oder die Metadaten in bestehenden Verarbeitungsketten wiederzuverwenden.
 
-Für Geodaten sind die räumlichen Metadaten (Koordinatensystem, Ausdehnung, Auflösung) normalisiert und können von Geodateninfrastrukturen wie INSPIRE oder GeoCAT geerntet werden.
+Für Geodaten sind die räumlichen Metadaten (Koordinatensystem, Ausdehnung, Auflösung) normalisiert und können per Harvesting in Geodateninfrastrukturen wie INSPIRE oder GeoCAT eingebunden werden.
 
 ### Interne Sicht
 
