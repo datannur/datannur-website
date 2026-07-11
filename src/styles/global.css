@@ -98,6 +98,8 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: calc(var(--header-height) + 20px);
   background-color: var(--bg);
+  /* interactive elements carry their own states: no mobile tap veil */
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* only pages with the city background end on this grey */
