@@ -283,15 +283,22 @@ h4 {
 
 /* dropdown titles have no color of their own: neutral hover darkens to the
    heading tone, and while a child is hovered the title previews that child's
-   color (rules below) */
-.nav-list > li > button:not(.active):hover {
-  color: var(--heading);
-  background: color-mix(in srgb, var(--heading) 7%, transparent);
-}
+   color (rules below). Hover-only styles are gated to real pointers —
+   on touch a tap would leave them stuck on the title. */
+@media (hover: hover) {
+  .nav-list > li > button:not(.active):hover {
+    color: var(--heading);
+    background: color-mix(in srgb, var(--heading) 7%, transparent);
+  }
 
-.has-children:has(.sub-menu a:hover) > button {
-  color: var(--icon-c, var(--heading));
-  background: color-mix(in srgb, var(--icon-c, var(--heading)) 9%, transparent);
+  .has-children:has(.sub-menu a:hover) > button {
+    color: var(--icon-c, var(--heading));
+    background: color-mix(
+      in srgb,
+      var(--icon-c, var(--heading)) 9%,
+      transparent
+    );
+  }
 }
 
 /* dropdown menu arrow, rotates when opening */
