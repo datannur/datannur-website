@@ -10,7 +10,7 @@ interface Props {
   lang: Lang
   title: string
   description: string
-  entry?: PageEntry // absent pour les pages hors collection (404)
+  entry?: PageEntry // absent for pages outside the collection (404)
   ogImage?: string
 }
 const { lang, title, description, entry, ogImage } = Astro.props
@@ -19,7 +19,7 @@ const siteUrl = Astro.site!.href.replace(/\/$/, '')
 const path = entry ? pageMeta(entry).path : Astro.url.pathname
 const canonical = `${siteUrl}${path}`
 
-// URL par langue de la page courante (hreflang) ; x-default = anglais
+// per-language URLs of the current page (hreflang); x-default = English
 const alternates = entry ? await getAlternates(entry) : []
 const langUrls = entry
   ? langs.flatMap(l => {
@@ -45,7 +45,7 @@ const isHome = entry?.data.key === 'home'
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script is:inline>
-      // thème posé avant le premier rendu pour éviter tout flash
+      // theme set before the first render to avoid any flash
       let storedTheme = null
       try {
         storedTheme = localStorage.getItem('theme')

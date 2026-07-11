@@ -19,7 +19,7 @@ const { data } = entry
 const { Content } = await render(entry)
 const isHome = data.key === 'home'
 
-// « Section — Sous-titre » : rendu en deux lignes dans un seul h1 (SEO intact)
+// "Section — Subtitle": rendered as two lines within a single h1 (SEO intact)
 const [kicker, ...restTitle] = data.title.split(' — ')
 const titleMain = restTitle.join(' — ')
 ---

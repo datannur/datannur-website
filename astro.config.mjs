@@ -3,13 +3,13 @@ import { defineConfig } from 'astro/config'
 import sitemap from '@astrojs/sitemap'
 import { darkVariant } from './src/lib/dark-image.mjs'
 
-// Quatre sucres markdown :
-// - un paragraphe composé uniquement d'un lien devient un bouton (.md-btn) ;
-// - une image avec un titre "w=310" reçoit une largeur d'affichage fixe ;
-// - une image ayant une variante sombre sur disque est doublée : la version
-//   affichée dépend du thème (classes theme-light / theme-dark) ;
-// - ![alt](diagram:nom) insère le HTML de src/diagrams/<lang>/<nom>.html
-//   (diagrammes repris de l'app, nets et adaptés au thème).
+// Four markdown sugars:
+// - a paragraph made of a single link becomes a button (.md-btn);
+// - an image with a "w=310" title gets a fixed display width;
+// - an image with a dark variant on disk is duplicated: the displayed
+//   version depends on the theme (theme-light / theme-dark classes);
+// - ![alt](diagram:name) inserts the HTML of src/diagrams/<lang>/<name>.html
+//   (diagrams carried over from the app, crisp and theme-aware).
 function remarkSugar() {
   const isDiagram = c =>
     c.type === 'paragraph' &&

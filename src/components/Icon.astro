@@ -1,6 +1,6 @@
 ---
-// Icônes Font Awesome 6 Free inlinées en SVG (aucune webfont chargée).
-// Les fichiers .svg viennent de @fortawesome/fontawesome-free (licence CC BY 4.0).
+// Font Awesome 6 Free icons inlined as SVG (no webfont loaded).
+// The .svg files come from @fortawesome/fontawesome-free (CC BY 4.0 license).
 interface Props {
   name: string
   class?: string
@@ -13,14 +13,15 @@ const icons = import.meta.glob<string>('../icons/*.svg', {
   eager: true,
 })
 const raw = icons[`../icons/${name}.svg`]
-if (!raw) throw new Error(`Icône inconnue : ${name}`)
+if (!raw) throw new Error(`Unknown icon: ${name}`)
 
-// on retire le commentaire de licence et on injecte class + fill
+// strip the license comment and inject class + fill;
+// icon-c-<name> allows per-icon coloring where the CSS enables it (menu, titles)
 const svg = raw
   .replace(/<!--.*?-->/s, '')
   .replace(
     '<svg ',
-    `<svg class="icon${className ? ` ${className}` : ''}" fill="currentColor" aria-hidden="true" `
+    `<svg class="icon icon-c-${name}${className ? ` ${className}` : ''}" fill="currentColor" aria-hidden="true" `
   )
 ---
 

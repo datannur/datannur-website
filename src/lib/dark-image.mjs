@@ -1,8 +1,8 @@
-// Variante sombre d'une image : résolue au build en inspectant public/images.
-// Pour /images/stat-tab.fr.jpg on cherche, dans l'ordre :
-//   stat-tab.fr.dark.*  (variante propre à la langue, prioritaire)
-//   stat-tab.dark.*     (variante commune à toutes les langues)
-// L'extension peut différer de l'originale (png clair, webp sombre…).
+// Dark variant of an image: resolved at build time by inspecting public/images.
+// For /images/stat-tab.fr.jpg we look for, in order:
+//   stat-tab.fr.dark.*  (language-specific variant, takes priority)
+//   stat-tab.dark.*     (variant shared by all languages)
+// The extension may differ from the original (light png, dark webp…).
 import fs from 'node:fs'
 import path from 'node:path'
 

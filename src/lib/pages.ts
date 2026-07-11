@@ -3,7 +3,7 @@ import type { Lang } from '../i18n/ui'
 
 export type PageEntry = CollectionEntry<'pages'>
 
-// id = "<lang>/<slug>" ; le slug "home" correspond à la racine
+// id = "<lang>/<slug>"; the "home" slug maps to the root
 export function pageMeta(entry: PageEntry) {
   const [lang, ...rest] = entry.id.split('/')
   const slug = rest.join('/')
@@ -16,17 +16,17 @@ export async function getPages(lang: Lang): Promise<PageEntry[]> {
   return getCollection('pages', e => e.id.startsWith(`${lang}/`))
 }
 
-// chemin d'une page par clé de traduction, pour une langue donnée
+// path of a page by translation key, for a given language
 export async function pathByKey(key: string, lang: Lang): Promise<string> {
   const pages = await getCollection('pages')
   const entry = pages.find(
     e => e.data.key === key && pageMeta(e).lang === lang
   )
-  if (!entry) throw new Error(`Page introuvable : key=${key} lang=${lang}`)
+  if (!entry) throw new Error(`Page not found: key=${key} lang=${lang}`)
   return pageMeta(entry).path
 }
 
-// versions traduites d'une page (pour hreflang et le sélecteur de langue)
+// translated versions of a page (for hreflang and the language switcher)
 export async function getAlternates(entry: PageEntry): Promise<PageEntry[]> {
   const { lang } = pageMeta(entry)
   const pages = await getCollection('pages')

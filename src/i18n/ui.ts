@@ -21,8 +21,8 @@ export type NavGroup = {
   items: NavItem[]
 }
 
-// Structure du menu : les libellés des pages internes viennent de `navLabels`,
-// les URLs sont résolues depuis la collection (key -> slug localisé).
+// Menu structure: labels of internal pages come from `navLabels`,
+// URLs are resolved from the collection (key -> localized slug).
 export const nav: NavGroup[] = [
   {
     label: { en: 'Solution', fr: 'Solution', de: 'Lösung' },

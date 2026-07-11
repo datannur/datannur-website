@@ -1,6 +1,6 @@
 /* ==========================================================================
-   Diagrammes de structure — markup et styles repris de l'app datannur
-   (extraits de dev.datannur.com/about, fichiers dans src/diagrams/)
+   Structure diagrams — markup and styles carried over from the datannur app
+   (extracted from dev.datannur.com/about, files in src/diagrams/)
    ========================================================================== */
 
 .simple-diagram-block {
@@ -133,7 +133,7 @@ a.internal-link:hover .simple-diagram-node-frequency, .simple-diagram-node-frequ
 .simple-diagram-node-id-donnees_dataset:hover, .simple-diagram-node-id-contexte_dataset:hover { color: var(--color-1); border-color: color-mix(in srgb, var(--color-2) 78%, var(--background-1)); }
 .simple-diagram-block { text-align: center; margin-bottom: 40px; }
 
-/* icônes colorées selon leur entité (comme dans le reste de l'app) */
+/* icons colored by their entity (as in the rest of the app) */
 .simple-diagram-node .icon-organization { color: rgb(98, 93, 140); }
 .simple-diagram-node .icon-folder { color: rgb(182, 139, 76); }
 .simple-diagram-node .icon-tag { color: rgb(57, 100, 150); }

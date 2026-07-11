@@ -17,7 +17,7 @@ const { lang, entry } = Astro.props
 const homePath = await pathByKey('home', lang)
 const currentPath = entry ? pageMeta(entry).path : undefined
 
-// le sélecteur de langue pointe vers la page traduite, pas vers l'accueil
+// the language switcher points to the translated page, not the homepage
 const alternates = entry ? await getAlternates(entry) : []
 const langPath = (l: Lang) => {
   if (l === lang) return currentPath ?? homePath
@@ -169,16 +169,16 @@ const themeLabel: Record<Lang, string> = {
       ? 'dark'
       : 'light'
     try {
-      // choix identique au système : on l'oublie pour continuer à le suivre
+      // same choice as the system: forget it so we keep following the system
       if (next === system) localStorage.removeItem('theme')
       else localStorage.setItem('theme', next)
     } catch {}
   })
 
-  // changement de langue : on retrouve le même endroit dans la page traduite.
-  // Les pages traduites ont la même structure : on repère le premier élément
-  // visible sous le header (index + position dans le viewport) et on cale la
-  // page d'arrivée sur son homologue. Ratio global en secours.
+  // language switch: land at the same spot in the translated page.
+  // Translated pages share the same structure: we locate the first element
+  // visible below the header (index + viewport position) and align the
+  // destination page on its counterpart. Global ratio as a fallback.
   const anchorEls = () =>
     document.querySelectorAll(
       'main h1, main h2, main h3, main h4, main p, main img, main li, main figure'
@@ -226,8 +226,8 @@ const themeLabel: Record<Lang, string> = {
     for (const evt of ['wheel', 'touchstart', 'keydown'])
       addEventListener(evt, mark, { once: true, passive: true })
     addEventListener('DOMContentLoaded', apply)
-    // les images lazy qui se chargent décalent la page : on suit sa hauteur
-    // un court instant, tant que l'utilisateur n'a pas repris la main
+    // lazy images loading in shift the page: we track its height for a
+    // short while, as long as the user has not taken over
     addEventListener('load', () => {
       if (userScrolled) return
       apply()

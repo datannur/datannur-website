@@ -8,9 +8,9 @@ const button = z.object({
   style: z.enum(['solid', 'outline']).default('solid'),
 })
 
-// Un fichier .md par page et par langue : src/content/pages/<lang>/<slug>.md
-// La langue et le slug sont déduits du chemin du fichier ("home" = racine).
-// La clé `key` lie les versions traduites d'une même page (hreflang, switch).
+// One .md file per page and per language: src/content/pages/<lang>/<slug>.md
+// The language and slug are derived from the file path ("home" = root).
+// The `key` field links the translated versions of a page (hreflang, switch).
 const pages = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/pages' }),
   schema: z.object({
@@ -19,11 +19,11 @@ const pages = defineCollection({
     description: z.string(),
     icon: z.string().optional(),
     bg: z.enum(['city']).optional(),
-    // images du corps sans ombre ni arrondi (diagrammes)
+    // body images without shadow or rounded corners (diagrams)
     plainImages: z.boolean().optional(),
-    // bloc contact (email, téléphone, GitHub) affiché après le contenu
+    // contact block (email, phone, GitHub) shown after the content
     contactBlock: z.boolean().optional(),
-    // blocs structurés de la homepage
+    // structured blocks of the homepage
     hero: z
       .object({
         title: z.string(),
@@ -45,7 +45,7 @@ const pages = defineCollection({
           z.object({
             image: z.string(),
             alt: z.string(),
-            // libellé court affiché en légende et au survol des vignettes
+            // short label shown as caption and on thumbnail hover
             label: z.string(),
           })
         ),
@@ -59,7 +59,7 @@ const pages = defineCollection({
         note: z.string().optional(),
       })
       .optional(),
-    // offres de support (page support)
+    // support plans (support page)
     plans: z
       .array(
         z.object({

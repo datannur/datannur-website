@@ -1,7 +1,7 @@
 /* ==========================================================================
-   datannur.com — styles globaux
-   Charte reprise du site WordPress : accent #12999b, fonds clairs
-   Typo : Manrope (variable, auto-hébergée), repli pile système
+   datannur.com — global styles
+   Design carried over from the WordPress site: accent #12999b, light backgrounds
+   Type: Manrope (variable, self-hosted), system stack fallback
    ========================================================================== */
 
 @font-face {
@@ -32,12 +32,12 @@
   --text: #707070;
   --muted: #9a9a9a;
   --bg: #ffffff;
-  --bg-elev: #ffffff; /* surfaces surélevées : sous-menus */
-  --bg-soft: #f9f9f9; /* cartes (offres de support) */
+  --bg-elev: #ffffff; /* elevated surfaces: submenus */
+  --bg-soft: #f9f9f9; /* cards (support plans) */
   --border: #e8e8e8;
   --border-soft: rgba(0, 0, 0, 0.05);
-  --veil: 255, 255, 255; /* voile posé sur les images (header, légendes) */
-  --page-edge: #e7e8e6; /* visible en overscroll : gris des bords d'images */
+  --veil: 255, 255, 255; /* veil laid over images (header, captions) */
+  --page-edge: #e7e8e6; /* visible on overscroll: grey of the image edges */
   --switch-bg: #f1f3f4;
   --switch-active: #ffffff;
   --stage-a: #f4f7f7;
@@ -56,8 +56,8 @@
     'Helvetica Neue', Arial, sans-serif;
 }
 
-/* palette sombre : l'attribut est posé avant le rendu par le script du <head>
-   (localStorage, sinon préférence système) */
+/* dark palette: the attribute is set before render by the <head> script
+   (localStorage, else system preference) */
 [data-theme='dark'] {
   color-scheme: dark;
   --accent: #1cadaf;
@@ -98,7 +98,7 @@ html {
   background-color: var(--bg);
 }
 
-/* seules les pages à fond ville se terminent sur ce gris */
+/* only pages with the city background end on this grey */
 html:has(.city-bottom) {
   background-color: var(--page-edge);
 }
@@ -168,7 +168,7 @@ h4 {
   position: sticky;
   top: 0;
   z-index: 100;
-  /* le contenu commence sous le header : l'image de fond passe derrière */
+  /* content starts under the header: the background image runs behind it */
   margin-bottom: calc(-1 * var(--header-height));
   background: rgba(var(--veil), 0.88);
   backdrop-filter: blur(12px);
@@ -176,8 +176,8 @@ h4 {
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06), 0 4px 16px rgba(0, 0, 0, 0.04);
 }
 
-/* header transparent en haut de page, plein dès qu'on défile
-   (scroll-driven animation ; repli : header plein en permanence) */
+/* transparent header at the top of the page, solid once scrolled
+   (scroll-driven animation; fallback: header solid at all times) */
 @supports (animation-timeline: scroll()) {
   .site-header {
     background: transparent;
@@ -198,7 +198,7 @@ h4 {
     }
   }
 
-  /* menu mobile ouvert : barre pleine quelle que soit la position */
+  /* mobile menu open: solid bar whatever the scroll position */
   .site-header:has(.nav-toggle:checked) {
     animation: none;
     background: var(--bg);
@@ -206,7 +206,7 @@ h4 {
   }
 }
 
-/* trois zones : logo | menu centré | langues */
+/* three zones: logo | centered menu | languages */
 .header-inner {
   max-width: var(--container);
   margin: 0 auto;
@@ -279,7 +279,7 @@ h4 {
   background: var(--accent-soft);
 }
 
-/* flèche des menus déroulants, pivote à l'ouverture */
+/* dropdown menu arrow, rotates when opening */
 .caret {
   width: 7px;
   height: 7px;
@@ -296,7 +296,7 @@ h4 {
   transform: rotate(225deg) translate(-2px, -2px);
 }
 
-/* sous-menus */
+/* submenus */
 .sub-menu {
   position: absolute;
   top: calc(100% + 6px);
@@ -316,7 +316,7 @@ h4 {
   transition: 0.18s ease;
 }
 
-/* zone tampon pour ne pas perdre le survol entre bouton et menu */
+/* buffer zone so hover is not lost between button and menu */
 .sub-menu::before {
   content: '';
   position: absolute;
@@ -340,7 +340,6 @@ h4 {
 }
 
 .sub-menu a .icon {
-  color: var(--accent);
   width: 1.05em;
   height: 1.05em;
 }
@@ -351,7 +350,7 @@ h4 {
   background: var(--accent-soft);
 }
 
-/* zone droite : langues + thème */
+/* right zone: languages + theme */
 .header-tools {
   display: flex;
   align-items: center;
@@ -359,7 +358,7 @@ h4 {
   justify-self: end;
 }
 
-/* sélecteur de langue : contrôle segmenté */
+/* language selector: segmented control */
 .lang-switch {
   display: flex;
   align-items: center;
@@ -389,7 +388,7 @@ h4 {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
 }
 
-/* bascule clair/sombre : soleil qui se transforme en lune (masque SVG) */
+/* light/dark toggle: sun morphing into a moon (SVG mask) */
 .theme-toggle {
   display: flex;
   align-items: center;
@@ -456,20 +455,20 @@ h4 {
   cy: 6px;
 }
 
-/* sans JavaScript le bouton resterait inerte : on le masque */
+/* without JavaScript the button would stay inert: hide it */
 html:not([data-theme]) .theme-toggle {
   display: none;
 }
 
-/* diagrammes en mode sombre : inversés faute de variante dédiée
-   (logo et captures d'écran ont de vraies variantes, cf. fin de fichier) */
+/* diagrams in dark mode: inverted for lack of a dedicated variant
+   (logo and screenshots have real variants, see end of file) */
 [data-theme='dark'] .plain-images .page-body img {
   filter: invert(0.92) hue-rotate(180deg);
-  /* le blanc inversé (plus sombre que la page) disparaît dans le fond */
+  /* inverted white (darker than the page) blends into the background */
   mix-blend-mode: lighten;
 }
 
-/* burger mobile, animé en croix */
+/* mobile burger, animated into a cross */
 .nav-toggle {
   display: none;
 }
@@ -503,7 +502,7 @@ html:not([data-theme]) .theme-toggle {
 }
 
 @media (max-width: 991px) {
-  /* barre : logo | langues | burger — le menu devient un panneau */
+  /* bar: logo | languages | burger — the menu becomes a panel */
   .header-inner {
     display: flex;
     gap: 10px;
@@ -530,7 +529,7 @@ html:not([data-theme]) .theme-toggle {
   .main-nav {
     display: none;
     position: absolute;
-    justify-self: auto; /* annule le centrage desktop, sinon le panneau rétrécit */
+    justify-self: auto; /* cancels desktop centering, else the panel shrinks */
     top: var(--header-height);
     left: 0;
     right: 0;
@@ -546,7 +545,7 @@ html:not([data-theme]) .theme-toggle {
     overscroll-behavior: contain;
   }
 
-  /* menu ouvert : on défile dans le panneau, pas dans la page derrière */
+  /* menu open: scroll inside the panel, not the page behind it */
   body:has(.nav-toggle:checked) {
     overflow: hidden;
   }
@@ -689,7 +688,7 @@ html:not([data-theme]) .theme-toggle {
 }
 
 /* --------------------------------------------------------------------------
-   Piliers (homepage)
+   Pillars (homepage)
    -------------------------------------------------------------------------- */
 
 .pillars {
@@ -731,7 +730,7 @@ html:not([data-theme]) .theme-toggle {
 }
 
 /* --------------------------------------------------------------------------
-   Galerie (homepage)
+   Gallery (homepage)
    -------------------------------------------------------------------------- */
 
 .gallery {
@@ -747,13 +746,13 @@ html:not([data-theme]) .theme-toggle {
   margin: 0 0 40px;
 }
 
-/* visualiseur : une scène + vignettes, piloté par des radios cachées */
+/* viewer: one stage + thumbnails, driven by hidden radio inputs */
 .showcase {
   max-width: 1000px;
   margin: 0 auto;
 }
 
-/* la radio vit dans sa vignette : le focus reste sur place, pas de défilement */
+/* the radio lives inside its thumbnail: focus stays in place, no scrolling */
 .showcase input {
   position: absolute;
   width: 1px;
@@ -811,7 +810,7 @@ html:not([data-theme]) .theme-toggle {
   white-space: nowrap;
 }
 
-/* diapo active : vignette n cochée -> slide n */
+/* active slide: thumbnail n checked -> slide n */
 .showcase:has(.thumbs label:nth-of-type(1) input:checked) .slide:nth-of-type(1),
 .showcase:has(.thumbs label:nth-of-type(2) input:checked) .slide:nth-of-type(2),
 .showcase:has(.thumbs label:nth-of-type(3) input:checked) .slide:nth-of-type(3),
@@ -828,7 +827,7 @@ html:not([data-theme]) .theme-toggle {
   pointer-events: auto;
 }
 
-/* vignettes */
+/* thumbnails */
 .thumbs {
   display: flex;
   flex-wrap: wrap;
@@ -863,13 +862,13 @@ html:not([data-theme]) .theme-toggle {
   object-position: top;
 }
 
-/* vignette active */
+/* active thumbnail */
 .thumbs label:has(input:checked) {
   opacity: 1;
   box-shadow: 0 0 0 2px var(--accent), 0 4px 12px rgba(18, 153, 155, 0.25);
 }
 
-/* anneau de focus clavier */
+/* keyboard focus ring */
 .thumbs label:has(input:focus-visible) {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
@@ -892,7 +891,7 @@ html:not([data-theme]) .theme-toggle {
 }
 
 /* --------------------------------------------------------------------------
-   Pages internes
+   Internal pages
    -------------------------------------------------------------------------- */
 
 .page {
@@ -915,7 +914,7 @@ html:not([data-theme]) .theme-toggle {
   margin: 0 0 30px;
 }
 
-/* surtitre : la partie avant le « — » du titre, sur sa propre ligne */
+/* kicker: the part before the "—" in the title, on its own line */
 .title-kicker {
   display: block;
   font-size: 15px;
@@ -926,7 +925,7 @@ html:not([data-theme]) .theme-toggle {
   margin-bottom: 4px;
 }
 
-/* présent pour les moteurs et lecteurs d'écran, invisible à l'écran */
+/* present for search engines and screen readers, invisible on screen */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -936,7 +935,7 @@ html:not([data-theme]) .theme-toggle {
   white-space: nowrap;
 }
 
-/* icône du titre dans une pastille teal douce */
+/* title icon in a soft teal badge */
 .title-icon {
   width: 54px;
   height: 54px;
@@ -970,13 +969,13 @@ html:not([data-theme]) .theme-toggle {
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
 }
 
-/* diagrammes (page structure) : sans ombre, largeur fixée dans le markdown */
+/* diagrams (structure page): no shadow, width set in the markdown */
 .plain-images .page-body img {
   border-radius: 0;
   box-shadow: none;
 }
 
-/* légende sous une image : *texte en italique* sur la ligne suivante */
+/* caption under an image: *italic text* on the following line */
 .page-body p:has(> em:only-child),
 .page-body p:has(> img) {
   text-align: center;
@@ -990,7 +989,7 @@ html:not([data-theme]) .theme-toggle {
   margin-top: -8px;
 }
 
-/* un lien seul dans son paragraphe devient un bouton (page démo) */
+/* a link alone in its paragraph becomes a button (demo page) */
 .page-body p:has(> a.md-btn) {
   text-align: center;
 }
@@ -1018,7 +1017,7 @@ html:not([data-theme]) .theme-toggle {
   box-shadow: 0 8px 22px rgba(18, 153, 155, 0.38);
 }
 
-/* deux colonnes dans le contenu markdown */
+/* two columns in the markdown content */
 .grid-2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1032,7 +1031,7 @@ html:not([data-theme]) .theme-toggle {
 }
 
 /* --------------------------------------------------------------------------
-   Fond ville (contact, bas de la homepage)
+   City background (contact, bottom of the homepage)
    -------------------------------------------------------------------------- */
 
 .bg-city {
@@ -1047,13 +1046,13 @@ html:not([data-theme]) .theme-toggle {
     url('/images/black_and_white_image.webp') center bottom / cover no-repeat;
 }
 
-/* l'image file jusqu'en bas de la page : le footer transparent se pose dessus
-   (padding et marge égaux, sinon les pages courtes débordent de la fenêtre) */
+/* the image runs to the bottom of the page: the transparent footer sits on it
+   (equal padding and margin, else short pages overflow the viewport) */
 .city-bottom .bg-city {
   padding-bottom: 69px;
 }
 
-/* le fond et le footer espacent déjà la fin de page */
+/* the background and footer already space out the end of the page */
 .bg-city .page-body {
   padding-bottom: 10px;
 }
@@ -1069,7 +1068,7 @@ html:not([data-theme]) .theme-toggle {
 }
 
 /* --------------------------------------------------------------------------
-   Bloc contact (email, téléphone, GitHub)
+   Contact block (email, phone, GitHub)
    -------------------------------------------------------------------------- */
 
 .contact-block {
@@ -1096,7 +1095,7 @@ html:not([data-theme]) .theme-toggle {
 }
 
 /* --------------------------------------------------------------------------
-   Section partenaires (homepage)
+   Partners section (homepage)
    -------------------------------------------------------------------------- */
 
 .home-bottom {
@@ -1132,7 +1131,7 @@ html:not([data-theme]) .theme-toggle {
 }
 
 /* --------------------------------------------------------------------------
-   Offres de support (page support)
+   Support plans (support page)
    -------------------------------------------------------------------------- */
 
 .plans {
@@ -1257,9 +1256,9 @@ html:not([data-theme]) .theme-toggle {
 }
 
 /* --------------------------------------------------------------------------
-   Variantes d'images par thème (logo, captures d'écran)
-   La version masquée est en loading="lazy" : elle n'est pas téléchargée.
-   En fin de fichier pour l'emporter sur les display posés plus haut.
+   Per-theme image variants (logo, screenshots)
+   The hidden version uses loading="lazy": it is never downloaded.
+   At the end of the file to win over the display rules set above.
    -------------------------------------------------------------------------- */
 
 img.theme-dark {
@@ -1272,4 +1271,35 @@ img.theme-dark {
 
 [data-theme='dark'] img.theme-light {
   display: none;
+}
+
+/* --------------------------------------------------------------------------
+   Icon colors: palette carried over from the datannur app (dev.datannur.com)
+   Each icon declares its color; it is only consumed in the menu
+   and page titles — elsewhere icons follow the text color.
+   -------------------------------------------------------------------------- */
+
+.icon-c-house { --icon-c: rgb(47, 125, 104); } /* dashboard */
+.icon-c-lightbulb { --icon-c: rgb(43, 159, 179); } /* concept */
+.icon-c-circle-nodes { --icon-c: rgb(57, 100, 150); } /* tag */
+.icon-c-circle-info { --icon-c: rgb(111, 131, 194); } /* protection */
+.icon-c-book-open { --icon-c: rgb(87, 159, 189); } /* understanding */
+.icon-c-diagram-project { --icon-c: rgb(159, 182, 88); } /* diagram */
+.icon-c-screwdriver-wrench { --icon-c: rgb(224, 116, 92); } /* features */
+.icon-c-plug-circle-check { --icon-c: rgb(22, 122, 69); } /* integrity */
+.icon-c-earth-europe { --icon-c: rgb(94, 147, 129); } /* coverage */
+.icon-c-desktop { --icon-c: rgb(198, 105, 94); } /* preview */
+.icon-c-handshake-simple { --icon-c: rgb(98, 93, 140); } /* organization */
+.icon-c-life-ring { --icon-c: rgb(18, 153, 155); } /* frequency */
+.icon-c-book { --icon-c: rgb(224, 116, 92); } /* doc */
+.icon-c-compass { --icon-c: rgb(170, 78, 99); } /* enumeration */
+.icon-c-comments { --icon-c: rgb(85, 148, 188); } /* value */
+
+.main-nav .icon {
+  color: var(--icon-c, currentColor);
+}
+
+.page-header .title-icon {
+  color: var(--icon-c, var(--accent));
+  background: color-mix(in srgb, var(--icon-c, var(--accent)) 13%, transparent);
 }
