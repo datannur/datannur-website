@@ -1,6 +1,6 @@
-export type Lang = 'en' | 'fr' | 'de'
+export type Lang = 'en' | 'fr' | 'de' | 'it'
 
-export const langs: Lang[] = ['en', 'fr', 'de']
+export const langs: Lang[] = ['en', 'fr', 'de', 'it']
 export const defaultLang: Lang = 'en'
 
 export const site = {
@@ -25,7 +25,7 @@ export type NavGroup = {
 // URLs are resolved from the collection (key -> localized slug).
 export const nav: NavGroup[] = [
   {
-    label: { en: 'Solution', fr: 'Solution', de: 'Lösung' },
+    label: { en: 'Solution', fr: 'Solution', de: 'Lösung', it: 'Soluzione' },
     icon: 'lightbulb',
     items: [
       { key: 'overview', icon: 'book-open' },
@@ -37,24 +37,21 @@ export const nav: NavGroup[] = [
     ],
   },
   {
-    label: { en: 'Ecosystem', fr: 'Écosystème', de: 'Ökosystem' },
+    label: {
+      en: 'Ecosystem',
+      fr: 'Écosystème',
+      de: 'Ökosystem',
+      it: 'Ecosistema',
+    },
     icon: 'circle-nodes',
     items: [
       { key: 'partners', icon: 'handshake-simple' },
       { key: 'support', icon: 'life-ring' },
-      {
-        label: {
-          en: 'Documentation',
-          fr: 'Documentation',
-          de: 'Dokumentation',
-        },
-        href: site.docs,
-        icon: 'book',
-      },
+      { key: 'documentation', icon: 'book' },
     ],
   },
   {
-    label: { en: 'About', fr: 'A propos', de: 'Über uns' },
+    label: { en: 'About', fr: 'A propos', de: 'Über uns', it: 'Chi siamo' },
     icon: 'circle-info',
     items: [
       { key: 'project', icon: 'compass' },
@@ -64,19 +61,46 @@ export const nav: NavGroup[] = [
 ]
 
 export const navLabels: Record<string, Record<Lang, string>> = {
-  home: { en: 'Homepage', fr: 'Accueil', de: 'Startseite' },
-  overview: { en: 'Overview', fr: 'Présentation', de: 'Überblick' },
-  structure: { en: 'Structure', fr: 'Structure', de: 'Struktur' },
-  features: { en: 'Features', fr: 'Fonctionnalités', de: 'Funktionen' },
+  home: { en: 'Homepage', fr: 'Accueil', de: 'Startseite', it: 'Home' },
+  overview: {
+    en: 'Overview',
+    fr: 'Présentation',
+    de: 'Überblick',
+    it: 'Panoramica',
+  },
+  structure: {
+    en: 'Structure',
+    fr: 'Structure',
+    de: 'Struktur',
+    it: 'Struttura',
+  },
+  features: {
+    en: 'Features',
+    fr: 'Fonctionnalités',
+    de: 'Funktionen',
+    it: 'Funzionalità',
+  },
   'data-ingestion': {
     en: 'Data Ingestion',
     fr: 'Alimentation',
     de: 'Dateneinspeisung',
+    it: 'Alimentazione dati',
   },
-  geodata: { en: 'Geodata', fr: 'Géodonnées', de: 'Geodaten' },
-  demo: { en: 'Demo', fr: 'Démo', de: 'Demo' },
-  partners: { en: 'Partners', fr: 'Partenaires', de: 'Partner' },
-  support: { en: 'Support', fr: 'Support', de: 'Support' },
-  project: { en: 'Project', fr: 'Projet', de: 'Projekt' },
-  contact: { en: 'Contact', fr: 'Contact', de: 'Kontakt' },
+  geodata: { en: 'Geodata', fr: 'Géodonnées', de: 'Geodaten', it: 'Geodati' },
+  demo: { en: 'Demo', fr: 'Démo', de: 'Demo', it: 'Demo' },
+  partners: {
+    en: 'Partners',
+    fr: 'Partenaires',
+    de: 'Partner',
+    it: 'Partner',
+  },
+  support: { en: 'Support', fr: 'Support', de: 'Support', it: 'Supporto' },
+  documentation: {
+    en: 'Documentation',
+    fr: 'Documentation',
+    de: 'Dokumentation',
+    it: 'Documentazione',
+  },
+  project: { en: 'Project', fr: 'Projet', de: 'Projekt', it: 'Progetto' },
+  contact: { en: 'Contact', fr: 'Contact', de: 'Kontakt', it: 'Contatti' },
 }
