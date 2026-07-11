@@ -12,7 +12,7 @@ cards:
     title: Builder
     text: Das Python-Paket, das Dateien und Datenbanken scannt, um die Metadaten für den Katalog zu erstellen. Starten Sie hier, um die Einspeisung zu automatisieren.
     cta:
-      { label: Builder-Doku öffnen, href: https://docs.datannur.com/builder/ }
+      { label: Builder-Doku öffnen, href: https://docs.datannur.com/builder/de/ }
 ---
 
 Die Dokumentation ist in zwei Bereiche gegliedert, entsprechend der modularen Architektur von datannur. Wählen Sie den passenden Bereich.

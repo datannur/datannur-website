@@ -12,7 +12,7 @@ cards:
     title: Builder
     text: Le package Python qui analyse fichiers et bases de données pour construire les métadonnées alimentant le catalogue. Commencez ici pour automatiser l’alimentation.
     cta:
-      { label: Ouvrir la doc builder, href: https://docs.datannur.com/builder/ }
+      { label: Ouvrir la doc builder, href: https://docs.datannur.com/builder/fr/ }
 ---
 
 La documentation est divisée en deux sections, reflétant l’architecture modulaire de datannur. Choisissez celle dont vous avez besoin.

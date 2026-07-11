@@ -45,6 +45,6 @@ Pour installer, personnaliser ou déployer un catalogue datannur :
 
 Pour scanner des sources et générer un catalogue avec datannurpy :
 
-- [Documentation du builder](https://docs.datannur.com/builder/)
+- [Documentation du builder](https://docs.datannur.com/builder/fr/)
 - [GitHub](https://github.com/datannur/datannurpy/tree/main/examples)
 - [PyPI](https://pypi.org/project/datannurpy/)

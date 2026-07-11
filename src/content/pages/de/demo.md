@@ -45,6 +45,6 @@ Um einen datannur-Katalog zu installieren, anzupassen oder bereitzustellen:
 
 Um Quellen zu scannen und mit datannurpy einen Katalog zu erzeugen:
 
-- [Builder-Dokumentation](https://docs.datannur.com/builder/)
+- [Builder-Dokumentation](https://docs.datannur.com/builder/de/)
 - [GitHub](https://github.com/datannur/datannurpy/tree/main/examples)
 - [PyPI](https://pypi.org/project/datannurpy/)
