@@ -263,7 +263,8 @@ h4 {
   font: inherit;
   font-size: 15px;
   font-weight: 500;
-  color: var(--heading);
+  /* at rest the menu sits in the greyer paragraph tone, distinct from headings */
+  color: var(--text);
   background: none;
   border: none;
   padding: 9px 14px;
@@ -280,8 +281,9 @@ h4 {
   background: color-mix(in srgb, var(--icon-c, var(--accent)) 9%, transparent);
 }
 
-/* dropdown titles have no color of their own: neutral hover, and while a
-   child is hovered the title previews that child's color (rules below) */
+/* dropdown titles have no color of their own: neutral hover darkens to the
+   heading tone, and while a child is hovered the title previews that child's
+   color (rules below) */
 .nav-list > li > button:not(.active):hover {
   color: var(--heading);
   background: color-mix(in srgb, var(--heading) 7%, transparent);
