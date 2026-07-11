@@ -38,7 +38,7 @@ datannur può anche funzionare in locale o su un disco condiviso. La demo fittiz
 
 Per installare, personalizzare o distribuire un catalogo datannur:
 
-- [Documentazione dell'app](https://docs.datannur.com/app/)
+- [Documentazione dell'app](https://docs.datannur.com/app/it/)
 - [GitHub](https://github.com/datannur/datannur)
 
 #### Documentazione del builder

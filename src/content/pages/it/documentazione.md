@@ -7,7 +7,7 @@ cards:
   - icon: desktop
     title: App
     text: "L’interfaccia del catalogo: esplorate dataset, variabili e metadati nel browser. Iniziate qui per esplorare o distribuire il catalogo."
-    cta: { label: Apri la doc app, href: https://docs.datannur.com/app/ }
+    cta: { label: Apri la doc app, href: https://docs.datannur.com/app/it/ }
   - icon: screwdriver-wrench
     title: Builder
     text: Il pacchetto Python che analizza file e database per costruire i metadati che alimentano il catalogo. Iniziate qui per automatizzare l’alimentazione.

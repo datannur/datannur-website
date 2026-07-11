@@ -7,7 +7,7 @@ cards:
   - icon: desktop
     title: App
     text: "L’interface du catalogue : parcourez jeux de données, variables et métadonnées dans votre navigateur. Commencez ici pour explorer ou déployer le catalogue."
-    cta: { label: Ouvrir la doc app, href: https://docs.datannur.com/app/ }
+    cta: { label: Ouvrir la doc app, href: https://docs.datannur.com/app/fr/ }
   - icon: screwdriver-wrench
     title: Builder
     text: Le package Python qui analyse fichiers et bases de données pour construire les métadonnées alimentant le catalogue. Commencez ici pour automatiser l’alimentation.

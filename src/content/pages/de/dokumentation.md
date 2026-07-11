@@ -7,7 +7,7 @@ cards:
   - icon: desktop
     title: App
     text: "Die Katalog-Oberfläche: Datensätze, Variablen und Metadaten im Browser durchsuchen. Starten Sie hier, um den Katalog zu erkunden oder bereitzustellen."
-    cta: { label: App-Doku öffnen, href: https://docs.datannur.com/app/ }
+    cta: { label: App-Doku öffnen, href: https://docs.datannur.com/app/de/ }
   - icon: screwdriver-wrench
     title: Builder
     text: Das Python-Paket, das Dateien und Datenbanken scannt, um die Metadaten für den Katalog zu erstellen. Starten Sie hier, um die Einspeisung zu automatisieren.

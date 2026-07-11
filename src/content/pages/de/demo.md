@@ -38,7 +38,7 @@ datannur kann auch lokal oder auf einem Netzlaufwerk laufen. Die fiktive Demo ka
 
 Um einen datannur-Katalog zu installieren, anzupassen oder bereitzustellen:
 
-- [App-Dokumentation](https://docs.datannur.com/app/)
+- [App-Dokumentation](https://docs.datannur.com/app/de/)
 - [GitHub](https://github.com/datannur/datannur)
 
 #### Builder-Dokumentation
