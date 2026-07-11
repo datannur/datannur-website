@@ -403,6 +403,17 @@ h4 {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
 }
 
+/* compact variant plumbing: inert on desktop, the options render inline
+   as if the wrapper did not exist */
+.lang-toggle,
+.lang-current {
+  display: none;
+}
+
+.lang-options {
+  display: contents;
+}
+
 /* light/dark toggle: sun morphing into a moon (SVG mask) */
 .theme-toggle {
   display: flex;
@@ -608,6 +619,66 @@ html:not([data-theme]) .theme-toggle {
 
   .sub-menu::before {
     display: none;
+  }
+}
+
+/* very narrow screens: the language switch collapses to the current
+   language; tapping unfolds the others under the pill */
+@media (max-width: 480px) {
+  .lang-switch {
+    position: relative;
+  }
+
+  .lang-current {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 9px 4px 11px;
+    border-radius: 999px;
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    color: var(--heading);
+    background: var(--switch-active);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+  }
+
+  .lang-current .caret {
+    margin: -3px 0 0;
+  }
+
+  .lang-toggle:checked ~ .lang-current .caret {
+    transform: rotate(225deg) translate(-2px, -2px);
+  }
+
+  .lang-options {
+    display: none;
+  }
+
+  .lang-toggle:checked ~ .lang-options {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    padding: 6px;
+    background: var(--bg-elev);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-s);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.05);
+    animation: menu-in 0.2s ease;
+  }
+
+  /* the current language lives on the pill: not repeated in the list */
+  .lang-options a.active {
+    display: none;
+  }
+
+  .lang-options a {
+    padding: 8px 16px;
+    text-align: center;
   }
 }
 

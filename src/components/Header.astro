@@ -60,6 +60,13 @@ const themeLabel: Record<Lang, string> = {
   de: 'Dunkelmodus umschalten',
   it: 'Attiva/disattiva la modalità scura',
 }
+
+const langMenuLabel: Record<Lang, string> = {
+  en: 'Choose language',
+  fr: 'Choisir la langue',
+  de: 'Sprache wählen',
+  it: 'Scegli la lingua',
+}
 ---
 
 <header class="site-header">
@@ -134,13 +141,27 @@ const themeLabel: Record<Lang, string> = {
 
     <div class="header-tools">
       <div class="lang-switch">
-        {
-          langs.map(l => (
-            <a href={langPath(l)} class:list={{ active: l === lang }} lang={l}>
-              {l.toUpperCase()}
-            </a>
-          ))
-        }
+        <!-- compact variant (narrow screens): only the current language
+             shows, the checkbox unfolds the others under the pill -->
+        <input type="checkbox" id="lang-toggle" class="lang-toggle" />
+        <label
+          for="lang-toggle"
+          class="lang-current"
+          aria-haspopup="true"
+          aria-label={langMenuLabel[lang]}
+        >
+          {lang.toUpperCase()}
+          <span class="caret"></span>
+        </label>
+        <div class="lang-options">
+          {
+            langs.map(l => (
+              <a href={langPath(l)} class:list={{ active: l === lang }} lang={l}>
+                {l.toUpperCase()}
+              </a>
+            ))
+          }
+        </div>
       </div>
       <button type="button" class="theme-toggle" aria-label={themeLabel[lang]}>
         <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -179,6 +200,13 @@ const themeLabel: Record<Lang, string> = {
       if (next === system) localStorage.removeItem('theme')
       else localStorage.setItem('theme', next)
     } catch {}
+  })
+
+  // compact language menu (narrow screens): close on tap outside
+  const langToggle = document.querySelector('.lang-toggle')
+  document.addEventListener('click', e => {
+    if (langToggle.checked && !e.target.closest('.lang-switch'))
+      langToggle.checked = false
   })
 
   // language switch: land at the same spot in the translated page.
