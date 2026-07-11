@@ -5,6 +5,14 @@ RewriteEngine On
 RewriteCond %{HTTPS} !=on
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
+# legacy WordPress URLs (old site was French at the root)
+RedirectPermanent /fonctionnalites /fr/fonctionnalites
+RedirectPermanent /alimentation /fr/alimentation
+RedirectPermanent /geodonnees /fr/geodonnees
+RedirectPermanent /partenaires /fr/partenaires
+RedirectPermanent /presentation /fr/presentation
+RedirectPermanent /projet /fr/projet
+
 # custom 404 page
 ErrorDocument 404 /404.html
 
@@ -17,12 +25,21 @@ AddType image/avif .avif
   AddOutputFilterByType DEFLATE text/html text/css text/plain application/javascript application/json image/svg+xml
 </IfModule>
 
-# cache: long for fingerprinted assets and images, short for HTML
+# cache: long for fingerprinted assets (_astro) and fonts, moderate for
+# images (replaceable in place under the same name), short for HTML
 <IfModule mod_headers.c>
-  <FilesMatch "\.(css|js|webp|avif|png|jpe?g|svg|ico|woff2?)$">
+  <FilesMatch "\.(css|js|woff2?)$">
     Header set Cache-Control "public, max-age=31536000, immutable"
   </FilesMatch>
-  <FilesMatch "\.(html|xml|txt)$">
-    Header set Cache-Control "public, max-age=3600"
+  <FilesMatch "\.(webp|avif|png|jpe?g|svg|ico)$">
+    Header set Cache-Control "public, max-age=604800"
   </FilesMatch>
+  <FilesMatch "\.(html|xml|txt)$">
+    Header set Cache-Control "public, max-age=600"
+  </FilesMatch>
+
+  # security headers
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
 </IfModule>
