@@ -1,6 +1,7 @@
 export type Lang = 'en' | 'fr' | 'de' | 'it'
 
-export const langs: Lang[] = ['en', 'fr', 'de', 'it']
+// Swiss order: German, French, Italian — English first as default locale
+export const langs: Lang[] = ['en', 'de', 'fr', 'it']
 export const defaultLang: Lang = 'en'
 
 export const site = {
