@@ -36,7 +36,12 @@ const ogLocales: Record<Lang, string> = {
   de: 'de_CH',
   it: 'it_CH',
 }
-const ogImageUrl = `${siteUrl}${ogImage ?? '/images/logo.png'}`
+// social-share image: the hero screenshot (1200x628, OG ratio) shows the
+// product; the app UI exists in FR and EN, other languages get EN
+const defaultOgImage = `/images/folder-page-folder-tab.${
+  lang === 'fr' ? 'fr' : 'en'
+}.jpg`
+const ogImageUrl = `${siteUrl}${ogImage ?? defaultOgImage}`
 const isHome = entry?.data.key === 'home'
 
 // Direct visits to the root: forward the visitor to their language (once,
@@ -102,22 +107,45 @@ const langRedirect = `try {
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={ogImageUrl} />
+    {
+      !ogImage && (
+        <>
+          <meta property="og:image:width" content="3200" />
+          <meta property="og:image:height" content="1800" />
+        </>
+      )
+    }
     <meta property="og:locale" content={ogLocales[lang]} />
     <meta name="twitter:card" content="summary_large_image" />
     {
       isHome && (
         <script
           type="application/ld+json"
-          set:html={JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'Organization',
-            name: 'datannur',
-            url: siteUrl,
-            logo: `${siteUrl}/images/logo.png`,
-            email: 'contact@datannur.com',
-            telephone: '+41 21 510 21 21',
-            sameAs: ['https://github.com/datannur/datannur'],
-          })}
+          set:html={JSON.stringify([
+            {
+              '@context': 'https://schema.org',
+              '@type': 'Organization',
+              name: 'datannur',
+              url: siteUrl,
+              logo: `${siteUrl}/images/logo.png`,
+              email: 'contact@datannur.com',
+              telephone: '+41 21 510 21 21',
+              sameAs: ['https://github.com/datannur/datannur'],
+            },
+            {
+              '@context': 'https://schema.org',
+              '@type': 'SoftwareApplication',
+              name: 'datannur',
+              url: siteUrl,
+              description,
+              applicationCategory: 'BusinessApplication',
+              operatingSystem: 'Web',
+              softwareHelp: 'https://docs.datannur.com',
+              license: 'https://github.com/datannur/datannur/blob/main/LICENSE',
+              offers: { '@type': 'Offer', price: '0', priceCurrency: 'CHF' },
+              screenshot: ogImageUrl,
+            },
+          ])}
         />
       )
     }

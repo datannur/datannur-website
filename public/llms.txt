@@ -1,0 +1,40 @@
+# datannur
+
+> Open-source, lightweight and sovereign data catalog. datannur scans data
+> sources (files, databases, folder trees), generates metadata and builds a
+> structured, interoperable catalog that runs in a browser — no heavy
+> infrastructure, no vendor lock-in. Developed in Switzerland, in production
+> for over two years in a cantonal statistical office.
+
+datannur has two parts: the app (the catalog interface, a static web app)
+and the builder (a Python package that scans sources and produces the
+metadata feeding the catalog). Metadata stays under the organization's
+control, in reusable formats. Target users: public administrations,
+statistical offices, open-data teams, SMEs, NGOs, universities, BI/data
+teams, and the consultants who support them.
+
+The website is available in English (default), German (/de/), French (/fr/)
+and Italian (/it/); every page exists in the four languages.
+
+## Main pages
+
+- [Overview](https://datannur.com/overview/): why data catalogs matter and the datannur approach
+- [Structure](https://datannur.com/structure/): the catalog concepts (folder, dataset, variable, tag...) and how they relate
+- [Features](https://datannur.com/features/): search, filtering, tree view, AI assistant, lineage, statistics, favorites, interoperability
+- [Data ingestion](https://datannur.com/data-ingestion/): how the builder scans sources and feeds the catalog
+- [Geodata](https://datannur.com/geodata/): cataloguing geographic data
+- [Demo](https://datannur.com/demo/): try datannur online
+- [Partners](https://datannur.com/partners/): the partner ecosystem (consultants, integrators)
+- [Support](https://datannur.com/support/): vendor support plans
+- [Project](https://datannur.com/project/): origins, open-source approach and vendor model
+- [Contact](https://datannur.com/contact/): email, phone, GitHub
+
+## Documentation
+
+- [Documentation portal](https://datannur.com/documentation/): entry point, app vs builder
+- [App documentation](https://docs.datannur.com/app/): install, configure and use the catalog interface
+- [Builder documentation](https://docs.datannur.com/builder/): the Python metadata scanner
+
+## Source code
+
+- [GitHub repository](https://github.com/datannur/datannur): source code and license
