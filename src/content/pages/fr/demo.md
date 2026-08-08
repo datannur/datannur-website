@@ -23,7 +23,7 @@ Deux démos sont accessibles directement dans le navigateur :
 
 **Démo open data :** pour voir le catalogue appliqué à un cas concret
 
-[Démo open data](https://suisse.datannur.com)
+[Démo open data](https://swiss-demo.datannur.com)
 
 </div>
 </div>
