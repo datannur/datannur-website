@@ -2,8 +2,9 @@
 
 Official website of [datannur](https://datannur.com), the open-source,
 lightweight and sovereign data catalog. Static site built with
-[Astro](https://astro.build), all content in markdown, trilingual (EN/FR/DE):
-English at the root, translated slugs under `/fr/` and `/de/`.
+[Astro](https://astro.build), all content in markdown, in four languages
+(EN/FR/DE/IT): English at the root, translated slugs under `/fr/`, `/de/`
+and `/it/`.
 
 ## Architecture in short
 
@@ -17,13 +18,11 @@ English at the root, translated slugs under `/fr/` and `/de/`.
   markdown, with shared layout and components at build time only.
 - **Hosting:** any static file server. Production runs on Infomaniak shared
   hosting (Apache) — `public/.htaccess` handles https redirects, caching and
-  the 404 page. No PHP, no Node at runtime. Note: the root of
-  docs.datannur.com carries a manually uploaded `.htaccess` (not in any
-  deployed repo) that 301-redirects only `/` to `/documentation/` on this
-  site; `/app/` and `/builder/` stay served by VitePress.
-- **Dark mode:** header toggle, system preference by default, choice persisted
-  in `localStorage`, no flash on load. Every color is a CSS variable defined
-  in `src/styles/global.css` (`:root` for light, `[data-theme='dark']` for
+  the 404 page. No PHP, no Node at runtime. (One piece lives outside any
+  repo: a manually uploaded `.htaccess` at the root of docs.datannur.com
+  301-redirects `/` to `/documentation/` here.)
+- **Design system:** every color is a CSS variable defined in
+  `src/styles/global.css` (`:root` for light, `[data-theme='dark']` for
   dark) — any new color must go through these variables.
 
 ## Commands
@@ -54,7 +53,7 @@ Page body in markdown…
 ```
 
 The `key` field drives everything multilingual: it generates the crossed
-`hreflang` tags and makes the EN/FR/DE switcher point to the translated page
+`hreflang` tags and makes the language switcher point to the translated page
 (`/features/` → `/fr/fonctionnalites/`, not `/fr/`). Inner-page titles follow
 the `Section — Subtitle` pattern: the part before the em dash is rendered as
 a small teal kicker line, the rest as the main heading — inside a single
@@ -116,7 +115,8 @@ sitemap) follows automatically.
 ## SEO
 
 Handled by the base layout on every page: unique title and meta description,
-absolute canonical, `hreflang` for en/fr/de + `x-default` (EN), Open Graph and
+absolute canonical, `hreflang` for every language + `x-default` (EN), Open
+Graph and
 Twitter card, `og:locale` per language, JSON-LD Organization on the home
 pages, sitemap with i18n alternates, `robots.txt`, custom 404. Single `<h1>`
 per page, `alt` on all meaningful images, `width`/`height` attributes and lazy
@@ -149,3 +149,9 @@ set on the repository). Manual runs are available from the Actions tab.
 
 Manual fallback: `npm run build`, then upload the contents of `dist/` to the
 web root (SFTP/rsync). No PHP or Node required server-side.
+
+## License
+
+The code is released under the [MIT License](LICENSE). Site content, texts,
+images, screenshots and the datannur name and logo are not covered by it —
+all rights reserved.
