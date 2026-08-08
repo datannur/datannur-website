@@ -41,10 +41,10 @@ Um einen datannur-Katalog zu installieren, anzupassen oder bereitzustellen:
 - [App-Dokumentation](https://docs.datannur.com/app/de/)
 - [GitHub](https://github.com/datannur/datannur)
 
-#### Builder-Dokumentation
+### Einen eigenen Katalog erstellen
 
-Um Quellen zu scannen und mit datannurpy einen Katalog zu erzeugen:
+Mit dem [datannur-Template](https://github.com/datannur/datannur-template) lässt sich in wenigen Minuten ein eigener Katalog auf GitHub Pages veröffentlichen – ohne Server und ohne Installation: einfach auf Open-Data-URLs verweisen oder Dateien ablegen, jeder Commit baut den Katalog automatisch neu.
 
+- [GitHub-Template](https://github.com/datannur/datannur-template)
+- [Beispielkatalog](https://datannur.github.io/datannur-template/)
 - [Builder-Dokumentation](https://docs.datannur.com/builder/de/)
-- [GitHub](https://github.com/datannur/datannurpy/tree/main/examples)
-- [PyPI](https://pypi.org/project/datannurpy/)

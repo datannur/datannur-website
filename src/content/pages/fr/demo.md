@@ -41,10 +41,10 @@ Pour installer, personnaliser ou déployer un catalogue datannur :
 - [Documentation de l’app](https://docs.datannur.com/app/fr/)
 - [GitHub](https://github.com/datannur/datannur)
 
-#### Documentation du builder
+### Créer son propre catalogue
 
-Pour scanner des sources et générer un catalogue avec datannurpy :
+Le [template datannur](https://github.com/datannur/datannur-template) permet de publier son propre catalogue sur GitHub Pages en quelques minutes, sans serveur ni installation : il suffit de pointer vers des URLs open data ou de déposer des fichiers, chaque commit reconstruit le catalogue automatiquement.
 
+- [Template GitHub](https://github.com/datannur/datannur-template)
+- [Catalogue d’exemple](https://datannur.github.io/datannur-template/)
 - [Documentation du builder](https://docs.datannur.com/builder/fr/)
-- [GitHub](https://github.com/datannur/datannurpy/tree/main/examples)
-- [PyPI](https://pypi.org/project/datannurpy/)

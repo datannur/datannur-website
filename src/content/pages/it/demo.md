@@ -41,10 +41,10 @@ Per installare, personalizzare o distribuire un catalogo datannur:
 - [Documentazione dell'app](https://docs.datannur.com/app/it/)
 - [GitHub](https://github.com/datannur/datannur)
 
-#### Documentazione del builder
+### Creare il proprio catalogo
 
-Per scansionare le sorgenti e generare un catalogo con datannurpy:
+Il [template datannur](https://github.com/datannur/datannur-template) permette di pubblicare il proprio catalogo su GitHub Pages in pochi minuti, senza server né installazione: basta puntare a URL open data o depositare dei file, ogni commit ricostruisce automaticamente il catalogo.
 
+- [Template GitHub](https://github.com/datannur/datannur-template)
+- [Catalogo di esempio](https://datannur.github.io/datannur-template/)
 - [Documentazione del builder](https://docs.datannur.com/builder/it/)
-- [GitHub](https://github.com/datannur/datannurpy/tree/main/examples)
-- [PyPI](https://pypi.org/project/datannurpy/)
