@@ -32,7 +32,7 @@ function remarkSugar() {
         link.data.hProperties ??= {}
         link.data.hProperties.className = ['md-btn']
       }
-      if (child.type === 'link' && /^https?:\/\//.test(child.url)) {
+      if (child.type === 'link' && /^(https?:\/\/|mailto:)/.test(child.url)) {
         child.data ??= {}
         child.data.hProperties ??= {}
         child.data.hProperties.target = '_blank'
