@@ -3,8 +3,9 @@ import { defineConfig } from 'astro/config'
 import sitemap from '@astrojs/sitemap'
 import { darkVariant } from './src/lib/dark-image.mjs'
 
-// Four markdown sugars:
+// Five markdown sugars:
 // - a paragraph made of a single link becomes a button (.md-btn);
+// - external links (http/https) open in a new tab, like the header ones;
 // - an image with a "w=310" title gets a fixed display width;
 // - an image with a dark variant on disk is duplicated: the displayed
 //   version depends on the theme (theme-light / theme-dark classes);
@@ -30,6 +31,12 @@ function remarkSugar() {
         link.data ??= {}
         link.data.hProperties ??= {}
         link.data.hProperties.className = ['md-btn']
+      }
+      if (child.type === 'link' && /^https?:\/\//.test(child.url)) {
+        child.data ??= {}
+        child.data.hProperties ??= {}
+        child.data.hProperties.target = '_blank'
+        child.data.hProperties.rel = 'noopener'
       }
       if (child.type === 'image' && /^w=\d+$/.test(child.title ?? '')) {
         child.data ??= {}
