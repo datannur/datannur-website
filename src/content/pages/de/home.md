@@ -12,11 +12,11 @@ hero:
     - { label: Demo, href: /de/demo/, icon: desktop }
     - { label: Kontakt, href: /de/kontakt/, icon: comments, style: outline }
   video:
-    src: "/videos/declic-v4/datannur-de.mp4"
-    darkSrc: "/videos/declic-v4/datannur-de.dark.mp4?v=2"
+    src: "/videos/declic-v4/datannur-de.mp4?v=3"
+    darkSrc: "/videos/declic-v4/datannur-de.dark.mp4?v=3"
     poster: "/videos/declic-v4/poster-de.webp"
     darkPoster: "/videos/declic-v4/poster-de.dark.webp"
-    captions: "/videos/declic-v4/datannur-de.vtt"
+    captions: "/videos/declic-v4/datannur-de.vtt?v=3"
     lang: "de"
     language: "Deutsch"
     title: "Datannur in Aktion"

@@ -12,11 +12,11 @@ hero:
     - { label: Demo, href: /it/demo/, icon: desktop }
     - { label: Contatti, href: /it/contatti/, icon: comments, style: outline }
   video:
-    src: "/videos/declic-v4/datannur-it.mp4"
-    darkSrc: "/videos/declic-v4/datannur-it.dark.mp4?v=2"
+    src: "/videos/declic-v4/datannur-it.mp4?v=3"
+    darkSrc: "/videos/declic-v4/datannur-it.dark.mp4?v=3"
     poster: "/videos/declic-v4/poster-it.webp"
     darkPoster: "/videos/declic-v4/poster-it.dark.webp"
-    captions: "/videos/declic-v4/datannur-it.vtt"
+    captions: "/videos/declic-v4/datannur-it.vtt?v=3"
     lang: "it"
     language: "Italiano"
     title: "Datannur in azione"

@@ -182,13 +182,17 @@ autoplay. The caption below the film and visible transcript link are removed;
 subtitles remain in the player and the transcript remains available to
 assistive technology through `aria-details`.
 
-The original light 1080p/60fps films are copied unchanged from
+The approved light 1080p/60fps films are copied unchanged from
 `datannur-media/video-declic/delivery-v4`. Dark exports come from
 `delivery-dark-v4`: native dark application captures, adapted motion colours
 and dark logo, with approved voices and editing preserved. The animated logo
 uses the artwork’s exact teal and white; its lettering follows the symbol
-through the final transition. The dark video URLs carry a revision query to
-refresh cached exports when the film is updated.
+through the final transition. Video and caption URLs carry a revision query when their files change,
+so browsers request corrected exports instead of a previously cached film.
+Revision 3 repairs 16 abrupt source-voice endings across EN, DE and IT,
+updates their caption timing, and preserves every approved video frame.
+French was checked and remains unchanged. Light and dark variants share
+the same corrected AAC soundtrack.
 
 `src/styles/film.css` styles only the player, using the existing site
 colours, rounded corners and shadows. The film replaces the hero screenshot;
