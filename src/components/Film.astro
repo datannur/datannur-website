@@ -1,0 +1,48 @@
+---
+import type { Film } from '../lib/film'
+import '../styles/film.css'
+interface Props { film: Film }
+const { film } = Astro.props
+---
+
+<div class="film" data-film
+  data-light-src={film.src} data-dark-src={film.darkSrc}
+  data-light-poster={film.poster} data-dark-poster={film.darkPoster}>
+  <span id="film-title" class="sr-only">{film.title}</span>
+  <div class="film-screen">
+    <video id="home-film" src={film.src} controls playsinline preload="none" poster={film.poster}
+      width="1920" height="1080" aria-labelledby="film-title" aria-details="film-transcript">
+      <track kind="captions" src={film.captions} srclang={film.lang} label={film.language} />
+      <a data-film-download href={film.src}>{film.downloadLabel}</a>
+    </video>
+    <button class="film-launch" type="button" aria-controls="home-film" hidden>
+      <span class="film-launch-pill">
+        <span class="film-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor" /></svg></span>
+        <span>{film.playLabel}</span>
+        <span class="film-launch-duration" aria-hidden="true">1:00</span>
+      </span>
+    </button>
+  </div>
+  <p class="film-error" role="status" hidden>{film.errorLabel} <a data-film-download href={film.src}>{film.downloadLabel}</a></p>
+  <p class="sr-only" id="film-transcript">{film.transcript}</p>
+  <script is:inline>
+    // Apply the theme during parsing, before the deferred player code runs.
+    // With no JavaScript the native player uses the light film.
+    {
+      const root = document.currentScript.closest('[data-film]')
+      const video = root.querySelector('video')
+      const theme = document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light'
+      root.dataset.filmTheme = theme
+      video.poster = root.dataset[theme + 'Poster']
+      if (theme === 'dark') video.src = root.dataset.darkSrc
+      root.querySelectorAll('[data-film-download]').forEach(link => {
+        link.href = root.dataset[theme + 'Src']
+      })
+    }
+  </script>
+</div>
+
+<script>
+  import { initFilm } from '../lib/film-player'
+  document.querySelectorAll<HTMLElement>('[data-film]').forEach(initFilm)
+</script>

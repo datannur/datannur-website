@@ -11,6 +11,21 @@ hero:
   buttons:
     - { label: Démo, href: /fr/demo/, icon: desktop }
     - { label: Contact, href: /fr/contact/, icon: comments, style: outline }
+  video:
+    src: "/videos/declic-v4/datannur-fr.mp4"
+    darkSrc: "/videos/declic-v4/datannur-fr.dark.mp4?v=2"
+    poster: "/videos/declic-v4/poster-fr.webp"
+    darkPoster: "/videos/declic-v4/poster-fr.dark.webp"
+    captions: "/videos/declic-v4/datannur-fr.vtt"
+    lang: "fr"
+    language: "Français"
+    title: "Datannur en action"
+    playLabel: "Voir le film"
+    caption: "Français · Sous-titres disponibles · Exemples fictifs"
+    transcriptLabel: "Lire la transcription"
+    transcript: "Il est où, le bon fichier ? Et cette colonne… elle veut dire quoi ? Vos données sont là. Leur contexte, lui, se disperse. Datannur le rassemble. Fichiers, bases de données, documentation : un point d’entrée. Recherchez. Retrouvez le bon jeu de données. Sa source. Son responsable. Sa documentation. Une colonne devient une information que l’on comprend. Les définitions, les variables, les liens : tout prend sa place. La connaissance se partage. Elle reste, même quand les équipes changent. Léger. Open source. En local, ou en ligne. Vous gardez la maîtrise. Moins de recherches. Plus de compréhension. Datannur. Le catalogue de données, simplement. Découvrez la démo."
+    downloadLabel: "Télécharger la vidéo"
+    errorLabel: "La lecture n’a pas pu démarrer. Utilisez les commandes du lecteur ou téléchargez le film."
 pillars:
   - icon: feather-pointed
     title: Léger

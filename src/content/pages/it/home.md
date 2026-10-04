@@ -11,6 +11,21 @@ hero:
   buttons:
     - { label: Demo, href: /it/demo/, icon: desktop }
     - { label: Contatti, href: /it/contatti/, icon: comments, style: outline }
+  video:
+    src: "/videos/declic-v4/datannur-it.mp4"
+    darkSrc: "/videos/declic-v4/datannur-it.dark.mp4?v=2"
+    poster: "/videos/declic-v4/poster-it.webp"
+    darkPoster: "/videos/declic-v4/poster-it.dark.webp"
+    captions: "/videos/declic-v4/datannur-it.vtt"
+    lang: "it"
+    language: "Italiano"
+    title: "Datannur in azione"
+    playLabel: "Guarda il video"
+    caption: "Italiano · Sottotitoli disponibili · Esempi fittizi"
+    transcriptLabel: "Leggi la trascrizione"
+    transcript: "Dov’è il file giusto? E questa colonna, cosa significa? I dati ci sono. Ma il loro contesto è sparso. Datannur lo riunisce. File, banche dati, documentazione. Un unico accesso. Cercate. Trovate il dataset giusto. La fonte. Il responsabile. La documentazione. Una colonna diventa un’informazione comprensibile. Definizioni, variabili, relazioni: tutto trova il suo posto. La conoscenza si condivide. E resta, anche quando i team cambiano. Leggero. Open source. In locale oppure online. Il controllo resta a voi. Meno ricerche. Più comprensione. Datannur. Il catalogo dei dati. Semplice. Scoprite la demo."
+    downloadLabel: "Scarica il video"
+    errorLabel: "Impossibile avviare la riproduzione. Usate i comandi del lettore o scaricate il video."
 pillars:
   - icon: feather-pointed
     title: Leggero

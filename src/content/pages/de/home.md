@@ -11,6 +11,21 @@ hero:
   buttons:
     - { label: Demo, href: /de/demo/, icon: desktop }
     - { label: Kontakt, href: /de/kontakt/, icon: comments, style: outline }
+  video:
+    src: "/videos/declic-v4/datannur-de.mp4"
+    darkSrc: "/videos/declic-v4/datannur-de.dark.mp4?v=2"
+    poster: "/videos/declic-v4/poster-de.webp"
+    darkPoster: "/videos/declic-v4/poster-de.dark.webp"
+    captions: "/videos/declic-v4/datannur-de.vtt"
+    lang: "de"
+    language: "Deutsch"
+    title: "Datannur in Aktion"
+    playLabel: "Film ansehen"
+    caption: "Deutsch · Untertitel verfügbar · Fiktive Beispiele"
+    transcriptLabel: "Transkript lesen"
+    transcript: "Wo ist die richtige Datei? Was bedeutet diese Spalte? Ihre Daten sind da. Doch der Kontext ist verstreut. Datannur verbindet. Dateien, Datenbanken, Dokumentation. Ein Zugang. Einfach suchen. Den richtigen Datensatz finden. Die Quelle. Die Zuständigkeit. Die Dokumentation. Aus einer Spalte wird verständliche Information. Definitionen, Variablen, Beziehungen: Alles findet seinen Platz. Wissen wird geteilt. Und bleibt erhalten, auch wenn Teams wechseln. Schlank. Open Source. Lokal oder online. Sie behalten die Kontrolle. Weniger suchen. Mehr verstehen. Datannur. Der Datenkatalog. Einfach. Jetzt die Demo entdecken."
+    downloadLabel: "Video herunterladen"
+    errorLabel: "Die Wiedergabe konnte nicht gestartet werden. Nutzen Sie die Steuerelemente oder laden Sie den Film herunter."
 pillars:
   - icon: feather-pointed
     title: Leichtgewichtig

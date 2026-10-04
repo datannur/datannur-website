@@ -11,6 +11,21 @@ hero:
   buttons:
     - { label: Demo, href: /demo/, icon: desktop }
     - { label: Contact, href: /contact/, icon: comments, style: outline }
+  video:
+    src: "/videos/declic-v4/datannur-en.mp4"
+    darkSrc: "/videos/declic-v4/datannur-en.dark.mp4?v=2"
+    poster: "/videos/declic-v4/poster-en.webp"
+    darkPoster: "/videos/declic-v4/poster-en.dark.webp"
+    captions: "/videos/declic-v4/datannur-en.vtt"
+    lang: "en"
+    language: "English"
+    title: "Datannur in action"
+    playLabel: "Watch the film"
+    caption: "English · Captions available · Fictional examples"
+    transcriptLabel: "Read the transcript"
+    transcript: "Where’s the right file? And what does this column mean? Your data is there. But its context is scattered. Datannur connects it. Files, databases, documentation. One way in. Search. Find the right dataset. Its source. Its owner. Its documentation. A column becomes information you can understand. Definitions, variables, links: everything connects. Knowledge is shared. And it stays, even when teams change. Lightweight. Open source. Locally or online. You stay in control. Less searching. More understanding. Datannur. The data catalogue. Made simple. Explore the demo."
+    downloadLabel: "Download the video"
+    errorLabel: "Playback could not start. Use the player controls or download the film."
 pillars:
   - icon: feather-pointed
     title: Lightweight

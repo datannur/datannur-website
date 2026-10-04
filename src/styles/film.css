@@ -1,0 +1,90 @@
+/* The film takes the original hero screenshot's place and styling. */
+:root {
+  --film-shadow: 0 10px 40px rgba(0, 0, 0, 0.18);
+  --film-button-shadow: 0 4px 24px rgba(0, 0, 0, 0.16);
+}
+.film {
+  max-width: 1000px;
+  min-width: 0;
+  margin: 0 auto;
+}
+.film-screen {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-s);
+  box-shadow: var(--film-shadow);
+  background: var(--bg-elev);
+}
+.film-screen video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.film-launch {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 16px;
+  border: 0;
+  background: transparent;
+  color: var(--heading);
+  cursor: pointer;
+  font: inherit;
+}
+.film-launch[hidden], .film-error[hidden] { display: none; }
+.film-launch-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 9px 22px 9px 9px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(var(--veil), 0.96);
+  box-shadow: var(--film-button-shadow);
+  font-size: 15px;
+  font-weight: 600;
+  transition: transform 180ms ease;
+}
+.film-play {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--bg);
+}
+.film-play svg { width: 22px; height: 22px; }
+.film-launch-duration {
+  border-left: 1px solid var(--border);
+  padding-left: 14px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text);
+}
+.film-launch:hover .film-launch-pill { transform: translateY(-2px); }
+.film-launch:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: -5px;
+  border-radius: var(--radius-s);
+}
+.film a:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 5px;
+  border-radius: 4px;
+}
+.film-error { font-size: 13px; }
+@media (max-width: 560px) {
+  .film-launch-pill { padding: 6px 14px 6px 6px; gap: 10px; font-size: 13px; }
+  .film-play { width: 36px; height: 36px; }
+  .film-launch-duration { padding-left: 10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .film-launch-pill { transition: none; }
+  .film-launch:hover .film-launch-pill { transform: none; }
+}

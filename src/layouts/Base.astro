@@ -87,6 +87,13 @@ const langRedirect = `try {
     />
     <title>{title}</title>
     <meta name="description" content={description} />
+    {isHome && entry?.data.hero?.video && <script is:inline define:vars={{ filmPosters: { light: entry.data.hero.video.poster, dark: entry.data.hero.video.darkPoster } }}>
+      const posterPreload = document.createElement('link')
+      posterPreload.rel = 'preload'
+      posterPreload.as = 'image'
+      posterPreload.href = filmPosters[document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light']
+      document.head.append(posterPreload)
+    </script>}
     <link rel="canonical" href={canonical} />
     {langUrls.map(u => <link rel="alternate" hreflang={u.lang} href={u.url} />)}
     {xDefault && <link rel="alternate" hreflang="x-default" href={xDefault} />}

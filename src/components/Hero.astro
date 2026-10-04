@@ -1,5 +1,6 @@
 ---
 import Icon from './Icon.astro'
+import Film from './Film.astro'
 import { darkVariant } from '../lib/dark-image.mjs'
 
 interface Props {
@@ -8,6 +9,7 @@ interface Props {
     text: string
     image: string
     imageAlt: string
+    video?: import('../lib/film').Film
     buttons: {
       label: string
       href: string
@@ -34,6 +36,7 @@ const heroDark = darkVariant(hero.image)
         ))
       }
     </div>
+    {hero.video ? <Film film={hero.video} /> : (
     <div class="hero-image">
       <img
         class:list={{ 'theme-light': heroDark }}
@@ -56,5 +59,6 @@ const heroDark = darkVariant(hero.image)
         )
       }
     </div>
+    )}
   </div>
 </section>

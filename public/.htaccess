@@ -19,6 +19,8 @@ ErrorDocument 404 /404.html
 # useful mime types
 AddType image/webp .webp
 AddType image/avif .avif
+AddType video/mp4 .mp4
+AddType text/vtt .vtt
 
 # compression
 <IfModule mod_deflate.c>
@@ -36,6 +38,10 @@ AddType image/avif .avif
   </FilesMatch>
   <FilesMatch "\.(html|xml|txt)$">
     Header set Cache-Control "public, max-age=600"
+  </FilesMatch>
+
+  <FilesMatch "\.(mp4|vtt)$">
+    Header set Cache-Control "public, max-age=604800"
   </FilesMatch>
 
   # security headers

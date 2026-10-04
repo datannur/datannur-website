@@ -9,8 +9,8 @@ and `/it/`.
 ## Architecture in short
 
 - **Static output, zero client-side framework.** The build produces plain
-  HTML/CSS. The only JavaScript shipped is ~30 inline lines for the theme
-  toggle and scroll preservation across language switches. Dropdown menus,
+  HTML/CSS. Small scripts handle theme and language switching, click-to-play
+  video playback. Dropdown menus,
   the mobile burger, the screenshot viewer and the header scroll transition
   are pure CSS.
 - **Why Astro:** markdown content collections, built-in i18n with translated
@@ -155,3 +155,43 @@ web root (SFTP/rsync). No PHP or Node required server-side.
 The code is released under the [MIT License](LICENSE). Site content, texts,
 images, screenshots and the datannur name and logo are not covered by it —
 all rights reserved.
+
+## Homepage film
+
+The hero displays the approved 60-second film in the page language (FR, EN,
+DE, IT), with separate light and dark variants. Assets live in
+`public/videos/declic-v4/`, served from the same host: no external player,
+cookies or video service. The eight MP4s total about 140 MB on disk. Only
+the selected film is requested, after the visitor starts playback;
+`preload="none"` keeps video bytes off the initial page load.
+
+Each homepage's `hero.video` frontmatter contains `src`, `darkSrc`, `poster`,
+`darkPoster`, shared WebVTT captions, labels and an accessible transcript.
+The small poster and film follow the existing `html[data-theme]` theme,
+including the saved preference on first load. The component applies the
+initial theme during parsing, and `film-player.ts` observes later changes.
+After playback has started, it reloads the selected variant and restores
+the current time, play/pause state, speed and caption selection. Rapid theme
+changes retain the original position. Both variants share the exact same
+audio stream and timeline.
+
+`Film.astro` progressively enhances a native, keyboard-accessible player;
+the native light player remains usable without JavaScript. Playback is
+inline on mobile, with fullscreen available through native controls. No
+autoplay. The caption below the film and visible transcript link are removed;
+subtitles remain in the player and the transcript remains available to
+assistive technology through `aria-details`.
+
+The original light 1080p/60fps films are copied unchanged from
+`datannur-media/video-declic/delivery-v4`. Dark exports come from
+`delivery-dark-v4`: native dark application captures, adapted motion colours
+and dark logo, with approved voices and editing preserved. The animated logo
+uses the artwork’s exact teal and white; its lettering follows the symbol
+through the final transition. The dark video URLs carry a revision query to
+refresh cached exports when the film is updated.
+
+`src/styles/film.css` styles only the player, using the existing site
+colours, rounded corners and shadows. The film replaces the hero screenshot;
+the original centred title, introduction, buttons, backgrounds and lower
+sections keep their existing layout. The play button has a subtle hover
+transition, disabled for visitors who prefer reduced motion.
