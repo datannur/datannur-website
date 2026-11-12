@@ -1,13 +1,8 @@
-# Deployment: push to main -> Astro build -> rsync dist/ to Infomaniak.
+# Deployment: push to main -> Astro build -> GitHub Pages (datannur.com).
 #
-# Secrets to define in GitHub (Settings > Secrets and variables > Actions):
-#   SSH_HOST          SSH host of the hosting account (e.g. xxx.ftp.infomaniak.com)
-#   SSH_USER          SSH user
-#   SSH_PRIVATE_KEY   private key whose public key is authorized on the Infomaniak side
-#   DEPLOY_PATH       web root of the site (e.g. /home/clients/xxx/web/datannur.com)
-#
-# rsync --delete: the remote content becomes an exact mirror of dist/ —
-# double-check DEPLOY_PATH before the first deployment.
+# Pages serves static files only: no .htaccess, so the legacy WordPress
+# redirects live in astro.config.mjs (meta-refresh pages) and 404.html is
+# picked up at the site root. No secrets are needed.
 
 name: deploy
 
@@ -16,12 +11,15 @@ on:
     branches: [main]
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 concurrency:
-  group: deploy
-  cancel-in-progress: true
+  group: pages
+  cancel-in-progress: false
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
@@ -35,17 +33,19 @@ jobs:
 
       - run: npm run build
 
-      # the server's public host key is pinned (strict checking): the deploy
-      # fails rather than talk to a machine that is not our Infomaniak host
-      - name: SSH key
-        run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_deploy
-          chmod 600 ~/.ssh/id_deploy
-          echo "${{ secrets.SSH_HOST }} ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHq1brZovVzZlNHMTLQxd+T9rhDNlrLsL+xgrwBlshj9" > ~/.ssh/known_hosts
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: dist
 
-      - name: Rsync to Infomaniak
-        run: |
-          rsync -az --delete \
-            -e "ssh -i ~/.ssh/id_deploy -o StrictHostKeyChecking=yes" \
-            dist/ "${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.DEPLOY_PATH }}/"
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5

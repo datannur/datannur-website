@@ -16,11 +16,11 @@ and `/it/`.
 - **Why Astro:** markdown content collections, built-in i18n with translated
   slugs, sitemap generation, and no hydration by default — plain HTML from
   markdown, with shared layout and components at build time only.
-- **Hosting:** any static file server. Production runs on Infomaniak shared
-  hosting (Apache) — `public/.htaccess` handles https redirects, caching and
-  the 404 page. No PHP, no Node at runtime. (One piece lives outside any
-  repo: a manually uploaded `.htaccess` at the root of docs.datannur.com
-  301-redirects `/` to `/documentation/` here.)
+- **Hosting:** any static file server. Production runs on GitHub Pages (DNS
+  at Infomaniak). Pages forces https and serves `404.html`; the legacy
+  WordPress URLs redirect through Astro `redirects` (meta-refresh pages). No
+  PHP, no Node at runtime. The root of docs.datannur.com redirects to
+  `/documentation/` here (see the datannur/docs repository).
 - **Design system:** every color is a CSS variable defined in
   `src/styles/global.css` (`:root` for light, `[data-theme='dark']` for
   dark) — any new color must go through these variables.
@@ -136,19 +136,14 @@ visitor chooses via the switcher.
 - `src/styles/diagrams.css` — diagram styles ported from the app
 - `public/images/` — logo, screenshots (`.en`/`.fr` suffix when localized,
   `.dark` for dark variants)
-- `public/.htaccess` — https, cache, 404 (Apache shared hosting)
-- `astro.config.mjs` — i18n, sitemap, markdown sugar (buttons, image widths,
-  dark variants, `diagram:` embeds)
+- `astro.config.mjs` — i18n, sitemap, legacy redirects, markdown sugar
+  (buttons, image widths, dark variants, `diagram:` embeds)
 
 ## Deployment
 
-Automatic: every push to `main` builds and syncs `dist/` to Infomaniak over
-rsync/SSH ([.github/workflows/deploy.yml](.github/workflows/deploy.yml) —
-`SSH_HOST`, `SSH_USER`, `SSH_PRIVATE_KEY` and `DEPLOY_PATH` secrets must be
-set on the repository). Manual runs are available from the Actions tab.
-
-Manual fallback: `npm run build`, then upload the contents of `dist/` to the
-web root (SFTP/rsync). No PHP or Node required server-side.
+Automatic: every push to `main` builds `dist/` and publishes it on GitHub
+Pages ([.github/workflows/deploy.yml](.github/workflows/deploy.yml), no
+secrets needed). Manual runs are available from the Actions tab.
 
 ## License
 

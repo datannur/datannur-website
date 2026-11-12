@@ -77,6 +77,16 @@ function remarkSugar() {
 export default defineConfig({
   site: 'https://datannur.com',
   trailingSlash: 'always',
+  // Legacy WordPress URLs (the old site was French at the root). GitHub Pages
+  // has no server-side redirects, so Astro emits meta-refresh pages instead.
+  redirects: {
+    '/fonctionnalites': '/fr/fonctionnalites/',
+    '/alimentation': '/fr/alimentation/',
+    '/geodonnees': '/fr/geodonnees/',
+    '/partenaires': '/fr/partenaires/',
+    '/presentation': '/fr/presentation/',
+    '/projet': '/fr/projet/',
+  },
   integrations: [sitemap()],
   markdown: {
     remarkPlugins: [remarkSugar],
