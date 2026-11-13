@@ -16,7 +16,7 @@ Due demo sono accessibili direttamente nel browser:
 
 **Demo fittizia:** per esplorare l'interfaccia in un ambiente neutro
 
-[Demo fittizia](https://dev.datannur.com)
+[Demo fittizia](https://demo.datannur.com)
 
 </div>
 <div>

@@ -16,7 +16,7 @@ Zwei Demos sind direkt im Browser zugänglich:
 
 **Fiktive Demo:** um die Oberfläche in einer neutralen Umgebung zu erkunden
 
-[Fiktive Demo](https://dev.datannur.com)
+[Fiktive Demo](https://demo.datannur.com)
 
 </div>
 <div>

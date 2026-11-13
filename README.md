@@ -79,7 +79,7 @@ a small teal kicker line, the rest as the main heading — inside a single
 ### Structure diagrams
 
 The diagrams on the structure page are the app's own HTML/SVG (extracted from
-the about page of dev.datannur.com) stored in `src/diagrams/<lang>/`, with
+the about page of demo.datannur.com) stored in `src/diagrams/<lang>/`, with
 their styles in `src/styles/diagrams.css`: crisp at any resolution, localized
 labels, colors that adapt to both themes, entity-colored icons. If the app's
 diagrams evolve, re-extract the `.simple-diagram-block` elements and replace
